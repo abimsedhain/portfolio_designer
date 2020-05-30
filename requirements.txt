@@ -1,5 +1,7 @@
 #Install the following packages
 
+###FOR CLIENT SIDE
+
 #react-bootstrap
 npm install react-bootstrap bootstrap
 
@@ -8,3 +10,12 @@ npm install react-router-dom
 
 #styled-components
 npm install --save styled-components
+
+
+
+###SERVER SIDE
+
+#express
+#body-parser
+#mongoose
+#nodemon
