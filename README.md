@@ -3,7 +3,7 @@
 Portfolio Designer
 </h1>
 <p align="center">
-Web App for creating fast and stylish portfolios.
+Web App for creating fast and stylish portfolios..
 </p>
 </p>
 
