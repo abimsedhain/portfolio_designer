@@ -1,11 +1,11 @@
 import React from 'react'
 
-function AppNavbar() {
+function Home() {
     return (
         <div>
-            
+            HOMEPAGE
         </div>
     )
 }
 
-export default AppNavbar
+export default Home
