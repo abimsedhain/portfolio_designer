@@ -2,9 +2,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #08B2E3;
+    background-color: #F6AF65;
     font-weight: bold;
-    margin-bottom: 10px;
+    height: 10vh;
 }
 
 .nav-logo {
@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #08B2E3;
+    background-color: #F6AF65;
     font-weight: bold;
     color: black;
     padding: 20px;
@@ -34,4 +34,9 @@ nav {
     color: #ffffff;
     font-style: normal;
     text-decoration: none;
+}
+
+.logoo {
+    height: 8vh;
+    width: 12vw;
 }

@@ -3,6 +3,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css';
 
+import logo from '../assets/capos.png'
 
 function AppNavbar() {
     return (
@@ -10,7 +11,8 @@ function AppNavbar() {
             <Navbar collapseOnSelect expand="lg" sticky="top">
                 <Navbar.Brand>
                     <NavItem>
-                        <Link className="nav-logo" to="/">PORTFOLIO DESIGNER</Link>
+                        {/* <Link className="nav-logo" to="/">PORTFOLIO DESIGNER</Link> */}
+                        <a target="_blank" href="https://www.google.com"><img className="logoo" src={logo} alt="github link"/></a>
                     </NavItem>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

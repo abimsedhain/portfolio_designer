@@ -1,3 +1,51 @@
 .App {
     text-align: center;
 }
+
+.lead {
+    color: white;
+    font-weight: bold;
+}
+
+.jumbotron-fluid {
+    height: 90vh;
+    background: #74ebd5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.display-3 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif;
+    font-size: 120px;
+}
+
+.lead {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    margin-top: 50px;
+    transform: translate(-50%, -50%)
+}
+
+.getStarted {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    margin-top: 50px;
+    transform: translate(-50%, -50%)
+}
+
+.logo {
+    height: 10vh;
+    width: 15vw;
+}
