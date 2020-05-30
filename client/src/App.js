@@ -9,6 +9,7 @@ import Login from './components/Login';
 
 //Importing Navbar
 import AppNavbar from './Navbar/AppNavbar';
+import AppFooter from './Navbar/AppFooter';
 
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" component={Login} />
       </Switch>
     </div>
+    <AppFooter/>
   </Router>
   );
 }

@@ -1,0 +1,48 @@
+.footerNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #08B2E3;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    height: 40vh;
+    text-align: center;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 25px;
+}
+
+.nav-logo:hover {
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    height: 8vh;
+    width: 4vw;
+    margin: 15px 40px 20px 20px;
+    padding: 5px;
+}
+
+.footHead {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.madeBy {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.footBottom {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
