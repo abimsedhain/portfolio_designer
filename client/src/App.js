@@ -10,8 +10,7 @@ import Login from './components/Login';
 //Importing Navbar
 import AppNavbar from './Navbar/AppNavbar';
 import AppFooter from './Navbar/AppFooter';
-import TestFooter from './Navbar/TestFooter';
-// import Jumbotronn from './components/Jumbotronn';
+
 
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
@@ -29,6 +28,7 @@ function App() {
         <Route path="/login" component={Login} />
       </Switch>
     </div>
+
   </Router>
   );
 }

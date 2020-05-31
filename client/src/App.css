@@ -16,6 +16,7 @@
 
 .jumbotron-fluid {
     height: 100vh;
+
     background: #0cebeb;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
@@ -97,6 +98,7 @@
 }
 
 .infoBtn {
+
     position: absolute;
     /* top: 180%; */
     left: 50%;
@@ -105,7 +107,9 @@
     transform: translate(-50%, -50%);
 }
 
+
 .infoBtn:hover {
+
     background-color: pink;
     border-color: pink;
     color: black;
@@ -124,4 +128,6 @@
 
 .infoBtn:hover span {
     max-width: 10rem;
+  
 }
+

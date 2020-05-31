@@ -13,6 +13,7 @@ function Instruction() {
             <Container className="insPage" fluid="lg">
                 <Row>
                     <Col className="insTitle">INSTRUCTION</Col>
+
                 </Row>
                 <Row xs="1" sm="1" md="3">
                     <Col>
@@ -61,6 +62,7 @@ function Instruction() {
                      </Col>
                 </Row>
             </Container>
+
         </React.Fragment>
     )
 }
