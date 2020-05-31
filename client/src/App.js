@@ -10,7 +10,7 @@ import Login from './components/Login';
 //Importing Navbar
 import AppNavbar from './Navbar/AppNavbar';
 import AppFooter from './Navbar/AppFooter';
-import Jumbotronn from './components/Jumbotronn';
+// import Jumbotronn from './components/Jumbotronn';
 
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
@@ -20,7 +20,7 @@ function App() {
     <Router>
     <div className="App">
       <AppNavbar/>
-      <Jumbotronn/>
+      {/* <Jumbotronn/> */}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
