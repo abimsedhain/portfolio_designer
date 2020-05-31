@@ -20,6 +20,7 @@ function App() {
     <Router>
     <div className="App">
       <AppNavbar/>
+      <Jumbotronn/>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
