@@ -4,7 +4,7 @@ nav {
     align-items: center;
     background-color: #F6AF65;
     font-weight: bold;
-    height: 10vh;
+    height: 8vh;
 }
 
 .nav-logo {
@@ -36,7 +36,9 @@ nav {
     text-decoration: none;
 }
 
+
+/* 
 .logoo {
     height: 8vh;
     width: 12vw;
-}
+} */

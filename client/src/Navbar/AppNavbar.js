@@ -8,14 +8,7 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
-} from 'reactstrap';
+    NavItem} from 'reactstrap';
 
 import logo from '../assets/capos.png'
 
@@ -26,7 +19,7 @@ function AppNavbar() {
 
     return (
         <React.Fragment>
-            <Navbar expand="sm" fixed="top">
+            <Navbar light expand="md" fixed="top">
                 <NavbarBrand href="/">CAPOS</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
