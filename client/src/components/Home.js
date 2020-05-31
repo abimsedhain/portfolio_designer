@@ -1,7 +1,10 @@
 import React from 'react'
-
+import Jumbotronn from "./Jumbotronn"
 function Home() {
     return (
+
+		<React.Fragment>
+      <Jumbotronn/>
         <div>
             Lorem Ipsum
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
@@ -37,6 +40,7 @@ Sed elementum facilisis diam, at consectetur magna iaculis vitae. Duis nec nunc 
 
 Curabitur eget lorem imperdiet nibh mattis volutpat. Donec ut est non justo fermentum aliquet non sed odio. Sed fringilla neque ac lacus facilisis, eu feugiat erat tincidunt. Fusce ac purus lobortis nulla fermentum porta. Maecenas fermentum bibendum ex eu dictum. Vivamus faucibus mi nec tortor malesuada, a convallis orci luctus. Nunc sit amet ligula elit. Nullam laoreet tellus tellus, at porta justo ultricies vitae. Mauris tristique diam tortor, ac scelerisque nisl faucibus non. 
         </div>
+</React.Fragment>
     )
 }
 
