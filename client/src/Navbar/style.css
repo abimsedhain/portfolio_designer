@@ -2,7 +2,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #F6AF65;
+    background-color: #aed9e0;
     font-weight: bold;
     height: 8vh;
 }
@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #F6AF65;
+    background-color: #aed9e0;
     font-weight: bold;
     color: black;
     padding: 20px;
@@ -36,9 +36,18 @@ nav {
     text-decoration: none;
 }
 
+.aboutPage {
+    height: 90vh;
+}
 
-/* 
-.logoo {
-    height: 8vh;
-    width: 12vw;
-} */
+.aboutTitle {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aboutDetails {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: justify;
+}

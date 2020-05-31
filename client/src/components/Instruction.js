@@ -10,9 +10,9 @@ import type from '../assets/typing.svg';
 function Instruction() {
     return (
         <React.Fragment>
-            <Container className="infoo" fluid="lg">
+            <Container className="insPage" fluid="lg">
                 <Row>
-                    <Col className="info" sm={{ size: 6, order: 2, offset: 1 }}>INSTRUCTION</Col>
+                    <Col className="insTitle">INSTRUCTION</Col>
                 </Row>
                 <Row xs="1" sm="1" md="3">
                     <Col>
@@ -32,17 +32,35 @@ function Instruction() {
                     </Col>
                 </Row>
 
-                <Row className="yooo">
+                <Row>
                     <Col>
-                        <Button color="primary" size="lg">Login&nbsp;
+                        <Button className="infoBtn" color="primary" size="lg">Login&nbsp;
                 <span>/ Signup &#8594;  </span>
                         </Button></Col>
                 </Row>
-
             </Container>
 
-           
+            <Container className="aboutPage" fluid="lg">
+                <Row>
+                    <Col className="aboutTitle">ABOUT CAPOS</Col>
+                </Row>
+                <Row>
+                    <Col xs="12" sm="12" md="12" className="aboutDetails">A great portfolio can attract the eyes of many recruiters.
+                    It can get you an interview and also allow you to show off your skills and project.
+                    But for people whose work involves mostly non-design technical jobs,
+                    it is hard to create an appealing portfolio website. This is where COPAS comes in handy.
+                     <br /><br />
 
+                     COPAS is a simple portfolio builder. Just enter the required information and get your portfolio
+                     generated. COPAS features minimal and flat design. And it takes less than 10 mintues. <br /><br />
+
+                     You will receive a portfolio link that can be shared across multiple of social medias. Similarly,
+                     you will be provided with HTML, CSS and JavaScript for fast and secure experience which you can host
+                     yourself.
+
+                     </Col>
+                </Row>
+            </Container>
         </React.Fragment>
     )
 }

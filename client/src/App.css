@@ -16,11 +16,11 @@
 
 .jumbotron-fluid {
     height: 100vh;
-    background: #74ebd5;
+    background: #0cebeb;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+    background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -76,35 +76,37 @@
 }
 
 .step {
-    height: 50%;
-    width: 40%;
+    height: 25vh;
+    width: 15vh;
     margin-right: 5%;
     margin-top: 50px;
 }
 
-.info {
-    text-align: left;
+.insTitle {
+    margin-top: 15px;
+    text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
 }
 
-.infoo {
-    height: 90vh;
+.insPage {
+    height: 80vh;
     width: 100%;
-    margin-top: -25px;
+    margin-top: -15px;
+    margin-bottom: 100px;
 }
 
 .infoBtn {
     position: absolute;
     /* top: 180%; */
-    left: 43%;
+    left: 50%;
     margin-right: -50%;
     margin-top: 50px;
     transform: translate(-50%, -50%);
 }
 
 .infoBtn:hover {
-    background-color: tomato;
+    background-color: pink;
     border-color: pink;
     color: black;
     cursor: pointer;
@@ -121,11 +123,5 @@
 }
 
 .infoBtn:hover span {
-    max-width: 8rem;
-}
-
-.yooo {
-    height: 10vh;
-    padding: -100px;
-    margin-top: -10px;
+    max-width: 10rem;
 }
