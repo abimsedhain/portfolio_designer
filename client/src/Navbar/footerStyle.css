@@ -24,3 +24,23 @@ img {
     text-align: center;
     margin-bottom: -10px;
 }
+
+.test {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #aed9e0;
+    max-width: 100%;
+}
+
+.footerMain {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.creators,
+.endCredit {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}

@@ -4,9 +4,10 @@ import './footerStyle.css';
 
 import { Link } from 'react-router-dom';
 
-import github from '../assets/github.png'
-import twitter from '../assets/twitter.png'
-import linkedin from '../assets/linkedin.png'
+import github from '../assets/github.svg'
+import twitter from '../assets/twitter.svg'
+import linkedin from '../assets/linkedin.svg'
+
 
 function AppFooter() {
 
