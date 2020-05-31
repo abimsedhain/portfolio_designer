@@ -5,10 +5,17 @@
 .lead {
     color: white;
     font-weight: bold;
+    /* position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    margin-top: 50px;
+    transform: translate(-50%, -50%) */
+    font-size: 25px;
 }
 
 .jumbotron-fluid {
-    height: 90vh;
+    height: 100vh;
     background: #74ebd5;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
@@ -18,34 +25,107 @@
 }
 
 .display-3 {
-    position: absolute;
-    top: 45%;
+    /* position: absolute;
+    top: 100%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    font-family: 'Dosis', sans-serif;
-    font-size: 120px;
+    font-family: 'Dosis', sans-serif; */
+    font-size: 80px;
 }
 
-.lead {
-    position: absolute;
-    top: 55%;
-    left: 50%;
+.logo {
+    /* position: absolute;
+    top: 15%;
+    left: 48%;
     margin-right: -50%;
     margin-top: 50px;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    height: 10vh;
+    width: 15vw; */
 }
 
-.getStarted {
+.btn {
     position: absolute;
     top: 70%;
     left: 50%;
     margin-right: -50%;
     margin-top: 50px;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
-.logo {
+.btn:hover {
+    background-color: pink;
+    border-color: pink;
+    color: black;
+    cursor: pointer;
+}
+
+.btn span {
+    max-width: 0;
+    -webkit-transition: max-width 0.8s;
+    transition: max-width 0.8s;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.btn:hover span {
+    max-width: 8rem;
+}
+
+.step {
+    height: 50%;
+    width: 40%;
+    margin-right: 5%;
+    margin-top: 50px;
+}
+
+.info {
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.infoo {
+    height: 90vh;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.infoBtn {
+    position: absolute;
+    /* top: 180%; */
+    left: 43%;
+    margin-right: -50%;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+}
+
+.infoBtn:hover {
+    background-color: tomato;
+    border-color: pink;
+    color: black;
+    cursor: pointer;
+}
+
+.infoBtn span {
+    max-width: 0;
+    -webkit-transition: max-width 0.8s;
+    transition: max-width 0.8s;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.infoBtn:hover span {
+    max-width: 8rem;
+}
+
+.yooo {
     height: 10vh;
-    width: 15vw;
+    padding: -100px;
+    margin-top: -10px;
 }

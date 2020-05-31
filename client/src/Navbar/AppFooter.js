@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar, NavItem } from 'react-bootstrap';
 import './footerStyle.css';
+
+import { Link } from 'react-router-dom';
 
 import github from '../assets/github.png'
 import twitter from '../assets/twitter.png'
 import linkedin from '../assets/linkedin.png'
 
 function AppFooter() {
+
     return (
         <React.Fragment>
+           
             <Navbar className="footerNav" collapseOnSelect expand="sm" sticky="bottom">
                 <Navbar.Brand>
                     <NavItem>

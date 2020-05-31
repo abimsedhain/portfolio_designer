@@ -1,25 +1,31 @@
-import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import React, { useState } from 'react';
+// import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem} from 'reactstrap';
 
 import logo from '../assets/capos.png'
 
 function AppNavbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+
     return (
         <React.Fragment>
-            <Navbar collapseOnSelect expand="lg" sticky="top">
-                <Navbar.Brand>
-                    <NavItem>
-                        {/* <Link className="nav-logo" to="/">PORTFOLIO DESIGNER</Link> */}
-                        <a target="_blank" href="https://www.google.com"><img className="logoo" src={logo} alt="github link"/></a>
-                    </NavItem>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ml-auto">
+            <Navbar light expand="md" fixed="top">
+                <NavbarBrand href="/">CAPOS</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Link className="nav-links" to="/">Get Started</Link>
+                            <Link className="nav-links" to="/about">Get Started</Link>
                         </NavItem>
                         <NavItem>
                             <Link className="nav-links" to="/about">About</Link>
@@ -31,7 +37,7 @@ function AppNavbar() {
                             <Link className="nav-links" to="/login">Login/Signup</Link>
                         </NavItem>
                     </Nav>
-                </Navbar.Collapse>
+                </Collapse>
             </Navbar>
         </React.Fragment>
     )
