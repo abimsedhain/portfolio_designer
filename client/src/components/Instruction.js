@@ -7,6 +7,7 @@ import signup from '../assets/signup.svg';
 import type from '../assets/typing.svg';
 
 
+
 function Instruction() {
     return (
         <React.Fragment>
@@ -35,7 +36,7 @@ function Instruction() {
 
                 <Row>
                     <Col>
-                        <Button className="infoBtn" color="primary" size="lg">Login&nbsp;
+                        <Button className="infoBtn" color="primary" size="lg" href="/form">Login&nbsp;
                 <span>/ Signup &#8594;  </span>
                         </Button></Col>
                 </Row>

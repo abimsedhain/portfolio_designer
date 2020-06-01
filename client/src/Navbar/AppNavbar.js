@@ -11,7 +11,7 @@ import {
     NavItem
 } from 'reactstrap';
 
-import logo from '../assets/capos.png'
+import logo from '../assets/logo.png'
 
 function AppNavbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,9 @@ function AppNavbar() {
     return (
         <React.Fragment>
             <Navbar light expand="md" fixed="top">
-                <NavbarBrand href="/">CAPOS</NavbarBrand>
+                <NavbarBrand href="/">
+                <img className="mainLogo" src={logo} alt="logo"/>
+                </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>

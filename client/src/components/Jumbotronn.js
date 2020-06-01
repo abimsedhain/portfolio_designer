@@ -1,6 +1,6 @@
 import React from 'react'
 import '../App.css';
-import logo from '../assets/capos.png';
+import logo from '../assets/logo.png';
 import { Jumbotron, Container, Button, Row, Col } from 'reactstrap';
 import { Link } from 'react-scroll';
 

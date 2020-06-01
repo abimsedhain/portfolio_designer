@@ -7,6 +7,8 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Login from './components/Login';
 
+import UserDetails from './Form/UserDetails';
+
 //Importing Navbar
 import AppNavbar from './Navbar/AppNavbar';
 import AppFooter from './Navbar/AppFooter';
@@ -26,6 +28,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
+        <Route path="/form" component={UserDetails} />
       </Switch>
     </div>
 
