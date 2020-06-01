@@ -11,6 +11,9 @@ npm install react-router-dom
 #styled-components
 npm install --save styled-components
 
+#react-scroll
+npm install react-scroll
+
 
 
 ###SERVER SIDE

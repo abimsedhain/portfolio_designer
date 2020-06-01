@@ -10,7 +10,7 @@ import type from '../assets/typing.svg';
 function Instruction() {
     return (
         <React.Fragment>
-            <Container className="insPage" fluid="lg">
+            <Container className="insPage" fluid="lg" id="instruction">
                 <Row>
                     <Col className="insTitle">INSTRUCTION</Col>
 

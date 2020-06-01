@@ -2,23 +2,22 @@ import React from 'react'
 import '../App.css';
 import logo from '../assets/capos.png';
 import { Jumbotron, Container, Button, Row, Col } from 'reactstrap';
+import { Link } from 'react-scroll';
 
 function Jumbotronn() {
     return (
-        <div>
+        <div id="main">
             <Jumbotron fluid>
                 <Container fluid>
                     <Row>
                         <Col >
-                        <img className="logo" src={logo} alt="logo" />
-                            </Col>
+                            <img className="logo" src={logo} alt="logo" />
+                        </Col>
                     </Row>
-
-                    
                     <Row>
                         <Col >
-                        <h1 className="display-3">Portfolio Builder</h1>
-                            </Col>
+                            <h1 className="display-3">Portfolio Builder</h1>
+                        </Col>
                     </Row>
                     <Row>
                         <Col>
@@ -27,10 +26,11 @@ function Jumbotronn() {
                     </Row>
 
                 </Container>
-                <Button color="primary" size="lg">Let's Build&nbsp;
-                <span>a Portfolio &#8594;  </span>
-                </Button>
-
+                <Link to="instruction" spy={true} smooth={true} offset={-50} duration={1000}>
+                    <Button color="primary" size="lg">Let's Build&nbsp;
+                             <span>a Portfolio &#8594;</span>
+                    </Button>
+                </Link>
 
             </Jumbotron>
         </div>

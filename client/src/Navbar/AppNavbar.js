@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import './style.css';
 import {
     Collapse,
@@ -8,7 +8,8 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem} from 'reactstrap';
+    NavItem
+} from 'reactstrap';
 
 import logo from '../assets/capos.png'
 
@@ -25,15 +26,17 @@ function AppNavbar() {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Link className="nav-links" to="/about">Get Started</Link>
+                            <Link className="nav-links" to="main" spy={true} smooth={true} offset={-100} duration={1000}>Get Started</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-links" to="/about">About</Link>
+                            <Link className="nav-links" to="about" spy={true} smooth={true} offset={-80} duration={1000}>About</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-links" to="/contact">Contact</Link>
+                            {/* <Link className="nav-links" to="/contact">Contact</Link> */}
+                            <Link className="nav-links" to="contact" spy={true} smooth={true} offset={-100} duration={1000}>Contact</Link>
                         </NavItem>
                         <NavItem>
+                        
                             <Link className="nav-links" to="/login">Login/Signup</Link>
                         </NavItem>
                     </Nav>

@@ -12,7 +12,7 @@ import linkedin from '../assets/linkedin.svg'
 function TestFooter() {
     return (
         <React.Fragment>
-            <Container className="test" fluid="lg">
+            <Container className="test" fluid="lg" id="contact">
                 <Row>
                     <Col className="footerMain">
                         Feel free to reach out to us for feedback or any suggestions for new features, or just say hello!
