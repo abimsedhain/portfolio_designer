@@ -34,6 +34,7 @@ nav {
     color: #ffffff;
     font-style: normal;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .aboutPage {

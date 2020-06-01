@@ -6,7 +6,7 @@ import '../Navbar/style.css';
 function About() {
     return (
         <React.Fragment>
-            <Container className="aboutPage" fluid="lg">
+            <Container className="aboutPage" fluid="lg" id="about">
                 <Row>
                     <Col className="aboutTitle">ABOUT CAPOS</Col>
                 </Row>
