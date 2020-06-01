@@ -13,7 +13,7 @@ function Home() {
 
             <Jumbotronn/>
             <Instruction/>
-            {/* <About/> */}
+            <About/>
             <TestFooter/>
         </React.Fragment>
     )
