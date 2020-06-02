@@ -67,6 +67,11 @@ nav {
     .aboutPage {
         margin-top: 100px;
     }
+    .mainLogo {
+        height: 15vh;
+        padding: 20px;
+        width: 12vw;
+    }
 }
 
 
@@ -87,6 +92,9 @@ nav {
     .aboutPage {
         margin-top: 700px;
     }
+    .mainLogo {
+        display: none;
+    }
 }
 
 
@@ -95,5 +103,10 @@ nav {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .aboutPage {
         margin-top: -150px;
+    }
+    .mainLogo {
+        height: 10vh;
+        padding: 2px;
+        width: 15vw;
     }
 }
