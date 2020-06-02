@@ -16,7 +16,7 @@ function Jumbotronn() {
                     </Row>
                     <Row>
                         <Col >
-                            <h1 className="display-3">Portfolio Builder</h1>
+                            <h1 className="display-3">Portfolio Builder v2.0</h1>
                         </Col>
                     </Row>
                     <Row>
