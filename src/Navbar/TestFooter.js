@@ -1,13 +1,11 @@
 import React from 'react';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import './footerStyle.css';
 import '../App.css';
-
 
 import github from '../assets/github.svg'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
-
 
 function TestFooter() {
     return (
@@ -21,14 +19,11 @@ function TestFooter() {
 
                 <Row>
                     <Col sm="12" md={{ size: 6, offset: 3 }}>.
-                         <a target="_blank" href="https://www.google.com"><img src={github} alt="github link" /></a>
-                        <a target="_blank" href="https://www.google.com"><img src={twitter} alt="twitter link" /></a>
-                        <a target="_blank" href="https://www.google.com"><img src={linkedin} alt="linkedin link" /></a>
-
+                         <a target="_blank" rel="noopener noreferrer" href="https://www.google.com"><img src={github} alt="github link" /></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.google.com"><img src={twitter} alt="twitter link" /></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.google.com"><img src={linkedin} alt="linkedin link" /></a>
                     </Col>
                 </Row>
-
-             
                 <Row>
                     <Col className="creators">
                         Created with ♡ by ...

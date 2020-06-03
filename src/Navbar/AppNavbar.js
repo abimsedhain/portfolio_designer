@@ -20,9 +20,9 @@ function AppNavbar() {
 
     return (
         <React.Fragment>
-            <Navbar light expand="md" fixed="top">
+            <Navbar light expand="md" fixed="top" >
                 <NavbarBrand href="/">
-                <img className="mainLogo" src={logo} alt="logo"/>
+                    <img className="mainLogo" src={logo} alt="logo" />
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -38,8 +38,7 @@ function AppNavbar() {
                             <Link className="nav-links" to="contact" spy={true} smooth={true} offset={-100} duration={1000}>Contact</Link>
                         </NavItem>
                         <NavItem>
-                        
-                            <Link className="nav-links" to="/login">Login/Signup</Link>
+                            <Link className="nav-links" to="/modal">Login/Signup</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>

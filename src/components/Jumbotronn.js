@@ -3,9 +3,12 @@ import '../App.css';
 import logo from '../assets/logo.png';
 import { Jumbotron, Container, Button, Row, Col } from 'reactstrap';
 import { Link } from 'react-scroll';
+import AppNavbar from '../Navbar/AppNavbar';
 
 function Jumbotronn() {
     return (
+        <>
+        <AppNavbar/>
         <div id="main">
             <Jumbotron fluid>
                 <Container fluid>
@@ -16,7 +19,7 @@ function Jumbotronn() {
                     </Row>
                     <Row>
                         <Col >
-                            <h1 className="display-3">Portfolio Builder v2.0</h1>
+                            <h1 className="display-3">Portfolio Builder</h1>
                         </Col>
                     </Row>
                     <Row>
@@ -34,6 +37,7 @@ function Jumbotronn() {
 
             </Jumbotron>
         </div>
+        </>
     )
 }
 
