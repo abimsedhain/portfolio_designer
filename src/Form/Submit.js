@@ -1,13 +1,13 @@
 import React from 'react'
+import { Container } from 'reactstrap';
 
-const Submit = ({ navigation }) => {
-  const { go } = navigation;
+function Submit() {
   return (
-    <div>
-      <h3>Thank you for submitting. We will be in touch</h3>
-      New Form -> <button onClick={() => go("names")}>New</button>
-    </div>
-  );
-};
+    <Container fluid="sm">
+      <h1>YOUR INFORMATION HAS BEEN RECEIVED AND YOU WILL RECEIVE YOUR PORTFOLIO WEBSITE IN JUST A SECOND</h1>
+    </Container>
+
+  )
+}
 
 export default Submit
