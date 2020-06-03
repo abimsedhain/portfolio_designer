@@ -7,8 +7,6 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Login from './components/Login';
 
-import ModalExample from './Form/ModalExample';
-
 import UserDetails from './Form/UserDetails';
 
 //React Router
@@ -24,7 +22,6 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
         <Route path="/form" component={UserDetails} />
-        <Route path="/modal" component={ModalExample} />
       </Switch>
     </div>
 
