@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Row, Button, FormGroup, Table } from 'reactstrap';
+import { Container, Col, Button, Table } from 'reactstrap';
 
 export class Review extends Component {
   continue = e => {
@@ -24,116 +24,111 @@ export class Review extends Component {
       eduTitle, eduDescription } } = this.props;
 
     return (
-       <Container fluid="md">
+      <Container fluid="md" style={{ marginTop: '20px' }}>
         <h1>Confirm your Information</h1>
-        <Table bordered>
-          <thead>
-            <tr>
-              <th scope="row">Fields</th>
-              <th scope="row">Information</th>
+        <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 10, offset: 1 }} >
+          <Table bordered responsive>
+            <thead>
+              <tr>
+                <th scope="row">Fields</th>
+                <th scope="row">Information</th>
 
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Full Name</td>
-              <td>{fullName}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full Name</td>
+                <td>{fullName}</td>
 
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{email}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{email}</td>
 
-            </tr>
-            <tr>
-              <td>Bio</td>
-              <td>{bio}</td>
+              </tr>
+              <tr>
+                <td>Bio</td>
+                <td>{bio}</td>
 
-            </tr>
-            <tr>
-              <td>Github Link</td>
-              <td>{github}</td>
-            </tr>
-            <tr>
-              <td>Linkedin Link</td>
-              <td>{linkedin}</td>
-            </tr>
-            <tr>
-              <td>Skills</td>
-              <td>{skills}</td>
-            </tr>
-            <tr>
-              <td>Project 1 Title</td>
-              <td>{pro1Title}</td>
-            </tr>
-            <tr>
-              <td>Project 1 Description</td>
-              <td>{pro1Description}</td>
-            </tr>
+              </tr>
+              <tr>
+                <td>Github Link</td>
+                <td>{github}</td>
+              </tr>
+              <tr>
+                <td>Linkedin Link</td>
+                <td>{linkedin}</td>
+              </tr>
+              <tr>
+                <td>Skills</td>
+                <td>{skills}</td>
+              </tr>
+              <tr>
+                <td>Project 1 Title</td>
+                <td>{pro1Title}</td>
+              </tr>
+              <tr>
+                <td>Project 1 Description</td>
+                <td>{pro1Description}</td>
+              </tr>
 
-            <tr>
-              <td>Project 2 Title</td>
-              <td>{pro2Title}</td>
-            </tr>
+              <tr>
+                <td>Project 2 Title</td>
+                <td>{pro2Title}</td>
+              </tr>
 
-            <tr>
-              <td>Project 2 Description</td>
-              <td>{pro2Description}</td>
-            </tr>
-            <tr>
-              <td>Project 3 Title</td>
-              <td>{pro3Title}</td>
-            </tr>
-            <tr>
-              <td>Project 3 Description</td>
-              <td>{pro3Description}</td>
-            </tr>
+              <tr>
+                <td>Project 2 Description</td>
+                <td>{pro2Description}</td>
+              </tr>
+              <tr>
+                <td>Project 3 Title</td>
+                <td>{pro3Title}</td>
+              </tr>
+              <tr>
+                <td>Project 3 Description</td>
+                <td>{pro3Description}</td>
+              </tr>
 
-            <tr>
-              <td>Experience 1 </td>
-              <td>{exp1Title}</td>
-            </tr>
-            <tr>
-              <td>Experience 1 Description</td>
-              <td>{exp1Description}</td>
-            </tr>
-            <tr>
-              <td>Experience 2 </td>
-              <td>{exp2Title}</td>
-            </tr>
-            <tr>
-              <td>Experience 2 Description</td>
-              <td>{exp2Description}</td>
-            </tr>
+              <tr>
+                <td>Experience 1 </td>
+                <td>{exp1Title}</td>
+              </tr>
+              <tr>
+                <td>Experience 1 Description</td>
+                <td>{exp1Description}</td>
+              </tr>
+              <tr>
+                <td>Experience 2 </td>
+                <td>{exp2Title}</td>
+              </tr>
+              <tr>
+                <td>Experience 2 Description</td>
+                <td>{exp2Description}</td>
+              </tr>
 
-            <tr>
-              <td>Education Institution </td>
-              <td>{eduTitle}</td>
-            </tr>
-            <tr>
-              <td>Education Description</td>
-              <td>{eduDescription}</td>
-            </tr>
-          </tbody>
-        </Table>
-        <Row form>
-          <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-            <FormGroup>
-              <Button color="success" onClick={this.continue}>Confirm</Button>
-            </FormGroup>
-          </Col>
-          <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-            <FormGroup>
-              <Button color="danger" onClick={this.back}>Back</Button>
-            </FormGroup>
-          </Col>
-        </Row>
+              <tr>
+                <td>Education Institution </td>
+                <td>{eduTitle}</td>
+              </tr>
+              <tr>
+                <td>Education Description</td>
+                <td>{eduDescription}</td>
+              </tr>
+            </tbody>
+          </Table>
+          <br /><br />
 
-
+        </Col>
+        <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 10, offset: 1 }} >
+          <Button color="primary" style={{ marginTop:'-50px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
+          <Button color="danger" style={{ marginTop:'-50px', marginLeft: '80px' }} onClick={this.back}>Back</Button> 
+          <br />
+        </Col>
 
       </Container>
 
-       
+
     )
   }
 }

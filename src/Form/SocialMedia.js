@@ -16,10 +16,10 @@ export class SocialMedia extends Component {
     const { values, handleChange } = this.props;
     return (
       <>
-        <Container fluid="md">
+        <Container fluid="md" style={{marginTop: '20px'}}>
           <Form>
             <Row form>
-              <Col md={6}>
+              <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }} >
                 <h1>Social Media</h1>
                 <FormGroup>
                   <Label for="exampleEmail">Github</Label>
@@ -32,37 +32,24 @@ export class SocialMedia extends Component {
                   <Input type="text" name="password" id="examplePassword" placeholder="Linkedin Link"
                     onChange={handleChange('linkedin')}
                     defaultValue={values.linkedin} /><br />
-                </FormGroup>
-              </Col>
 
-              <Col md={6}>
-                <h1>Skills</h1>
-                <FormGroup>
+                  <h1>Skills</h1>
+
                   <Label for="exampleEmail">Skills</Label>
                   <Input type="text" name="skills" id="exampleEmail" placeholder="List your skills"
                     onChange={handleChange('skills')}
                     defaultValue={values.skills} />
+
+                  <Button color="primary" style={{marginTop: '150px', marginLeft:'-80px'}} onClick={this.continue}>Next</Button><br /><br />
+
+                  <Button color="danger" style={{marginTop: '150px', marginLeft:'80px'}}onClick={this.back}>Back</Button>
                   <br />
-                </FormGroup>
-              </Col>
-            </Row>
-
-            <Row form>
-              <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-                <FormGroup>
-                  <Button color="primary" onClick={this.continue}>Next</Button>
-                </FormGroup>
-
-              </Col>
-              <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-                <FormGroup>
-                  <Button color="danger" onClick={this.back}>Back</Button>
                 </FormGroup>
               </Col>
             </Row>
           </Form>
         </Container>
-        
+
       </>
     )
   }
