@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import PersonalInfo from './PersonalInfo';
 import Projects from './Projects';
 import Review from './Review';
@@ -8,93 +8,45 @@ import Education from './Education';
 import Submit from './Submit';
 
 export const MultistepForm = () => {
-    const [step, setStep] = useState(1);
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        bio: '',
+	const [step, setStep] = useState(0);
 
-        github: '',
-        linkedin: '',
+	const [formData, setFormData] = useState({
+		fullName: '',
+		email: '',
+		bio: '',
 
-        skills: '',
+		github: '',
+		linkedin: '',
 
-        pro1Title: '',
-        pro1Description: '',
-        pro2Title: '',
-        pro2Description: '',
-        pro3Title: '',
-        pro3Description: '',
+		skills: '',
 
-        exp1Title: '',
-        exp1Description: '',
-        exp2Title: '',
-        exp2Description: '',
+		pro1Title: '',
+		pro1Description: '',
+		pro2Title: '',
+		pro2Description: '',
+		pro3Title: '',
+		pro3Description: '',
 
-        eduTitle: '',
-        eduDescription: '',
+		exp1Title: '',
+		exp1Description: '',
+		exp2Title: '',
+		exp2Description: '',
 
-        errorMsg: ''
-    });
-    const nextStep = () => setStep(step => step + 1);
-    const prevStep = () => setStep(step => step - 1);
+		eduTitle: '',
+		eduDescription: '',
 
-    switch (step) {
-        case 1:
-            return (
-                <PersonalInfo
-                    formData={formData}
-                    setFormData={setFormData}
-                    nextStep={nextStep}
-                />);
+		errorMsg: ''
+	});
+	const nextStep = () => setStep(step => step + 1);
+	const prevStep = () => setStep(step => step - 1);
 
-        case 2:
-            return (<SocialMedia
-                formData={formData}
-                setFormData={setFormData}
-                nextStep={nextStep}
-                prevStep={prevStep} />);
 
-        case 3:
-            return (<Projects
-                formData={formData}
-                setFormData={setFormData}
-                nextStep={nextStep}
-                prevStep={prevStep} />)
+	// Creating an array for the components and react element array. then returning the selected array
+	const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit].map((comp) => {
+		return React.createElement(comp, { formData, setFormData, nextStep, prevStep }, null)
+	}))
 
-        case 4:
-            return (
-                <Experience
-                    formData={formData}
-                    setFormData={setFormData}
-                    nextStep={nextStep}
-                    prevStep={prevStep} />
-            )
-
-        case 5:
-            return (
-                <Education
-                    formData={formData}
-                    setFormData={setFormData}
-                    nextStep={nextStep}
-                    prevStep={prevStep} />
-            )
-
-        case 6:
-            return (
-                <Review
-                    formData={formData}
-                    setFormData={setFormData}
-                    nextStep={nextStep}
-                    prevStep={prevStep} />
-            )
-        case 7:
-            return (
-                <Submit />
-            )
-        default:
-            break;
-    }
+	return FormComponents.current[step]
 }
 
 export default MultistepForm;
