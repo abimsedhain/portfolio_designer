@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
+    "formik": "^2.1.4",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
@@ -15,7 +16,8 @@
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.16",
     "reactstrap": "^8.4.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-scripts start",

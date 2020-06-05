@@ -1,69 +1,88 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
-export class Projects extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+    // pro1Title:yup.string().required('Title is required'),
+    // pro1Description:yup.string().required('Description should be less than 240 words').max(240)
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
+    // pro2Title:yup.string().required('Title is required'),
+    // pro2Description:yup.string().required('Description should be less than 240 words').max(240)
+    
+    // pro3Title:yup.string().required('Title is required'),
+    // pro3Description:yup.string().required('Description should be less than 240 words').max(240)
+});
 
-  render() {
-    const { values, handleChange } = this.props;
+
+const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
     return (
-      <Container fluid="md" style={{marginTop: '20px'}}>
-        <h1>Projects</h1>
-        <Form>
-          <Row form>
-            <Col  xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }} >
-              <FormGroup>
-                <Label for="Project 1">Project 1</Label>
-                <Input type="text" name="pro1Title" id="pro1Title" placeholder="Project Title"
-                  onChange={handleChange('pro1Title')}
-                  defaultValue={values.pro1Title} />
+        <Formik
+            initialValues={formData}
+            onSubmit={values => {
+                setFormData(values);
+                nextStep();
+                console.log(values);
+            }}
+            validationSchema={validationSchema}
+        >
+
+            <Form>
+                <h1>Social Media</h1>
+
+                <label htmlFor='pro1Title'>Project 1 Title</label>
+                <Field type='text' id='pro1Title' name='pro1Title'
+                />
+                <br /><br />
+                <ErrorMessage name='pro1Title' />
                 <br />
 
-                <Input type="textarea" rows="10" name="pro1Description" id="pro1Description" placeholder="Description about the project"
-                  onChange={handleChange('pro1Description')}
-                  defaultValue={values.pro1Description} />
+                <label htmlFor='pro1Description'>Project 1 Description</label>
+                <Field type='text' id='pro1Description' name='pro1Description'
+                />
+                <br /><br />
+                <ErrorMessage name='pro1Description' />
                 <br />
 
-                <Label for="Project 2">Project 2</Label>
-                <Input type="text" name="pro2Title" id="pro2Title" placeholder="Project Title"
-                  onChange={handleChange('pro2Title')}
-                  defaultValue={values.pro2Title} />
-                <br />
-                <Input type="textarea" rows="10" name="pro2Description" id="pro2Description" placeholder="Description about the project"
-                  onChange={handleChange('pro2Description')}
-                  defaultValue={values.pro2Description} />
+                <label htmlFor='pro2Title'>Project 2 Title</label>
+                <Field type='text' id='pro2Title' name='pro2Title'
+                />
+                <br /><br />
+                <ErrorMessage name='pro2Title' />
                 <br />
 
-                <Label for="Project 3">Project 3</Label>
-                <Input type="text" name="pro3Title" id="pro3Title" placeholder="Project Title"
-                  onChange={handleChange('pro3Title')}
-                  defaultValue={values.pro3Title} />
+                <label htmlFor='pro2Description'>Project 2 Description</label>
+                <Field type='text' id='pro2Description' name='pro2Description'
+                />
+                <br /><br />
+                <ErrorMessage name='pro2Description' />
                 <br />
 
-                <Input type="textarea" rows="10" name="pro3Description" id="pro3Description" placeholder="Description about the project"
-                  onChange={handleChange('pro3Description')}
-                  defaultValue={values.pro3Description} />
+                <label htmlFor='pro3Title'>Project 3</label>
+                <Field type='text' id='pro3Title' name='pro3Title'
+                />
+                <br /><br />
+                <ErrorMessage name='pro3Title' />
                 <br />
 
-                <Button color="primary" style={{ marginTop: '320px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
+                <label htmlFor='pro31Description'>Project 3 Description</label>
+                <Field type='text' id='pro3Description' name='pro3Description'
+                />
+                <br /><br />
+                <ErrorMessage name='pro3Description' />
+                <br />
 
-                <Button color="danger" style={{ marginTop: '320px', marginLeft: '80px' }} onClick={this.back}>Back</Button>
+                <div>
+                    <button type='submit'> NEXT</button>
+                </div>
+                <div style={{ marginTop: '-30px', marginLeft: '150px' }}>
+                    <button onClick={prevStep}> BACK</button>
+                </div>
+            </Form>
+        </Formik>
 
-              </FormGroup>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+
     )
-  }
+
 }
 
-export default Projects
+export default Projects;

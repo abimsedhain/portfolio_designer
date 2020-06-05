@@ -1,58 +1,61 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
-export class SocialMedia extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+    // github:yup.string().required('Github Link is required'),
+    // linkedin:yup.string().required('Linkedin Link is required'),
+    // skills:yup.string().required('PLEASE TRY SOME COMMENTS').max(50)
+});
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
 
-  render() {
-    const { values, handleChange } = this.props;
+const SocialMedia = ({ formData, setFormData, nextStep, prevStep }) => {
     return (
-      <>
-        <Container fluid="md" style={{marginTop: '20px'}}>
-          <Form>
-            <Row form>
-              <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }} >
+        <Formik
+            initialValues={formData}
+            onSubmit={values => {
+                setFormData(values);
+                nextStep();
+                console.log(values);
+            }}
+            validationSchema={validationSchema}
+        >
+
+            <Form>
                 <h1>Social Media</h1>
-                <FormGroup>
-                  <Label for="exampleEmail">Github</Label>
-                  <Input type="text" name="email" id="exampleEmail" placeholder="Github Link"
-                    onChange={handleChange('github')}
-                    defaultValue={values.github} />
-                  <br />
+                <label htmlFor='github'>Github Link</label><br/>
+                <Field type='text' id='github' name='github'
+                />
+                <br /><br />
+                <ErrorMessage name='github' />
+                <br />  <br />
 
-                  <Label for="examplePassword">Linkedin</Label>
-                  <Input type="text" name="password" id="examplePassword" placeholder="Linkedin Link"
-                    onChange={handleChange('linkedin')}
-                    defaultValue={values.linkedin} /><br />
+                <label htmlFor='linkedin'>Linkedin Link</label><br/>
+                <Field type='text' id='linkedin' name='linkedin'
+                />
+                <br /><br />
+                <ErrorMessage name='linkedin' />
+                <br /><br />
 
-                  <h1>Skills</h1>
+                <h1>Skills</h1>
+                <label htmlFor='skills'>Skills</label><br/>
+                <Field type='text' id='skills' name='skills'
+                />
+                <br /><br />
+                <ErrorMessage name='skills' />
+                <br />
 
-                  <Label for="exampleEmail">Skills</Label>
-                  <Input type="text" name="skills" id="exampleEmail" placeholder="List your skills"
-                    onChange={handleChange('skills')}
-                    defaultValue={values.skills} />
+                <div>
+                    <button type='submit'> NEXT</button>
+                </div>
+                <div style={{ marginTop: '-25px', marginLeft: '150px' }}>
+                    <button onClick={prevStep}> BACK</button>
+                </div>
 
-                  <Button color="primary" style={{marginTop: '150px', marginLeft:'-80px'}} onClick={this.continue}>Next</Button><br /><br />
-
-                  <Button color="danger" style={{marginTop: '150px', marginLeft:'80px'}}onClick={this.back}>Back</Button>
-                  <br />
-                </FormGroup>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
-
-      </>
+            </Form>
+        </Formik>
     )
-  }
+
 }
 
-export default SocialMedia
+export default SocialMedia;

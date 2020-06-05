@@ -1,58 +1,72 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
-export class Experience extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+    // exp1Title:yup.string().required('Title is required'),
+    // exp1Description:yup.string().required('Description should be less than 240 words').max(240)
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
+    // exp2Title:yup.string().required('Title is required'),
+    // exp2Description:yup.string().required('Description should be less than 240 words').max(240)
+});
 
-  render() {
-    const { values, handleChange } = this.props;
+
+const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
     return (
-      <Container fluid="md" style={{marginTop: '20px'}}>
-        <h1>Experience</h1>
-        <Form>
-          <Row form>
-            <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }}>
-              <FormGroup>
-                <Label for="Experience 1">Experience 1</Label>
-                <Input type="text" name="exp1Title" id="exp1Title" placeholder="Title"
-                  onChange={handleChange('exp1Title')}
-                  defaultValue={values.exp1Title} />
+        <Formik
+            initialValues={formData}
+            onSubmit={values => {
+                setFormData(values);
+                nextStep();
+                console.log(values);
+            }}
+            validationSchema={validationSchema}
+        >
+
+            <Form>
+                <h1>Experience</h1>
+
+                <label htmlFor='exp1Title'>Experience 1 Title</label>
+                <Field type='text' id='exp1Title' name='exp1Title'
+                />
+                <br /><br />
+                <ErrorMessage name='exp1Title' />
                 <br />
 
-                <Input type="textarea" rows="10" name="exp1Description" id="exp1Description" placeholder="Experience Description"
-                  onChange={handleChange('exp1Description')}
-                  defaultValue={values.exp1Description} />
-                <br />
-                <Label for="Experience 2">Experience 2</Label>
-                <Input type="text" name="exp2Title" id="exp2Title" placeholder="Title"
-                  onChange={handleChange('exp2Title')}
-                  defaultValue={values.exp2Title} />
+
+                <label htmlFor='exp1Description'>Experience 1 Description</label>
+                <Field type='text' id='exp1Description' name='exp1Description'
+                />
+                <br /><br />
+                <ErrorMessage name='exp1Description' />
                 <br />
 
-                <Input type="textarea" rows="10" name="exp2Description" id="exp2Description" placeholder="Experience Description"
-                  onChange={handleChange('exp2Description')}
-                  defaultValue={values.exp2Description} />
+                <label htmlFor='exp2Title'>Experience 2 Title</label>
+                <Field type='text' id='exp2Title' name='exp2Title'
+                />
+                <br /><br />
+                <ErrorMessage name='exp2Title' />
                 <br />
 
-                <Button color="primary" style={{ marginTop: '200px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
-
-                <Button color="danger" style={{ marginTop: '200px', marginLeft: '80px' }} onClick={this.back}>Back</Button>
+                <label htmlFor='exp2Description'>Experience 2 Description</label>
+                <Field type='text' id='exp2Description' name='exp2Description'
+                />
+                <br /><br />
+                <ErrorMessage name='exp2Description' />
                 <br />
-              </FormGroup>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+
+                <div>
+                    <button type='submit'> NEXT</button>
+                </div>
+                <div style={{ marginTop: '-30px', marginLeft: '150px' }}>
+                    <button onClick={prevStep}> BACK</button>
+                </div>
+            </Form>
+        </Formik>
+
+
     )
-  }
+
 }
 
-export default Experience
+export default Experience;
