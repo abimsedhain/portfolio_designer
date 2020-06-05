@@ -15,11 +15,11 @@ export class Education extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <Container fluid="md">
+      <Container fluid="md" style={{ marginTop: '20px' }}>
         <h1>Education</h1>
         <Form>
           <Row form>
-            <Col md={12}>
+            <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }}>
               <FormGroup>
                 <Label for="Education 1">Education</Label>
                 <Input type="text" name="eduTitle" id="eduTitle" placeholder="Institution Name"
@@ -30,19 +30,10 @@ export class Education extends Component {
                   onChange={handleChange('eduDescription')}
                   defaultValue={values.eduDescription} />
                 <br />
-              </FormGroup>
-            </Col>
-          </Row>
+                <Button color="primary" style={{ marginTop: '60px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
 
-          <Row form>
-            <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-              <FormGroup>
-                <Button color="primary" onClick={this.continue}>Next</Button>
-              </FormGroup>
-            </Col>
-            <Col xs={4} sm={4} md={4} lg={6} xl={6}>
-              <FormGroup>
-                <Button color="danger" onClick={this.back}>Back</Button>
+                <Button color="danger" style={{ marginTop: '60px', marginLeft: '80px' }} onClick={this.back}>Back</Button>
+                <br />
               </FormGroup>
             </Col>
           </Row>
