@@ -20,6 +20,27 @@ export const MultistepForm = () => {
 
 		skills: '',
 
+		projects: [{
+			Title: "",
+			Description: "",
+			SourceLink: "",
+			DemoLink: "",
+			Highlights: [""]
+		}],
+		experience:{
+			CompanyName: "",
+			Position: "",
+			StartDate: "",
+			EndDate: "",
+			Highlights: [""]
+		},
+		education:[{
+			InstituteName:"",
+			StartDate: "",
+			EndDate: "",
+			Degree: ""
+		}]
+		,
 		pro1Title: '',
 		pro1Description: '',
 		pro2Title: '',
