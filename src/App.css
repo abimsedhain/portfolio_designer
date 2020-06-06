@@ -40,7 +40,7 @@
     margin-bottom: -10px;
 }
 
-.btn {
+/* .btn {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -68,7 +68,7 @@
 
 .btn:hover span {
     max-width: 8rem;
-}
+} */
 
 .step {
     height: 25vh;
