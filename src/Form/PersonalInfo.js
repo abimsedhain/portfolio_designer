@@ -1,54 +1,52 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { Label, Input, FromGroup, Button, FormGroup } from "reactstrap"
 
 const validationSchema = yup.object({
-    // fullName: yup.string().required('Name is required').max(20),
-    // email: yup.string().email('INVALID EMAIL').required('Email is Reqired')
-    // bio: yup.string().required('Description should be less than 240 words').max(240)
+	// fullName: yup.string().required('Name is required').max(20),
+	// email: yup.string().email('INVALID EMAIL').required('Email is Reqired')
+	// bio: yup.string().required('Description should be less than 240 words').max(240)
 });
 
 const PersonalInfo = ({ formData, setFormData, nextStep }) => {
-    return (
+	return (
 
-        <Formik
-            initialValues={formData}
-            onSubmit={values => {
-                setFormData(values);
-                nextStep();
-                console.log(values);
-            }}
-            validationSchema={validationSchema}>
+		<Formik
+			initialValues={formData}
+			onSubmit={values => {
+				setFormData(values);
+				nextStep();
+				console.log(values);
+			}}
+			validationSchema={validationSchema}>
 
-            <Form>
-                <h1>Personal Information</h1>
+			<Form>
+				<h1>Personal Information</h1>
 
-                <label htmlFor='name'>Full Name</label> <br/>
-                 <Field type='text' id='fullName' name='fullName'/>
-                <br /><br />
-                <ErrorMessage name='fullName' />
-                <br />
+				<FormGroup>
+					<Label>Full Name</Label>
+					<Field type="text" id="fullName" name="fullName" as={Input} placeholder="Enter Full Name"></Field>
+					<ErrorMessage name='fullName' />
+				</FormGroup>
 
-                <label htmlFor='email'>EMAIL</label><br/>
-                <Field type='email' id='email' name='email'
-                />
-                <br /><br />
-                <ErrorMessage name='email' />
-                <br />
+				<FormGroup>
+					<Label>Email</Label>
+					<Field type='email' id='email' name='email' as={Input} placeholder="Enter Email"/>
+					<ErrorMessage name='email' />
+				</FormGroup>
 
-                <label htmlFor='bio'>Bio</label><br/>
-                <Field as='textarea' rows='5' id='bio' name='bio'
-                />
-                <br /><br />
-                <ErrorMessage name='email' />
-                <br />
-
-                <button type='submit'> NEXT </button>
-            </Form>
-        </Formik>
+				<FormGroup>
+					<Label>Bio</Label>
+					<Field as='textarea' rows='5' id='bio' name='bio' as={Input} placeholder="Enter Bio"/>
+					<ErrorMessage name='email' />
+				</FormGroup>
+				<Button type='submit'> NEXT </Button>
+			</Form>
+		</Formik>
 
 
-    )
+	)
 
 }
 
