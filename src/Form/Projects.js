@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
-import { ButtonGroup, Button, Label, Input, FormGroup } from 'reactstrap';
+import { ButtonGroup, Button, Label, Input, FormGroup, InputGroup } from 'reactstrap';
 
 const validationSchema = yup.object({
 	// pro1Title:yup.string().required('Title is required'),
@@ -58,6 +58,40 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 										<FormGroup>
 											<Label>Project Description</Label>
 											<Field type="text" name={`projects.${index}.Description`} as={Input} placeholder="Enter Project Description"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>Highlights</Label>
+
+											<FieldArray name={`projects.${index}.Highlights`} render={
+												arrayHelpers => (
+													<>
+														{values.projects[index].Highlights.map((highlight, index2) => (
+															<FormGroup key={index2}>
+																<InputGroup>
+																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
+																	<ButtonGroup>
+																		<Button
+																			type="button"
+																			onClick={() => { values.projects[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
+																		>
+																			-
+                      											</Button>
+																		<Button
+																			type="button"
+																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
+																		>+
+                      											</Button>
+																	</ButtonGroup>
+																</InputGroup>
+															</FormGroup>
+														))}
+													</>
+												)
+
+											}>
+
+											</FieldArray>
+
 										</FormGroup>
 										<FormGroup>
 											<Label>Source Link</Label>

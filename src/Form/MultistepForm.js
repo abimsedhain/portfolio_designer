@@ -18,7 +18,7 @@ export const MultistepForm = () => {
 		github: '',
 		linkedin: '',
 
-		skills: '',
+		skills: [""],
 
 		projects: [{
 			Title: "",
@@ -27,35 +27,19 @@ export const MultistepForm = () => {
 			DemoLink: "",
 			Highlights: [""]
 		}],
-		experience:{
+		experiences:[{
 			CompanyName: "",
 			Position: "",
 			StartDate: "",
 			EndDate: "",
 			Highlights: [""]
-		},
+		}],
 		education:[{
 			InstituteName:"",
 			StartDate: "",
 			EndDate: "",
 			Degree: ""
-		}]
-		,
-		pro1Title: '',
-		pro1Description: '',
-		pro2Title: '',
-		pro2Description: '',
-		pro3Title: '',
-		pro3Description: '',
-
-		exp1Title: '',
-		exp1Description: '',
-		exp2Title: '',
-		exp2Description: '',
-
-		eduTitle: '',
-		eduDescription: '',
-
+		}],
 		errorMsg: ''
 	});
 	const nextStep = () => setStep(step => step + 1);

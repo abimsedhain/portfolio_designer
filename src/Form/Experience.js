@@ -1,6 +1,6 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage, FieldArray} from 'formik';
-import {Label, Input, FormGroup, Button, ButtonGroup} from "reactstrap"
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
+import { Label, Input, FormGroup, Button, ButtonGroup, InputGroup } from "reactstrap"
 import * as yup from 'yup';
 
 const validationSchema = yup.object({
@@ -56,6 +56,40 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 										<FormGroup>
 											<Label>Position</Label>
 											<Field type="text" name={`experiences.${index}.Position`} as={Input} placeholder="Enter Position"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>Highlights</Label>
+
+											<FieldArray name={`experiences.${index}.Highlights`} render={
+												arrayHelpers => (
+													<>
+														{values.experiences[index].Highlights.map((highlight, index2) => (
+															<FormGroup key={index2}>
+																<InputGroup>
+																	<Field name={`experiences.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
+																	<ButtonGroup>
+																		<Button
+																			type="button"
+																			onClick={() => { values.experiences[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
+																		>
+																			-
+                      											</Button>
+																		<Button
+																			type="button"
+																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
+																		>+
+                      											</Button>
+																	</ButtonGroup>
+																</InputGroup>
+															</FormGroup>
+														))}
+													</>
+												)
+
+											}>
+
+											</FieldArray>
+
 										</FormGroup>
 										<FormGroup>
 											<Label>Start Date</Label>
