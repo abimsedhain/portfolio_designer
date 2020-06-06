@@ -1,69 +1,129 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
+import * as yup from 'yup';
+import { ButtonGroup, Button, Label, Input, FormGroup, InputGroup } from 'reactstrap';
 
-export class Projects extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+	// pro1Title:yup.string().required('Title is required'),
+	// pro1Description:yup.string().required('Description should be less than 240 words').max(240)
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
+	// pro2Title:yup.string().required('Title is required'),
+	// pro2Description:yup.string().required('Description should be less than 240 words').max(240)
 
-  render() {
-    const { values, handleChange } = this.props;
-    return (
-      <Container fluid="md" style={{marginTop: '20px'}}>
-        <h1>Projects</h1>
-        <Form>
-          <Row form>
-            <Col  xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }} >
-              <FormGroup>
-                <Label for="Project 1">Project 1</Label>
-                <Input type="text" name="pro1Title" id="pro1Title" placeholder="Project Title"
-                  onChange={handleChange('pro1Title')}
-                  defaultValue={values.pro1Title} />
-                <br />
+	// pro3Title:yup.string().required('Title is required'),
+	// pro3Description:yup.string().required('Description should be less than 240 words').max(240)
+});
 
-                <Input type="textarea" rows="10" name="pro1Description" id="pro1Description" placeholder="Description about the project"
-                  onChange={handleChange('pro1Description')}
-                  defaultValue={values.pro1Description} />
-                <br />
 
-                <Label for="Project 2">Project 2</Label>
-                <Input type="text" name="pro2Title" id="pro2Title" placeholder="Project Title"
-                  onChange={handleChange('pro2Title')}
-                  defaultValue={values.pro2Title} />
-                <br />
-                <Input type="textarea" rows="10" name="pro2Description" id="pro2Description" placeholder="Description about the project"
-                  onChange={handleChange('pro2Description')}
-                  defaultValue={values.pro2Description} />
-                <br />
+const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
+	return (
+		<Formik
+			initialValues={formData}
+			onSubmit={values => {
+				setFormData(values);
+				nextStep();
+				console.log(values);
+			}}
+			validationSchema={validationSchema}
+		>
+			{({ values }) => (
+				<Form>
+					<h1>Projects</h1>
 
-                <Label for="Project 3">Project 3</Label>
-                <Input type="text" name="pro3Title" id="pro3Title" placeholder="Project Title"
-                  onChange={handleChange('pro3Title')}
-                  defaultValue={values.pro3Title} />
-                <br />
 
-                <Input type="textarea" rows="10" name="pro3Description" id="pro3Description" placeholder="Description about the project"
-                  onChange={handleChange('pro3Description')}
-                  defaultValue={values.pro3Description} />
-                <br />
 
-                <Button color="primary" style={{ marginTop: '320px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
+					<FieldArray name="projects" render={
+						arrayHelpers => (
+							<>
+								{values.projects.map((project, index) => (
+									<div key={index}>
+										<FormGroup>
+											<Label>Project Title</Label>
+											<ButtonGroup>
+												<Button className="bg-danger" type="button"
+													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }} >-</Button>
+												<Button className="bg-info" type="button"
+													onClick={() => arrayHelpers.insert(index, {
+														Title: "",
+														Description: "",
+														SourceLink: "",
+														DemoLink: "",
+														Highlights: [""]
+													})}>+</Button>
+											</ButtonGroup>
 
-                <Button color="danger" style={{ marginTop: '320px', marginLeft: '80px' }} onClick={this.back}>Back</Button>
+											<Field type="text" name={`projects.${index}.Title`} as={Input} placeholder="Enter Project Title"></Field>
 
-              </FormGroup>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-    )
-  }
+										</FormGroup>
+										<FormGroup>
+											<Label>Project Description</Label>
+											<Field type="text" name={`projects.${index}.Description`} as={Input} placeholder="Enter Project Description"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>Highlights</Label>
+
+											<FieldArray name={`projects.${index}.Highlights`} render={
+												arrayHelpers => (
+													<>
+														{values.projects[index].Highlights.map((highlight, index2) => (
+															<FormGroup key={index2}>
+																<InputGroup>
+																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
+																	<ButtonGroup>
+																		<Button
+																			type="button"
+																			onClick={() => { values.projects[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
+																		>
+																			-
+                      											</Button>
+																		<Button
+																			type="button"
+																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
+																		>+
+                      											</Button>
+																	</ButtonGroup>
+																</InputGroup>
+															</FormGroup>
+														))}
+													</>
+												)
+
+											}>
+
+											</FieldArray>
+
+										</FormGroup>
+										<FormGroup>
+											<Label>Source Link</Label>
+											<Field type="text" name={`projects.${index}.SourceLink`} as={Input} placeholder="Enter Project Source Link"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>Demo Link</Label>
+											<Field type="text" name={`projects.${index}.DemoLink`} as={Input} placeholder="Enter Project Demo Link"></Field>
+										</FormGroup>
+									</div>
+
+								))}
+							</>
+						)
+
+
+					}>
+					</FieldArray>
+					<ButtonGroup>
+						<Button onClick={prevStep}>BACK</Button>
+						<Button type="submit">NEXT</Button>
+					</ButtonGroup>
+				</Form>
+
+			)}
+
+
+		</Formik>
+
+
+	)
+
 }
 
-export default Projects
+export default Projects;

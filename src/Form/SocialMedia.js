@@ -1,58 +1,88 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
+import * as yup from 'yup';
+import { FormGroup, Label, Input, Button, ButtonGroup, InputGroup } from 'reactstrap';
 
-export class SocialMedia extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+	// github:yup.string().required('Github Link is required'),
+	// linkedin:yup.string().required('Linkedin Link is required'),
+	// skills:yup.string().required('PLEASE TRY SOME COMMENTS').max(50)
+});
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
 
-  render() {
-    const { values, handleChange } = this.props;
-    return (
-      <>
-        <Container fluid="md" style={{marginTop: '20px'}}>
-          <Form>
-            <Row form>
-              <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }} >
-                <h1>Social Media</h1>
-                <FormGroup>
-                  <Label for="exampleEmail">Github</Label>
-                  <Input type="text" name="email" id="exampleEmail" placeholder="Github Link"
-                    onChange={handleChange('github')}
-                    defaultValue={values.github} />
-                  <br />
+const SocialMedia = ({ formData, setFormData, nextStep, prevStep }) => {
+	return (
+		<Formik
+			initialValues={formData}
+			onSubmit={values => {
+				setFormData(values);
+				nextStep();
+				console.log(values);
+			}}
+			validationSchema={validationSchema}
+		>
+			{({ values }) => (
+				<Form>
+					<h1>Social Media</h1>
 
-                  <Label for="examplePassword">Linkedin</Label>
-                  <Input type="text" name="password" id="examplePassword" placeholder="Linkedin Link"
-                    onChange={handleChange('linkedin')}
-                    defaultValue={values.linkedin} /><br />
+					<FormGroup>
+						<Label>
+							Github Link
+					</Label>
+						<Field type='text' id='github' name='github' placeholder="Enter GitHub Link" as={Input} />
+						<ErrorMessage name='github' />
+					</FormGroup>
+					<FormGroup>
+						<Label>Linkedin Link</Label>
 
-                  <h1>Skills</h1>
+						<Field type='text' id='linkedin' name='linkedin' as={Input} placeholder="Enter LinkedIn Link" />
+						<ErrorMessage name='linkedin' />
+					</FormGroup>
+					<h1>Skills</h1>
+						<FieldArray name="skills" render={
+							arrayHelpers => (
+								<>
+									{
+										values.skills.map((skill, index) => (
+											<FormGroup key={index}>
+												<InputGroup>
+													<Field name={`skills.${index}`} type="input" as={Input} placeholder="Enter Skill" />
+													<ButtonGroup>
+														<Button
+															type="button"
+															onClick={() => { values.skills.length > 1 && arrayHelpers.remove(index) }} className="bg-danger"
+														>
+															-
+                      											</Button>
+														<Button
+															type="button"
+															onClick={() => arrayHelpers.insert(index, '')} className="bg-success"
+														>+
+                      											</Button>
+													</ButtonGroup>
+												</InputGroup>
+											</FormGroup>
+										))
+									}
+								</>
 
-                  <Label for="exampleEmail">Skills</Label>
-                  <Input type="text" name="skills" id="exampleEmail" placeholder="List your skills"
-                    onChange={handleChange('skills')}
-                    defaultValue={values.skills} />
+							)
 
-                  <Button color="primary" style={{marginTop: '150px', marginLeft:'-80px'}} onClick={this.continue}>Next</Button><br /><br />
+						}>
 
-                  <Button color="danger" style={{marginTop: '150px', marginLeft:'80px'}}onClick={this.back}>Back</Button>
-                  <br />
-                </FormGroup>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
+						</FieldArray>
+					<ButtonGroup>
+						<Button onClick={prevStep}>BACK</Button>
+						<Button type="submit">NEXT</Button>
+					</ButtonGroup>
 
-      </>
-    )
-  }
+
+				</Form>
+
+			)}
+		</Formik>
+	)
+
 }
 
-export default SocialMedia
+export default SocialMedia;

@@ -1,29 +1,25 @@
-import React, { Component } from 'react';
-import { Container, Col, Button, Table } from 'reactstrap';
+import React from 'react'
+import { Container, Col, Table } from 'reactstrap';
+import { Formik, Form } from 'formik';
 
-export class Review extends Component {
-  continue = e => {
-    e.preventDefault();
-    //This is where we handle data transfer to database 
-    this.props.nextStep();
-  }
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
-  render() {
-    const { values: { fullName, email, bio,
-      github, linkedin,
-      skills,
-      pro1Title, pro1Description,
-      pro2Title, pro2Description,
-      pro3Title, pro3Description,
-      exp1Title, exp1Description,
-      exp2Title, exp2Description,
-      eduTitle, eduDescription } } = this.props;
+const Review = ({ formData, setFormData, nextStep, prevStep }) => {
 
-    return (
+  const { fullName, email, bio, github, linkedin, skills,
+    pro1Title, pro1Description,
+    pro2Title, pro2Description,
+    pro3Title, pro3Description,
+    exp1Title, exp1Description,
+    exp2Title, exp2Description,
+    eduTitle, eduDescription } = formData
+  return (
+    <Formik
+      initialValues={formData}
+      onSubmit={values => {
+        nextStep();
+        console.log(values);
+      }}>
+
       <Container fluid="md" style={{ marginTop: '20px' }}>
         <h1>Confirm your Information</h1>
         <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 10, offset: 1 }} >
@@ -115,22 +111,28 @@ export class Review extends Component {
                 <td>Education Description</td>
                 <td>{eduDescription}</td>
               </tr>
+
             </tbody>
           </Table>
           <br /><br />
 
         </Col>
-        <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 10, offset: 1 }} >
-          <Button color="primary" style={{ marginTop:'-50px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
-          <Button color="danger" style={{ marginTop:'-50px', marginLeft: '80px' }} onClick={this.back}>Back</Button> 
-          <br />
-        </Col>
+
+
+        <Form>
+          <Col>
+            <div style={{ marginTop: '-50px' }}>
+              <button type='submit'>NEXT</button>
+            </div>
+            <div style={{ marginTop: '-30px', marginLeft: '150px' }}>
+              <button onClick={prevStep}> BACK</button>
+            </div>
+          </Col>
+        </Form>
 
       </Container>
-
-
-    )
-  }
+    </Formik>
+  )
 }
 
-export default Review
+export default Review;

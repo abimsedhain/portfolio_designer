@@ -1,44 +1,53 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import { Label, Input, Button, FormGroup } from "reactstrap"
 
-export class PersonalInfo extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+	// fullName: yup.string().required('Name is required').max(20),
+	// email: yup.string().email('INVALID EMAIL').required('Email is Reqired')
+	// bio: yup.string().required('Description should be less than 240 words').max(240)
+});
 
-  render() {
-    const { values, handleChange } = this.props;
-    return (
-      <Container fluid="md" style={{marginTop: '20px'}}>
-        <Form>
-          <h1>Personal Information</h1>
-          <Row form>
-            <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }}>
-              <FormGroup>
-                <Label for="fullName">Full Name</Label>
-                <Input type="text" name="fullName" id="fullName" placeholder="Full Name"
-                  onChange={handleChange('fullName')}
-                  defaultValue={values.fullName} />
-                <span>{values.errorMsg}</span>
+const PersonalInfo = ({ formData, setFormData, nextStep }) => {
+	return (
 
-                <Label for="email">Email</Label>
-                <Input type="email" name="email" id="email" placeholder="Email"
-                  onChange={handleChange('email')}
-                  defaultValue={values.email} />
+		<Formik
+			initialValues={formData}
+			onSubmit={values => {
+				setFormData(values);
+				nextStep();
+				console.log(values);
+			}}
+			validationSchema={validationSchema}>
 
-                <Label for="bio">Bio</Label>
-                <Input type="textarea" rows="10" name="bio" id="bio" placeholder="Enter your Bio"
-                  onChange={handleChange('bio')}
-                  defaultValue={values.bio} />
-                <Button style={{marginTop: '180px'}} color="primary" onClick={this.continue}>Next</Button>
-              </FormGroup>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-    )
-  }
+			<Form>
+				<h1>Personal Information</h1>
+
+				<FormGroup>
+					<Label>Full Name</Label>
+					<Field type="text" id="fullName" name="fullName" as={Input} placeholder="Enter Full Name"></Field>
+					<ErrorMessage name='fullName' />
+				</FormGroup>
+
+				<FormGroup>
+					<Label>Email</Label>
+					<Field type='email' id='email' name='email' as={Input} placeholder="Enter Email"/>
+					<ErrorMessage name='email' />
+				</FormGroup>
+
+				<FormGroup>
+					<Label>Bio</Label>
+					<Field as='textarea' rows='5' id='bio' name='bio' as={()=>(<Input type="textarea"></Input>)} placeholder="Enter Bio"/>
+					<ErrorMessage name='email' />
+				</FormGroup>
+				<Button type='submit'> NEXT </Button>
+			</Form>
+		</Formik>
+
+
+	)
+
 }
 
-export default PersonalInfo
+export default PersonalInfo;

@@ -1,47 +1,85 @@
-import React, { Component } from 'react';
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage, FieldArray} from 'formik';
+import {Label, Input, FormGroup, Button, ButtonGroup} from "reactstrap"
+import * as yup from 'yup';
 
-export class Education extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  }
+const validationSchema = yup.object({
+	// eduTitle:yup.string().required('Title is required'),
+	// eduDescription:yup.string().required('Description should be less than 240 words').max(240)
+});
 
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  }
 
-  render() {
-    const { values, handleChange } = this.props;
-    return (
-      <Container fluid="md" style={{ marginTop: '20px' }}>
-        <h1>Education</h1>
-        <Form>
-          <Row form>
-            <Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 8, offset: 2 }}>
-              <FormGroup>
-                <Label for="Education 1">Education</Label>
-                <Input type="text" name="eduTitle" id="eduTitle" placeholder="Institution Name"
-                  onChange={handleChange('eduTitle')}
-                  defaultValue={values.eduTitle} />
-                <br />
-                <Input type="textarea" rows="5" name="eduDescription" id="eduDescription" placeholder="Education Description"
-                  onChange={handleChange('eduDescription')}
-                  defaultValue={values.eduDescription} />
-                <br />
-                <Button color="primary" style={{ marginTop: '60px', marginLeft: '-80px' }} onClick={this.continue}>Next</Button><br /><br />
+const Education = ({ formData, setFormData, nextStep, prevStep }) => {
+	return (
+		<Formik
+			initialValues={formData}
+			onSubmit={values => {
+				setFormData(values);
+				nextStep();
+				console.log(values);
+			}}
+			validationSchema={validationSchema}
+		>
 
-                <Button color="danger" style={{ marginTop: '60px', marginLeft: '80px' }} onClick={this.back}>Back</Button>
-                <br />
-              </FormGroup>
-            </Col>
-          </Row>
+			{({ values }) => (
+				<Form>
+					<h1>Education</h1>
 
-        </Form>
-      </Container>
-    )
-  }
+
+
+					<FieldArray name="education" render={
+						arrayHelpers => (
+							<>
+								{values.education.map((edu, index) => (
+									<div key={index}>
+										<FormGroup>
+											<Label>Institution Name</Label>
+											<ButtonGroup>
+												<Button className="bg-danger" type="button"
+													onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >-</Button>
+												<Button className="bg-info" type="button"
+													onClick={() => arrayHelpers.insert(index, {
+														InstituteName: "",
+														StartDate: "",
+														EndDate: "",
+														Degree: ""
+													})}>+</Button>
+											</ButtonGroup>
+
+											<Field type="text" name={`education.${index}.InstitutionName`} as={Input} placeholder="Enter Institution Name"></Field>
+
+										</FormGroup>
+										<FormGroup>
+											<Label>Degree</Label>
+											<Field type="text" name={`education.${index}.Degree`} as={Input} placeholder="Enter Degree"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>Start Date</Label>
+											<Field type="text" name={`education.${index}.StartDate`} as={Input} placeholder="Enter Start Date"></Field>
+										</FormGroup>
+										<FormGroup>
+											<Label>End Date</Label>
+											<Field type="text" name={`education.${index}.EndDate`} as={Input} placeholder="Enter End Date"></Field>
+										</FormGroup>
+									</div>
+
+								))}
+							</>
+						)
+
+
+					}>
+					</FieldArray>
+					<ButtonGroup>
+						<Button onClick={prevStep}>BACK</Button>
+						<Button type="submit">NEXT</Button>
+					</ButtonGroup>
+				</Form>
+
+			)}
+		</Formik>
+
+	)
 }
 
-export default Education
+export default Education;
