@@ -38,7 +38,7 @@ const PersonalInfo = ({ formData, setFormData, nextStep }) => {
 
 				<FormGroup>
 					<Label>Bio</Label>
-					<Field as='textarea' rows='5' id='bio' name='bio' as={Input} placeholder="Enter Bio"/>
+					<Field as='textarea' rows='5' id='bio' name='bio' as={()=>(<Input type="textarea"></Input>)} placeholder="Enter Bio"/>
 					<ErrorMessage name='email' />
 				</FormGroup>
 				<Button type='submit'> NEXT </Button>
