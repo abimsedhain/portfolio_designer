@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import github from '../assets/github.svg'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
+import twit from '../assets/twit.svg'
 
 
 function AppFooter() {
@@ -22,7 +23,7 @@ function AppFooter() {
                     </NavItem>
 
                     <a target="_blank" href="https://www.google.com"><img src={github} alt="github link"/></a>
-                    <a target="_blank" href="https://www.google.com"><img src={twitter} alt="twitter link"/></a>
+                    <a target="_blank" href="https://www.google.com"><img src={twit} alt="twitter link"/></a>
                     <a target="_blank" href="https://www.google.com"><img src={linkedin} alt="linkedin link"/></a>
 
                     <NavItem>

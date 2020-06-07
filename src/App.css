@@ -2,8 +2,35 @@
     text-align: center;
 }
 
+.vectorLogo {
+    margin-top: 5px;
+    height: 450px;
+    width: 550px;
+}
+
+.mainBtn {
+    background: #485f71;
+    border-color: #485f71;
+    border-radius: 25px;
+    margin-right: 310px;
+}
+
+.mainBtn span {
+    max-width: 0;
+    -webkit-transition: max-width 0.8s;
+    transition: max-width 0.8s;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.mainBtn:hover span {
+    max-width: 10rem;
+}
+
 .lead {
-    color: white;
+    color: #3b3b3b;
     font-weight: bold;
     /* position: absolute;
     top: 55%;
@@ -11,17 +38,16 @@
     margin-right: -50%;
     margin-top: 50px;
     transform: translate(-50%, -50%) */
-    font-size: 25px;
+    font-size: 40px;
+    text-align: left;
+    font-family: Yrsa;
+    padding-left: 50px;
+    font-weight: lighter;
 }
 
 .jumbotron-fluid {
     height: 100vh;
-    background: #0cebeb;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: white;
 }
 
 .display-3 {
@@ -31,7 +57,11 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     font-family: 'Dosis', sans-serif; */
+    margin-top: 50px;
     font-size: 80px;
+    color: #3b3b3b;
+    text-align: left;
+    padding-left: 50px;
 }
 
 .logo {
@@ -39,6 +69,7 @@
     width: 25vw;
     margin-bottom: -10px;
 }
+
 
 /* .btn {
     position: absolute;
@@ -80,13 +111,33 @@
 .insTitle {
     margin-top: 15px;
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 40px;
+    color: white;
+    font-family: Montserrat;
+}
+
+h3,
+h5 {
+    color: white;
+}
+
+h3 {
+    font-family: Montserrat;
+}
+
+h5 {
+    font-family: Yrsa;
+    font-weight: lighter;
+    font-size: 23px;
 }
 
 .insPage {
-    height: 80vh;
+    height: 100vh;
     width: 100%;
+    background: #485f71;
+    margin-top: -32px;
+    padding-top: 30px;
 }
 
 .infoBtn {
@@ -95,13 +146,15 @@
     left: 50%;
     margin-right: -50%;
     margin-top: 50px;
+    border-radius: 25px;
     transform: translate(-50%, -50%);
+    background: #4549b1;
+    border-color: #4549b1;
 }
 
 .infoBtn:hover {
-    background-color: pink;
-    border-color: pink;
-    color: black;
+    background-color: #4549b1;
+    border-color: #4549b1;
     cursor: pointer;
 }
 

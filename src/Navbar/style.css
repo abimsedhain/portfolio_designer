@@ -2,9 +2,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #aed9e0;
     font-weight: bold;
-    height: 8vh;
+    height: 10vh;
 }
 
 .navbar {
@@ -25,13 +24,40 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #aed9e0;
     font-weight: bold;
     color: black;
     padding: 20px;
     height: 8vh;
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
+}
+
+.navBtn {
+    margin-top: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 40px;
+    background: #4549b1;
+    border-color: #4549b1;
+    border-radius: 20px;
+}
+
+.navBtn:hover {
+    background: yellowgreen;
+    border-color: yellowgreen;
+}
+
+.sign-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    background: #4549b1;
+    border-radius: 25px;
+    padding: 1px;
+    color: white;
 }
 
 .nav-links:hover {
@@ -42,20 +68,30 @@ nav {
 }
 
 .aboutPage {
-    /* margin-top: 100px; */
-    height: 90vh;
+    margin-top: 100px;
+    height: 100vh;
+    background: #f4f9ff;
+}
+
+#about {
+    margin-top: 0px;
 }
 
 .aboutTitle {
     font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: Montserrat;
 }
 
 .aboutDetails {
     font-size: 25px;
     font-weight: 400;
-    text-align: justify;
+    text-align: center;
+    padding-right: 100px;
+    padding-left: 100px;
+    font-family: Yrsa;
 }
 
 .mainLogo {

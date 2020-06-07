@@ -8,7 +8,8 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem
+    NavItem,
+    Button
 } from 'reactstrap';
 
 import logo from '../assets/logo.png'
@@ -20,7 +21,7 @@ function AppNavbar() {
 
     return (
         <React.Fragment>
-            <Navbar light expand="md" fixed="top" >
+            <Navbar expand="md" fixed="top">
                 <NavbarBrand href="/">
                     <img className="mainLogo" src={logo} alt="logo" />
                 </NavbarBrand>
@@ -31,15 +32,18 @@ function AppNavbar() {
                             <Link className="nav-links" to="main" spy={true} smooth={true} offset={-100} duration={1000}>Get Started</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-links" to="about" spy={true} smooth={true} offset={-80} duration={1000}>About</Link>
+                            <Link className="nav-links" to="about" spy={true} smooth={true} offset={0} duration={1000}>About</Link>
                         </NavItem>
                         <NavItem>
                             {/* <Link className="nav-links" to="/contact">Contact</Link> */}
-                            <Link className="nav-links" to="contact" spy={true} smooth={true} offset={-100} duration={1000}>Contact</Link>
+                            <Link className="nav-links" to="contact" spy={true} smooth={true} offset={0} duration={1000}>Contact</Link>
                         </NavItem>
+                       
                         <NavItem>
-                            <Link className="nav-links" to="/modal">Login/Signup</Link>
+                        <Button className='navBtn' size="lg">Login/Signup
+                                    </Button>
                         </NavItem>
+                        
                     </Nav>
                 </Collapse>
             </Navbar>

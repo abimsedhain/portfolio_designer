@@ -6,9 +6,9 @@ import '../Navbar/style.css';
 function About() {
     return (
         <React.Fragment>
-            <Container className="aboutPage" fluid="lg" id="about">
+            <Container className="aboutPage" fluid={true} id="about">
                 <Row>
-                    <Col className="aboutTitle">ABOUT CAPOS</Col>
+                    <Col className="aboutTitle">About Capos</Col>
                 </Row>
                 <Row>
                     <Col xs="12" sm="12" md="12" className="aboutDetails">A great portfolio can attract the eyes of many recruiters.
@@ -27,7 +27,6 @@ function About() {
                      </Col>
                 </Row>
             </Container>
-
         </React.Fragment>
     )
 }

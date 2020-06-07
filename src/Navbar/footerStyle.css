@@ -12,7 +12,9 @@
 }
 
 img {
-    height: 8vh;
+    /* height: 8vh;
+    width: 4vw; */
+    height: 6vh;
     width: 4vw;
     margin: 15px 40px 20px 20px;
     padding: 0px;
@@ -28,14 +30,17 @@ img {
 .test {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #aed9e0;
+    background: #3b3b3b;
     max-width: 100%;
 }
 
 .footerMain {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
+    color: white;
+    font-family: Montserrat light;
+    margin-bottom: 15px;
 }
 
 .creators,
@@ -43,6 +48,10 @@ img {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+    padding: 5px;
+    color: white;
+    font-family: Montserrat light;
+    margin-top: 10px;
 }
 
 
@@ -56,7 +65,7 @@ img {
 
 @media (min-width: 1281px) {
     .test {
-        margin-top: 40px;
+        margin-top: 0px;
     }
 }
 

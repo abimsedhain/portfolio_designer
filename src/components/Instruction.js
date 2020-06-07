@@ -11,9 +11,9 @@ import type from '../assets/typing.svg';
 function Instruction() {
     return (
         <React.Fragment>
-            <Container className="insPage" fluid="lg" id="instruction">
+            <Container className="insPage" fluid={true} id="instruction">
                 <Row>
-                    <Col className="insTitle">INSTRUCTION</Col>
+                    <Col className="insTitle">Instructions</Col>
 
                 </Row>
                 <Row xs="1" sm="1" md="3">
@@ -36,7 +36,7 @@ function Instruction() {
 
                 <Row>
                     <Col>
-                        <Button className="infoBtn" color="primary" size="lg" href="/form">Login&nbsp;
+                        <Button className="infoBtn" size="lg" href="/form">Login&nbsp;
                 <span>/ Signup &#8594;  </span>
                         </Button></Col>
                 </Row>
