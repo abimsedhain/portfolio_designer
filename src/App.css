@@ -32,12 +32,6 @@
 .lead {
     color: #3b3b3b;
     font-weight: bold;
-    /* position: absolute;
-    top: 55%;
-    left: 50%;
-    margin-right: -50%;
-    margin-top: 50px;
-    transform: translate(-50%, -50%) */
     font-size: 40px;
     text-align: left;
     font-family: Yrsa;
@@ -51,12 +45,6 @@
 }
 
 .display-3 {
-    /* position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Dosis', sans-serif; */
     margin-top: 50px;
     font-size: 80px;
     color: #3b3b3b;
@@ -69,37 +57,6 @@
     width: 25vw;
     margin-bottom: -10px;
 }
-
-
-/* .btn {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    margin-right: -50%;
-    margin-top: 50px;
-    transform: translate(-50%, -50%);
-}
-
-.btn:hover {
-    background-color: pink;
-    border-color: pink;
-    color: black;
-    cursor: pointer;
-}
-
-.btn span {
-    max-width: 0;
-    -webkit-transition: max-width 0.8s;
-    transition: max-width 0.8s;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.btn:hover span {
-    max-width: 8rem;
-} */
 
 .step {
     height: 25vh;
@@ -133,7 +90,7 @@ h5 {
 }
 
 .insPage {
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background: #485f71;
     margin-top: -32px;
@@ -142,10 +99,9 @@ h5 {
 
 .infoBtn {
     position: absolute;
-    /* top: 180%; */
     left: 50%;
     margin-right: -50%;
-    margin-top: 50px;
+    margin-top: 80px;
     border-radius: 25px;
     transform: translate(-50%, -50%);
     background: #4549b1;
@@ -174,14 +130,6 @@ h5 {
 
 
 /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-
-@media (min-width: 1025px) and (max-width: 1280px) {}
-
-
-/* 
       ##Device = Most of the Smartphones Mobiles (Portrait)
       ##Screen = B/w 320px to 479px
     */
@@ -191,15 +139,175 @@ h5 {
         height: 20vh;
         width: 75vw;
     }
+    .vectorLogo {
+        margin-top: 0px;
+        height: 250px;
+        width: 300px;
+    }
+    .display-3 {
+        margin-top: 10px;
+        margin-left: -30px;
+        font-size: 40px;
+        color: #3b3b3b;
+        text-align: left;
+        padding-left: 50px;
+    }
+    .lead {
+        color: #3b3b3b;
+        font-size: 20px;
+        text-align: left;
+        font-family: Yrsa;
+        font-weight: lighter;
+        margin-left: -25px;
+    }
+    .mainBtn {
+        margin-right: 120px;
+        font-size: 15px;
+    }
+    .insPage {
+        height: 100vh;
+        margin-top: -200px;
+    }
+    .insTitle {
+        margin-top: -10px;
+        font-size: 20px;
+    }
+    .step {
+        height: 20vh;
+        width: 10vh;
+        margin-top: -15px;
+    }
+    h3,
+    h5 {
+        margin-top: -15px;
+        font-size: 15px;
+    }
+    .infoBtn {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .vectorLogo {
+        margin-top: -60px;
+        height: 350px;
+        width: 400px;
+    }
+    .display-3 {
+        margin-top: 20px;
+        font-size: 40px;
+        color: #3b3b3b;
+        text-align: left;
+        padding-left: 50px;
+    }
+    .lead {
+        color: #3b3b3b;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: left;
+        font-family: Yrsa;
+        padding-right: 50px;
+        font-weight: lighter;
+    }
+    .mainBtn {
+        background: #485f71;
+        border-color: #485f71;
+        border-radius: 25px;
+        margin-right: 225px;
+        /* height: 40px;
+        width: 150px; */
+        font-size: 15px;
+        text-align: center;
+    }
+    .insPage {
+        height: 100vh;
+        margin-top: -400px;
+    }
+    .insTitle {
+        font-size: 30px;
+    }
+    .step {
+        height: 20vh;
+        width: 10vh;
+        margin-top: -15px;
+    }
+    h3,
+    h5 {
+        margin-top: -15px;
+        font-size: 20px;
+    }
+    .infoBtn {
+        margin-top: 50px;
+    }
 }
 
 
 /* iPad Media Queries */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     .logo {
         height: 30vh;
         width: 75vw;
         margin-bottom: -10px;
     }
+    .vectorLogo {
+        margin-top: -30px;
+        height: 450px;
+        width: 500px;
+    }
+    .display-3 {
+        margin-top: 30px;
+        color: #3b3b3b;
+        text-align: left;
+        padding-left: 50px;
+    }
+    .lead {
+        color: #3b3b3b;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: left;
+        font-family: Yrsa;
+        padding-left: 50px;
+        font-weight: lighter;
+    }
+    .mainBtn {
+        background: #485f71;
+        border-color: #485f71;
+        border-radius: 25px;
+        margin-right: 480px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .insPage {
+        margin-top: -100px;
+        height: 90vh;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .lead {
+        color: #3b3b3b;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: left;
+        font-family: Yrsa;
+        padding-left: 50px;
+        font-weight: lighter;
+    }
+    .mainBtn {
+        background: #485f71;
+        border-color: #485f71;
+        border-radius: 25px;
+        margin-right: 450px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {}

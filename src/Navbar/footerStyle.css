@@ -59,21 +59,66 @@ img {
 
 
 /* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+      ##Device = Most of the Smartphones Mobiles (Portrait)
+      ##Screen = B/w 320px to 479px
+    */
 
-@media (min-width: 1281px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .test {
-        margin-top: 0px;
+        margin-top: 550px;
+    }
+    .footerMain {
+        font-size: 15px;
+    }
+    img {
+        height: 60px;
+        width: 30px;
+        margin: 15px;
+    }
+    .creators,
+    .endCredit {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
+    .footerMain {
+        font-size: 18px;
+    }
+    img {
+        height: 60px;
+        width: 30px;
+        margin: 15px;
+    }
+    .creators,
+    .endCredit {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+}
+
+
+/* iPad Media Queries */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .test {
+        margin-top: -250px;
     }
 }
 
 
 /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
+            ##Device = Laptops, Desktops
+            ##Screen = B/w 1025px to 1280px
+          */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     .test {
@@ -83,21 +128,12 @@ img {
 
 
 /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 1281px) {
     .test {
-        margin-top: 550px;
-    }
-}
-
-
-/* iPad Media Queries */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .test {
-        margin-top: -250px;
+        margin-top: 0px;
     }
 }

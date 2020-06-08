@@ -12,8 +12,6 @@ import {
 	Button
 } from 'reactstrap';
 
-import logo from '../assets/logo.png'
-
 function AppNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -21,9 +19,9 @@ function AppNavbar() {
 
 	return (
 		<React.Fragment>
-			<Navbar expand="md" >
+			<Navbar light navbar-inverse expand="md" >
 				<NavbarBrand href="/">
-					<img className="mainLogo" src={logo} alt="logo" />
+				<h2>Capos</h2>
 				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
@@ -43,7 +41,6 @@ function AppNavbar() {
 							<Button className='navBtn' size="lg">Login/Signup
                                     </Button>
 						</NavItem>
-
 					</Nav>
 				</Collapse>
 			</Navbar>
