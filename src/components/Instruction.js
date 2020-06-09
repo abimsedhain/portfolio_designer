@@ -6,8 +6,6 @@ import login from '../assets/login.svg';
 import signup from '../assets/signup.svg';
 import type from '../assets/typing.svg';
 
-
-
 function Instruction() {
     return (
         <React.Fragment>
@@ -41,8 +39,7 @@ function Instruction() {
                         </Button></Col>
                 </Row>
             </Container>
-
-                  </React.Fragment>
+        </React.Fragment>
     )
 }
 

@@ -6,8 +6,9 @@ nav {
     height: 10vh;
 }
 
-.navbar {
-    flex-wrap: nowrap;
+.navbar-brand {
+    color: #3b3b3b !important;
+    margin-left: 65px;
 }
 
 .nav-logo {
@@ -45,6 +46,7 @@ nav {
 .navBtn:hover {
     background: yellowgreen;
     border-color: yellowgreen;
+    cursor: pointer;
 }
 
 .sign-links {
@@ -94,76 +96,75 @@ nav {
     font-family: Yrsa;
 }
 
-.mainLogo {
-    height: 15vh;
-    margin-top: 25px;
-    max-width: 100%;
+.navbar-toggler {
+    color: black;
 }
 
 
-/* Media Queries */
-
-
 /* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+      ##Device = Most of the Smartphones Mobiles (Portrait)
+      ##Screen = B/w 320px to 479px
+    */
 
-@media (min-width: 1281px) {
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
     .aboutPage {
-        margin-top: 100px;
+        height: 50vh;
     }
-    .mainLogo {
-        height: 15vh;
-        padding: 20px;
-        width: 12vw;
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
     }
-}
-
-
-/* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .mainLogo {
-        height: 15vh;
-        margin-top: 25px;
-        width: 12vw;
+    .aboutDetails {
+        font-size: 20px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 15px;
     }
 }
 
-
-/* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 767px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
     .aboutPage {
-        margin-top: 700px;
+        height: 70vh;
     }
-    .navbar {
-        flex-wrap: wrap;
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
     }
-    .mainLogo {
-        position: absolute;
-        top: -40%;
-        height: 10vh;
-        width: 25vw;
+    .aboutDetails {
+        font-size: 20px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 50px;
     }
 }
 
 
 /* iPad Media Queries */
 
-@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
-    .aboutPage {
-        margin-top: -150px;
-    }
-    .mainLogo {
-        height: 8vh;
-        width: 18vw;
-    }
-}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {}
+
+
+/* 
+        ##Device = Laptops, Desktops
+        ##Screen = B/w 1025px to 1280px
+      */
+
+@media (min-width: 1025px) and (max-width: 1280px) {}
