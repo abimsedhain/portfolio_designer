@@ -3,7 +3,7 @@
 }
 
 .vectorLogo {
-    margin-top: 5px;
+    margin-top: 60px;
     height: 450px;
     width: 550px;
 }
@@ -12,7 +12,7 @@
     background: #485f71;
     border-color: #485f71;
     border-radius: 25px;
-    margin-right: 310px;
+    float: left;
 }
 
 .mainBtn span {
@@ -35,8 +35,8 @@
     font-size: 40px;
     text-align: left;
     font-family: Yrsa;
-    padding-left: 50px;
     font-weight: lighter;
+    float: left;
 }
 
 .jumbotron-fluid {
@@ -49,7 +49,8 @@
     font-size: 80px;
     color: #3b3b3b;
     text-align: left;
-    padding-left: 50px;
+    /* padding-left: 50px; */
+    float: left;
 }
 
 .logo {
@@ -90,10 +91,9 @@ h5 {
 }
 
 .insPage {
-    height: 110vh;
+    height: 105vh;
     width: 100%;
     background: #485f71;
-    margin-top: -32px;
     padding-top: 30px;
 }
 
@@ -158,15 +158,15 @@ h5 {
         text-align: left;
         font-family: Yrsa;
         font-weight: lighter;
-        margin-left: -25px;
+        margin-left: 25px;
     }
     .mainBtn {
-        margin-right: 120px;
-        font-size: 15px;
+        margin-left: 30px;
+        font-size: 10px;
     }
     .insPage {
-        height: 100vh;
-        margin-top: -200px;
+        height: 120vh;
+        margin-top: -45px;
     }
     .insTitle {
         margin-top: -10px;
@@ -187,41 +187,40 @@ h5 {
     }
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
-    .vectorLogo {
-        margin-top: -60px;
-        height: 350px;
-        width: 400px;
-    }
-    .display-3 {
-        margin-top: 20px;
-        font-size: 40px;
-        color: #3b3b3b;
-        text-align: left;
-        padding-left: 50px;
+@media (min-width:360px) and (max-width:480px) {
+    .mainBtn {
+        margin-left: 20px;
     }
     .lead {
-        color: #3b3b3b;
-        font-weight: bold;
         font-size: 20px;
-        text-align: left;
-        font-family: Yrsa;
-        padding-right: 50px;
-        font-weight: lighter;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .vectorLogo {
+        margin-top: 0px;
+        height: 250px;
+        width: 300px;
+        /* margin-left: 290px; */
+    }
+    .display-3 {
+        margin-top: -200px;
+        font-size: 40px;
+        color: #3b3b3b;
+        margin-left: 20px;
+    }
+    .lead {
+        margin-top: -150px;
+        padding-right: 250px;
     }
     .mainBtn {
-        background: #485f71;
-        border-color: #485f71;
-        border-radius: 25px;
-        margin-right: 225px;
-        /* height: 40px;
-        width: 150px; */
-        font-size: 15px;
-        text-align: center;
+        margin-top: -100px;
+        font-size: 10px;
     }
     .insPage {
-        height: 100vh;
-        margin-top: -400px;
+        height: 125vh;
+        margin-top: -300px;
     }
     .insTitle {
         font-size: 30px;
@@ -280,7 +279,18 @@ h5 {
     }
     .insPage {
         margin-top: -100px;
-        height: 90vh;
+        height: 80vh;
+    }
+    .insTitle {
+        font-size: 30px;
+    }
+    h3,
+    h5 {
+        margin-top: -15px;
+        font-size: 20px;
+    }
+    .infoBtn {
+        margin-top: 50px;
     }
 }
 
@@ -311,3 +321,12 @@ h5 {
   */
 
 @media (min-width: 1025px) and (max-width: 1280px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #colText {
+        order: 2;
+    }
+    #colImg {
+        order: 1;
+    }
+}
