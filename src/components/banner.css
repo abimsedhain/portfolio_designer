@@ -1,0 +1,210 @@
+.mainBanner {
+    height: 100vh;
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+    .mainBanner {
+        margin-bottom: -150px;
+    }
+    .display-3 {
+        font-size: 35px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .mainBtn {
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 425px) {
+    .mainBanner {
+        margin-bottom: -180px;
+    }
+    .display-3 {
+        font-size: 35px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .mainBtn {
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 479px) {
+    .mainBanner {
+        margin-bottom: -180px;
+    }
+    .display-3 {
+        font-size: 35px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .mainBtn {
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 529px) {
+    .mainBanner {
+        margin-bottom: 100px;
+    }
+    .display-3 {
+        margin-top: 0px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 0px;
+        font-size: 20px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 70px;
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 530px) and (max-width: 650px) {
+    .mainBanner {
+        margin-bottom: 100px;
+    }
+    .display-3 {
+        margin-top: 0px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 5px;
+        font-size: 25px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 70px;
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 767px) {
+    .mainBanner {
+        margin-bottom: 100px;
+    }
+    .display-3 {
+        margin-top: 0px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 5px;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 70px;
+        font-size: 15px;
+    }
+    .vectorLogo {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 859px) {
+    .mainBanner {
+        margin-bottom: 150px;
+    }
+    .display-3 {
+        margin-top: 20px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 5px;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 120px;
+        font-size: 15px;
+        margin-right: 0px;
+    }
+    .vectorLogo {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+    .mainBanner {
+        margin-bottom: 200px;
+    }
+    .display-3 {
+        margin-top: 20px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 5px;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 120px;
+        font-size: 15px;
+        margin-right: 0px;
+    }
+    .vectorLogo {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .mainBanner {
+        margin-bottom: 100px;
+    }
+    .display-3 {
+        margin-top: 20px;
+        font-size: 35px;
+        margin-left: 70px;
+    }
+    .lead {
+        margin-top: 0px;
+        padding-right: 5px;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+    .mainBtn {
+        margin-top: 0px;
+        margin-left: 70px;
+        font-size: 15px;
+        margin-right: 0px;
+    }
+    .vectorLogo {
+        margin-top: 50px;
+    }
+}

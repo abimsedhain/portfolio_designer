@@ -14,7 +14,7 @@ function Jumbotronn() {
                 <Jumbotron fluid>
                     <Container fluid>
                         <Row>
-                            <Col xs={{ span: 12, order: 2 }} sm={{ span: 6, order: 2 }} md={{ span: 6, order: 2}} lg={{ span: 6, order: 1}} xl={6}>
+                            <Col id="colText" xs={{ span: 12, order: 2 }} sm={{ span: 6, order: 2 }} md={{ span: 6, order: 2}} lg={{ span: 6, order: 1}} xl={6}>
                                 <h1 className="display-3">Capos</h1>
                                 <p className="lead">Build a simple and elegant Portfolio Website under 10 minutes.</p>
                                 <Link to="instruction" spy={true} smooth={true} offset={0} duration={1000}>
@@ -23,7 +23,7 @@ function Jumbotronn() {
                                     </Button>
                                 </Link>
                             </Col>
-                            <Col xs={{ span: 12, order: 1 }} sm={{ span: 6, order: 1 }} md={{ span: 6, order: 1 }} lg={{ span: 6, order: 2}} xl={6}>
+                            <Col id="colImg" xs={{ span: 12, order: 1 }} sm={{ span: 6, order: 1 }} md={{ span: 6, order: 1 }} lg={{ span: 6, order: 2}} xl={6}>
                                 <img className="vectorLogo" src={mainlogo} alt="logo"/>
                             </Col>
                         </Row>

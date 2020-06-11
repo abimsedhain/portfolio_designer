@@ -106,7 +106,7 @@ nav {
       ##Screen = B/w 320px to 479px
     */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 359px) {
     .navbar-collapse {
         background: #f4f9ff;
         width: 100px;
@@ -115,7 +115,8 @@ nav {
         /*replace with desired color*/
     }
     .aboutPage {
-        height: 50vh;
+        height: 120vh;
+        margin-bottom: -600px;
     }
     .aboutTitle {
         font-size: 30px;
@@ -131,7 +132,7 @@ nav {
     }
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 425px) {
     .navbar-collapse {
         background: #f4f9ff;
         width: 100px;
@@ -140,7 +141,60 @@ nav {
         /*replace with desired color*/
     }
     .aboutPage {
-        height: 70vh;
+        height: 110vh;
+        margin-bottom: -600px;
+    }
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    .aboutDetails {
+        font-size: 20px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 479px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
+    .aboutPage {
+        height: 100vh;
+        margin-bottom: -400px;
+    }
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    .aboutDetails {
+        font-size: 20px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 529px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
+    .aboutPage {
+        height: 90vh;
+        margin-bottom: -240px;
     }
     .aboutTitle {
         font-size: 30px;
@@ -156,10 +210,79 @@ nav {
     }
 }
 
+@media (min-width: 530px) and (max-width: 650px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
+    .aboutPage {
+        height: 80vh;
+        margin-bottom: -150px;
+    }
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    .aboutDetails {
+        font-size: 20px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 50px;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 767px) {
+    .navbar-collapse {
+        background: #f4f9ff;
+        width: 100px;
+        z-index: 1000;
+        padding-bottom: 20px;
+        /*replace with desired color*/
+    }
+    .aboutPage {
+        height: 80vh;
+        margin-bottom: -200px;
+    }
+    .aboutTitle {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    .aboutDetails {
+        font-size: 21px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .navbar-brand {
+        margin-left: 50px;
+    }
+}
+
 
 /* iPad Media Queries */
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 859px) {
+    .aboutPage {
+        height: 90vh;
+        margin-bottom: -100px;
+    }
+    .aboutDetails {
+        font-size: 25px;
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+    .aboutPage {
+        height: 95vh;
+        margin-bottom: -100px;
+    }
+}
 
 
 /* 
@@ -167,4 +290,9 @@ nav {
         ##Screen = B/w 1025px to 1280px
       */
 
-@media (min-width: 1025px) and (max-width: 1280px) {}
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .aboutPage {
+        height: 90vh;
+        margin-bottom: -100px;
+    }
+}
