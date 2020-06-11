@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css';
 import { Container, Button, Row, Col } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 import login from '../assets/login.svg';
 import signup from '../assets/signup.svg';
@@ -34,9 +35,12 @@ function Instruction() {
 
                 <Row>
                     <Col>
-                        <Button className="infoBtn" size="lg" href="/form">Login&nbsp;
+                    <Link to='/form'>
+                    <Button className="infoBtn" size="lg" >Login&nbsp;
                 <span>/ Signup &#8594;  </span>
-                        </Button></Col>
+                        </Button>
+                    </Link>
+                     </Col>
                 </Row>
             </Container>
         </React.Fragment>
