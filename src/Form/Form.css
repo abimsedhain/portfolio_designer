@@ -1,0 +1,124 @@
+/* .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: red;
+    opacity: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form__field:focus {
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    color: #11998e;
+    font-weight: 800;
+} */
+
+#fullName {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 5px;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-bottom: 50px;
+}
+
+#fullName::placeholder {
+    color: #3b3b3b;
+    opacity: 80%;
+    font-family: Cardo;
+}
+
+#fullName:focus {
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    color: #11998e;
+}
+
+#email {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 5px;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-bottom: 50px;
+}
+
+#email::placeholder {
+    color: #3b3b3b;
+    opacity: 80%;
+    font-family: Cardo;
+}
+
+#email:focus {
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    color: #11998e;
+}
+
+.container {
+    background: #f4f9ff;
+    height: 100%;
+    width: 70vw;
+    padding-top: 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 1px 2px #3b3b3b;
+}
+
+h1 {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    font-family: Montserrat;
+}
+
+label {
+    float: left;
+    font-size: 20px;
+}
+
+textarea::placeholder {
+    color: #3b3b3b;
+    opacity: 80%;
+    font-size: 20px;
+    font-family: Cardo;
+}
+
+.btn {
+    background: #428bca;
+    border-color: #428bca;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: normal;
+}
+
+.btn:hover {
+    background: #5cb85c;
+    border-color: #5cb85c;
+    color: black;
+}
