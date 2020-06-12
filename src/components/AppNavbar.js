@@ -7,8 +7,10 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	Button
+	NavLink,
+	Container
 } from 'reactstrap';
+import { Logo, Button, Description } from "./styled/StyledComponents"
 
 function AppNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -16,33 +18,50 @@ function AppNavbar() {
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<React.Fragment>
+		<Container fluid>
 			<Navbar light navbar-inverse="true" expand="md" >
 				<NavbarBrand href="/">
-				<h2>Capos</h2>
+					<Logo>Capos</Logo>
 				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<Link className="nav-links" to="main" spy={true} smooth={true} offset={-100} duration={1000}>Get Started</Link>
+							<Link className="nav-links" to="instruction" spy={true} smooth={true} offset={-100} duration={1000}>
+								<NavLink>
+									<Logo Small>Get Started</Logo>
+								</NavLink>
+							</Link>
 						</NavItem>
 						<NavItem>
-							<Link className="nav-links" to="about" spy={true} smooth={true} offset={0} duration={1000}>About</Link>
+
+							<Link className="nav-links" to="about" spy={true} smooth={true} offset={0} duration={1000}>
+								<NavLink><Logo Small>
+									About
+								</Logo>
+								</NavLink>
+							</Link>
 						</NavItem>
 						<NavItem>
-							{/* <Link className="nav-links" to="/contact">Contact</Link> */}
-							<Link className="nav-links" to="contact" spy={true} smooth={true} offset={0} duration={1000}>Contact</Link>
+
+							<Link className="nav-links" to="contact" spy={true} smooth={true} offset={0} duration={1000}>
+								<NavLink>
+									<Logo Small>
+										Contact
+									</Logo>
+								</NavLink>
+							</Link>
 						</NavItem>
 
 						<NavItem>
-							<Button className='navBtn' size="lg">Login/Signup
+								<Button Small White className="btn-nav">Login/Signup
                                     </Button>
+
 						</NavItem>
 					</Nav>
 				</Collapse>
 			</Navbar>
-		</React.Fragment>
+		</Container>
 	)
 }
 
