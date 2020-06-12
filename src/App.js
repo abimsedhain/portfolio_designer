@@ -9,7 +9,7 @@ import Home from './components/Home';
 
 // import UserDetails from './Form/UserDetails';
 import UserDetails from "./components/form/UserDetails"
-import Theme from "../components/styled/Theme"
+import Theme from "./components/styled/Theme"
 import { ThemeProvider } from "styled-components"
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

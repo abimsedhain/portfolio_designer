@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import {
 	Collapse,
@@ -18,7 +17,7 @@ function AppNavbar() {
 
 	return (
 		<React.Fragment>
-			<Navbar light navbar-inverse expand="md" >
+			<Navbar light navbar-inverse="true" expand="md" >
 				<NavbarBrand href="/">
 				<h2>Capos</h2>
 				</NavbarBrand>

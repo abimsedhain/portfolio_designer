@@ -26,19 +26,19 @@ function AppFooter() {
 					</Row>
 					<Row className="justify-content-center">
 						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={fb} alt="github link" />
+							<img className="img-fluid" height="100%" width="100%" src={fb} alt="github link" />
 						</Col>
 						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={github} alt="github link" />
+							<img className="img-fluid" height="100%" width="100%" src={github} alt="github link" />
 						</Col>
 						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={twitter} alt="twitter link" />
+							<img className="img-fluid" height="100%" width="100%" src={twitter} alt="twitter link" />
 						</Col>
 						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={linkedin} alt="linkedin link" />
+							<img className="img-fluid" height="100%" width="100%" src={linkedin} alt="linkedin link" />
 						</Col>
 						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={mail} alt="linkedin link" />
+							<img className="img-fluid" height="100%" width="100%" src={mail} alt="linkedin link" />
 						</Col>
 					</Row>
 					<Row>

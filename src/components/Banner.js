@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import AppNavbar from "./AppNavbar"
 import mainlogo from '../assets/mainlogo2.png';
 
+
 function Banner() {
     return (
         <>
