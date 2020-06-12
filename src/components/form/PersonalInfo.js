@@ -2,7 +2,6 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Label, Input, Button, FormGroup } from "reactstrap"
-import './Form.css';
 
 const validationSchema = yup.object({
 	// fullName: yup.string().required('Name is required').max(20),
