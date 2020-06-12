@@ -34,12 +34,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Step 1</Description>
+								<Description White Small>Step 1</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Login/Sign Up</Description>
+								<Description White Small>Login/Sign Up</Description>
 							</Col>
 						</Row>
 					</Col>
@@ -51,12 +51,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Step 2</Description>
+								<Description White Small>Step 2</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Enter your Information</Description>
+								<Description White Small>Enter your Information</Description>
 							</Col>
 						</Row>
 					</Col>
@@ -69,12 +69,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Step 3</Description>
+								<Description White Small>Step 3</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White>Get your new Portfolio</Description>
+								<Description White Small>Get your new Portfolio</Description>
 							</Col>
 						</Row>
 					</Col>
