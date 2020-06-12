@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Navbar, NavItem, NavbarBrand, NavbarText, Container, Row, Col } from 'reactstrap';
-
-import { Link } from 'react-router-dom';
+import {  Container, Row, Col } from 'reactstrap';
+import styled from "styled-components";
+import {Header, Subheader, Description} from "./styled/StyledComponents"
 
 import fb from '../assets/facebook.svg'
 import github from '../assets/github.svg'
@@ -12,55 +12,57 @@ import mail from '../assets/email.svg'
 
 
 function AppFooter() {
-
+const StyledContainer = styled.div`
+	background-color: ${props=> props.theme.Dark}
+	`
 	return (
-		<>
-			<Container fluid>
+		<StyledContainer>
+			<Container fluid className="pt-5" id="contact">
 				<Container>
-					<Row>
+					<Row className="py-1">
 						<Col>
-							<h3>
+							<Description White Small>
 								Feel free to reach out to us for feedback or any suggestions for new features, or just say hello!
-							</h3>
+							</Description>
 						</Col>
 					</Row>
-					<Row className="justify-content-center">
-						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={fb} alt="github link" />
+					<Row className="justify-content-center py-1">
+						<Col className="col-2 col-sm-1 ">
+							<img className="img-fluid" height="100%" width="100%" src={fb} alt="github link" />
 						</Col>
-						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={github} alt="github link" />
+						<Col className="col-2 col-sm-1 ">
+							<img className="img-fluid" height="100%" width="100%" src={github} alt="github link" />
 						</Col>
-						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={twitter} alt="twitter link" />
+						<Col className="col-2 col-sm-1 ">
+							<img className="img-fluid" height="100%" width="100%" src={twitter} alt="twitter link" />
 						</Col>
-						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={linkedin} alt="linkedin link" />
+						<Col className="col-2 col-sm-1 ">
+							<img className="img-fluid" height="100%" width="100%" src={linkedin} alt="linkedin link" />
 						</Col>
-						<Col className="col-1">
-							<img classname="img-fluid" height="100%" width="100%" src={mail} alt="linkedin link" />
+						<Col className="col-2 col-sm-1 ">
+							<img className="img-fluid" height="100%" width="100%" src={mail} alt="linkedin link" />
 						</Col>
 					</Row>
-					<Row>
+					<Row className="py-2">
 						<Col>
-							<h3>
+							<Description White Small>
 								Created with ♡ by ..
-						</h3>
+						</Description>
 
 						</Col>
 					</Row>
 					<Row>
 						<Col>
-							<h3>
+							<Description White Small>
 								&copy; 2020 Capos
-						</h3>
+						</Description>
 
 						</Col>
 					</Row>
 				</Container>
 
 			</Container>
-		</>
+		</StyledContainer>
 	)
 }
 
