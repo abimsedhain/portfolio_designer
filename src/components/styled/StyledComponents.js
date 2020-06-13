@@ -46,6 +46,8 @@ const Button = styled.button`
 	}
 `
 
+const NavbarButton = styled(Button)`
+	margin-top: 5px;
+`
 
-
-export { Header, Logo, Subheader, Description, Button }
+export { Header, Logo, Subheader, Description, Button, NavbarButton}

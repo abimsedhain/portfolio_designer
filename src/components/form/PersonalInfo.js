@@ -1,7 +1,9 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { Label, Input, Button, FormGroup } from "reactstrap"
+import { Input, FormGroup } from "reactstrap"
+import {Button} from '../styled/StyledComponents';
+
 
 const validationSchema = yup.object({
 	// fullName: yup.string().required('Name is required').max(20),
@@ -11,7 +13,6 @@ const validationSchema = yup.object({
 
 const PersonalInfo = ({ formData, setFormData, nextStep }) => {
 	return (
-
 		<Formik
 			initialValues={formData}
 			onSubmit={values => {
@@ -20,33 +21,34 @@ const PersonalInfo = ({ formData, setFormData, nextStep }) => {
 				console.log(values);
 			}}
 			validationSchema={validationSchema}>
-
 			<Form>
 				<h1>Personal Information</h1>
 
 				<FormGroup>
 					{/* <Label>Full Name</Label> */}
-					<Field type="text" id="fullName" name="fullName" as={Input} placeholder="Enter Full Name"></Field>
+					<Field type="text" id="fullName" name="fullName" as={Input} placeholder="Enter Full Name"
+						></Field>
 					<ErrorMessage name='fullName' />
 				</FormGroup>
 
 				<FormGroup>
 					{/* <Label>Email</Label> */}
-					<Field type='email' id='email' name='email' as={Input} placeholder="Enter Email" />
+					<Field type='email' id='email' name='email' as={Input} placeholder="Enter Email"/>
 					<ErrorMessage name='email' />
 				</FormGroup>
 
 				<FormGroup>
 					{/* <Label>Bio</Label> */}
-					<Field rows='5' id='bio'name='bio' as={() => (<Input type="textarea" rows="7" placeholder="Enter your Bio Here..."></Input>)}/>
+					<Field rows='5' id='bio' name='bio' as={() => (<Input type="textarea" rows="7" placeholder="Enter your Bio Here..."></Input>)} />
 					<ErrorMessage name='email' />
 				</FormGroup>
-{/* 
+				{/* 
 				<FormGroup>
 					<input type="input" class="form__field" placeholder="Enter Full Name" name="name" id='name' />
 				</FormGroup> */}
-				<Button type='submit'> Continue </Button>
+				<Button Secondary type='submit'> Continue </Button>
 			</Form>
+
 		</Formik>
 
 

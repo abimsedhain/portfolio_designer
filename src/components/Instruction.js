@@ -22,7 +22,7 @@ function Instruction() {
 			<Container fluid className="py-5" id="instruction">
 				<Row className="">
 					<Col>
-						<Header Small White>Intructions</Header>
+						<Header Small White>Instructions</Header>
 					</Col>
 				</Row>
 				<Row className="py-2">
@@ -34,12 +34,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Step 1</Description>
+								<Description White>Step 1</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Login/Sign Up</Description>
+								<Description White>Login/Sign Up</Description>
 							</Col>
 						</Row>
 					</Col>
@@ -51,12 +51,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Step 2</Description>
+								<Description White>Step 2</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Enter your Information</Description>
+								<Description White>Enter your Information</Description>
 							</Col>
 						</Row>
 					</Col>
@@ -69,12 +69,12 @@ function Instruction() {
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Step 3</Description>
+								<Description White>Step 3</Description>
 							</Col>
 						</Row>
 						<Row>
 							<Col>
-								<Description White Small>Get your new Portfolio</Description>
+								<Description White>Get your new Portfolio</Description>
 							</Col>
 						</Row>
 					</Col>
