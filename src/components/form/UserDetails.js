@@ -9,6 +9,7 @@ import Experience from './Experience';
 import Education from './Education';
 import Submit from './Submit';
 
+
 function UserDetails({ match }) {
 	const history = useHistory()
 	const [formData, setFormData] = useState({

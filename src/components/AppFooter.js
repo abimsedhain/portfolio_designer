@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {  Container, Row, Col } from 'reactstrap';
 import styled from "styled-components";
-import {Header, Subheader, Description} from "./styled/StyledComponents"
+import { Description} from "./styled/StyledComponents"
 
 import fb from '../assets/facebook.svg'
 import github from '../assets/github.svg'

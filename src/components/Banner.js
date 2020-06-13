@@ -19,7 +19,7 @@ function Banner() {
 				</Link>
 				</Col>
 				<Col>
-				<img src={mainlogo} className="img-fluid">
+				<img src={mainlogo} alt="Logo" className="img-fluid">
 				</img>
 				</Col>
 			</Row>
