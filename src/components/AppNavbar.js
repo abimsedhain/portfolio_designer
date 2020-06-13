@@ -10,7 +10,7 @@ import {
 	NavLink,
 	Container
 } from 'reactstrap';
-import { Logo, Button, Description } from "./styled/StyledComponents"
+import { Logo, Button} from "./styled/StyledComponents"
 
 function AppNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
