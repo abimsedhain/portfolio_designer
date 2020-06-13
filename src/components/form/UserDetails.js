@@ -11,6 +11,9 @@ import Submit from './Submit';
 import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
 
+import { FormContainer } from '../styled/StyledComponents';
+
+
 function UserDetails({ match }) {
 	const history = useHistory()
 	const [formData, setFormData] = useState({
@@ -52,28 +55,26 @@ function UserDetails({ match }) {
 	return (
 		<>
 			<LogoBar />
-			<div style={{ display: 'block', height: '100%', overflow: 'hidden' }}>
+			<FormContainer fluid={true}>
 				<Row>
 					<Col className="mx-auto col-12 col-sm-8 col-md-6">
-						<div style={{ display: 'block', height: '100%', overflow: 'scroll' }}>
-							<Route path={`${match.path}/:formId?`} render={(props) => {
+						<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+						<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
 								const id = parseInt(matchInner.params.formId) || 0
 								return React.createElement(FormComponents.current[id], { formData, setFormData, nextStep: () => history.push(`${match.url}/${id + 1}`), prevStep: () => history.goBack() })
 							}} />
-						</div>
-
+						</FormContainer>
 					</Col>
 
 					<Col className="mx-auto col-12 col-sm-8 col-md-6">
-						<div style={{ display: 'block', height: '97vh', overflow: 'scroll' }}>
+							<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
 							<Template />
-						</div>
-
-
+							</FormContainer>
 					</Col>
 				</Row>
-			</div>
+			</FormContainer>
+
 		</>
 	)
 }

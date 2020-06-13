@@ -15,7 +15,10 @@ const Theme={
 	Special: "#4549b1",
 	LargeButtonSize: "2rem",
 	ButtonSize: "1.5rem",
-	SmallButtonSize: "1rem"
+	SmallButtonSize: "1rem",
+
+	NextButton: "#24a0ed",
+	BackButton: "#CF0820"
 }
 
 export default Theme

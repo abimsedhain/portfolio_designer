@@ -13,12 +13,8 @@ function Instruction() {
 	const StyledContainer = styled.div`
 	background-color: ${props=> props.theme.Primary}
 	`
-
-
-
 	return (
 		<StyledContainer>
-
 			<Container fluid className="py-5" id="instruction">
 				<Row className="">
 					<Col>
@@ -83,7 +79,7 @@ function Instruction() {
 					<Col>
 						<Link to='/form'>
 							<Button Secondary >Login&nbsp;
-                <span>/ Signup &#8594;  </span>
+             					   <span>/ Signup &#8594;  </span>
 							</Button>
 						</Link>
 					</Col>
