@@ -20,14 +20,14 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<ThemeProvider theme={Theme}>
+				{/* <ThemeProvider theme={Theme}> */}
 					<Switch>
 						<Route path="/" exact component={Home} />
 						<Route path="/about" component={About} />
 						<Route path="/form" component={UserDetails} />
 						<Route path="/template" component={Template}/>
 					</Switch>
-				</ThemeProvider>
+				{/* </ThemeProvider> */}
 			</div>
 
 		</Router>
