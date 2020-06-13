@@ -8,6 +8,7 @@ import SocialMedia from './SocialMedia';
 import Experience from './Experience';
 import Education from './Education';
 import Submit from './Submit';
+import LogoBar from '../LogoBar';
 
 function UserDetails({ match }) {
 	const history = useHistory()
@@ -48,7 +49,9 @@ function UserDetails({ match }) {
 
 	
 	return (
-		<Container>
+		<>
+		<LogoBar/>
+		<Container >
 			<Row>
 				<Col className="mx-auto col-12 col-sm-8 col-md-6">
 					<Route path={`${match.path}/:formId?`} render={(props)=>{
@@ -56,8 +59,13 @@ function UserDetails({ match }) {
 						const id = parseInt(matchInner.params.formId) || 0
 						return React.createElement(FormComponents.current[id], {formData, setFormData, nextStep:()=>history.push(`${match.url}/${id+1}`), prevStep:()=>history.goBack() })}}/>
 				</Col>
+
+				<Col className="mx-auto col-12 col-sm-8 col-md-6">
+				<textarea rows='16' cols='50'></textarea>
+				</Col>
 			</Row>
 		</Container>
+		</>
 	)
 }
 

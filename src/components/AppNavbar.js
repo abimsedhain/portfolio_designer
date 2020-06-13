@@ -10,7 +10,7 @@ import {
 	NavLink,
 	Container
 } from 'reactstrap';
-import { Logo, Button, Description } from "./styled/StyledComponents"
+import { Logo, Button, Description, NavbarButton} from "./styled/StyledComponents"
 
 function AppNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -54,8 +54,8 @@ function AppNavbar() {
 						</NavItem>
 
 						<NavItem>
-								<Button Small White className="btn-nav">Login/Signup
-                                    </Button>
+								<NavbarButton Small White className="btn-nav">Login/Signup
+                                    </NavbarButton>
 
 						</NavItem>
 					</Nav>

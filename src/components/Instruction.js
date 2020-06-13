@@ -22,7 +22,7 @@ function Instruction() {
 			<Container fluid className="py-5" id="instruction">
 				<Row className="">
 					<Col>
-						<Header Small White>Intructions</Header>
+						<Header Small White>Instructions</Header>
 					</Col>
 				</Row>
 				<Row className="py-2">
