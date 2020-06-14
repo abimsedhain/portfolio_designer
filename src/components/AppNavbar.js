@@ -27,7 +27,7 @@ function AppNavbar() {
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<Link className="nav-links" to="instruction" spy={true} smooth={true} offset={-100} duration={1000}>
+							<Link className="nav-links" to="instruction" spy={true} smooth={true} offset={0} duration={1000}>
 								<NavLink>
 									<Logo Small>Get Started</Logo>
 								</NavLink>
