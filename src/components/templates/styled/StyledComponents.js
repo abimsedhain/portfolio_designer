@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Row, Badge, Navbar } from "reactstrap";
 
+
+
+
 const Header = styled.h1`
 	font-family: ${props => props.theme.Header};
 	font-size: ${props => props.Small ? props.theme.SubheaderSize : props.theme.HeaderSize};
