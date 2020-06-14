@@ -7,7 +7,7 @@ import EducationItem from "./components/EducationItem"
 import ProjectItem from "./components/ProjectItem"
 import WorkItem from "./components/WorkItem"
 import SkillItem from "./components/SkillItem";
-
+import TemplateNavbar from "./components/TemplateNavbar"
 
 // For testing purpose only
 import tempUser from "./TempUser"
@@ -18,6 +18,7 @@ import tempUser from "./TempUser"
 function Template() {
 
 	return (<ThemeProvider theme={Theme}>
+		<TemplateNavbar/>
 		<Container className="text-left py-5">
 			<Row>
 				<Col >
@@ -29,7 +30,7 @@ function Template() {
 				</Col>
 			</Row>
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="education">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>education</Subheader>
@@ -37,7 +38,7 @@ function Template() {
 			</Row>
 			{tempUser.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="skills">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>skills</Subheader>
@@ -47,7 +48,7 @@ function Template() {
 				{tempUser.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
 			</Row>
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="experiences">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>work experiences</Subheader>
@@ -55,7 +56,7 @@ function Template() {
 			</Row>
 			{tempUser.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="projects">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>projects</Subheader>

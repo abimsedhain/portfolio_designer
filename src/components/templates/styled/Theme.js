@@ -1,4 +1,5 @@
 const Theme = {
+	Background: "white",
 	Header: "Montserrat",
 	Subheader: "Palanquin",
 	Description: "Palanquin",
