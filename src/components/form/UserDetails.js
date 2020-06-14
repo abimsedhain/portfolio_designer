@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col } from "reactstrap";
 import { Route, useHistory } from 'react-router-dom';
 import PersonalInfo from './PersonalInfo';
@@ -9,6 +9,10 @@ import Experience from './Experience';
 import Education from './Education';
 import Submit from './Submit';
 import LogoBar from '../LogoBar';
+import Template from '../templates/Template';
+
+import { FormContainer } from '../styled/StyledComponents';
+
 
 function UserDetails({ match }) {
 	const history = useHistory()
@@ -47,24 +51,30 @@ function UserDetails({ match }) {
 	// Creating an array for the components and react element array. then returning the selected array
 	const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit])
 
-	
+
 	return (
 		<>
-		<LogoBar/>
-		<Container >
-			<Row>
-				<Col className="mx-auto col-12 col-sm-8 col-md-6">
-					<Route path={`${match.path}/:formId?`} render={(props)=>{
-						const matchInner = props.match
-						const id = parseInt(matchInner.params.formId) || 0
-						return React.createElement(FormComponents.current[id], {formData, setFormData, nextStep:()=>history.push(`${match.url}/${id+1}`), prevStep:()=>history.goBack() })}}/>
-				</Col>
+			<LogoBar />
+			<FormContainer fluid={true}>
+				<Row>
+					<Col className="mx-auto col-12 col-sm-8 col-md-6">
+						<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+						<Route path={`${match.path}/:formId?`} render={(props) => {
+								const matchInner = props.match
+								const id = parseInt(matchInner.params.formId) || 0
+								return React.createElement(FormComponents.current[id], { formData, setFormData, nextStep: () => history.push(`${match.url}/${id + 1}`), prevStep: () => history.goBack() })
+							}} />
+						</FormContainer>
+					</Col>
 
-				<Col className="mx-auto col-12 col-sm-8 col-md-6">
-				<textarea rows='16' cols='50'></textarea>
-				</Col>
-			</Row>
-		</Container>
+					<Col className="mx-auto col-12 col-sm-8 col-md-6">
+							<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+							<Template />
+							</FormContainer>
+					</Col>
+				</Row>
+			</FormContainer>
+
 		</>
 	)
 }

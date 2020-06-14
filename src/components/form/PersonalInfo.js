@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Input, FormGroup } from "reactstrap"
-import {Button} from '../styled/StyledComponents';
+import {NextButton} from '../styled/StyledComponents';
 
 
 const validationSchema = yup.object({
@@ -46,9 +46,8 @@ const PersonalInfo = ({ formData, setFormData, nextStep }) => {
 				<FormGroup>
 					<input type="input" class="form__field" placeholder="Enter Full Name" name="name" id='name' />
 				</FormGroup> */}
-				<Button Secondary type='submit'> Continue </Button>
+				<NextButton type='submit'> Continue </NextButton>
 			</Form>
-
 		</Formik>
 
 

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Col, Table } from 'reactstrap';
+import { Container, Col, Table, ButtonGroup} from 'reactstrap';
 import { Formik, Form } from 'formik';
 import { useHistory } from 'react-router-dom';
+import {NextButton, BackButton} from '../styled/StyledComponents';
 
 
 const Review = ({ formData, setFormData, nextStep, prevStep }) => {
@@ -126,14 +127,21 @@ const Review = ({ formData, setFormData, nextStep, prevStep }) => {
 
 
 				<Form>
-					<Col>
+					{/* <Col>
 						<div style={{ marginTop: '-50px' }}>
 							<button type='submit'>NEXT</button>
 						</div>
 						<div style={{ marginTop: '-30px', marginLeft: '150px' }}>
 							<button onClick={prevStep}> BACK</button>
 						</div>
-					</Col>
+					</Col> */}
+
+					<ButtonGroup>
+						{/* <Button onClick={prevStep}>BACK</Button> */}
+						<BackButton onClick={prevStep}> BACK </BackButton>
+						{/* <Button type="submit">NEXT</Button> */}
+						<NextButton type="submit">NEXT</NextButton>
+					</ButtonGroup>
 				</Form>
 
 			</Container>

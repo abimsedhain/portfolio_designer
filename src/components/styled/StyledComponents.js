@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Container } from "reactstrap";
 
 const Header = styled.h1`
 	font-family: ${props => props.theme.Header};
@@ -56,4 +57,47 @@ const NavbarButton = styled(Button)`
 	 }
 `
 
-export { Header, Logo, Subheader, Description, Button, NavbarButton }
+
+const NextButton = styled(Button)`
+	border: 1px solid;
+	border-color: ${props => props.theme.NextButton};
+	background-color: ${props => props.theme.White};
+	color: ${props => props.theme.NextButton};
+	border-radius: 4px;
+
+	&:hover{
+		background-color:${props => props.theme.NextButton};
+		color: ${props => props.theme.White};
+
+`
+const BackButton = styled(Button)`
+	border: 1px solid;
+	border-color: ${props => props.theme.BackButton}; 	
+	background-color: ${props => props.theme.White};
+	color:  ${props => props.theme.BackButton};
+	border-radius: 4px;
+
+	&:hover{
+		background-color: ${props => props.theme.BackButton};
+		color: ${props => props.theme.White};
+}
+`
+const Logobar = styled(Container)`
+	background-color: ${props => props.theme.Primary};
+	color:white;
+	padding:5px;
+	padding-left: 0px;
+	left:50%;
+	transform: 'translateX(-50%)',
+	top:'10px';
+	width:'100%';
+	margin-bottom: 15px;
+	font-family:${props => props.theme.Header};
+`
+const FormContainer = styled(Container)`
+	display: block;
+	height: 100%;
+	overflow: hidden;
+`
+
+export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
 import { ButtonGroup, Button, Label, Input, FormGroup, InputGroup } from 'reactstrap';
+import {NextButton, BackButton} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// pro1Title:yup.string().required('Title is required'),
@@ -111,8 +112,10 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 					}>
 					</FieldArray>
 					<ButtonGroup>
-						<Button onClick={prevStep}>BACK</Button>
-						<Button type="submit">NEXT</Button>
+						{/* <Button onClick={prevStep}>BACK</Button> */}
+						<BackButton onClick={prevStep}> BACK </BackButton>
+						{/* <Button type="submit">NEXT</Button> */}
+						<NextButton type="submit">NEXT</NextButton>
 					</ButtonGroup>
 				</Form>
 
