@@ -48,8 +48,15 @@ const Button = styled.button`
 `
 
 const NavbarButton = styled(Button)`
-	margin-top: 5px;
+	margin: 0em;	
+	font-size: 1.2rem;
+	@media (min-width: 768px) {
+		margin: 1em;
+		margin-top: 5px;
+		font-size:1.1rem;
+	 }
 `
+
 
 const NextButton = styled(Button)`
 	border: 1px solid;
@@ -93,4 +100,4 @@ const FormContainer = styled(Container)`
 	overflow: hidden;
 `
 
-export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton,BackButton }
+export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton}
