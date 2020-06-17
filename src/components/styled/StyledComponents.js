@@ -75,6 +75,37 @@ const BackButton = styled(Button)`
 		color: ${props => props.theme.White};
 }
 `
+
+const AddButton = styled(Button)`
+	border-radius: 50%;
+	background: rgba(51, 170, 51, .1);
+	border: 1px solid;
+	border-color: ${props => props.theme.NextButton};
+	font-size: 25px;
+	color:${props => props.theme.NextButton};
+	padding:1px 10px 1px 10px;
+	margin:0px 1px 0px 1px;
+
+	&:hover{
+		background-color:${props => props.theme.NextButton};
+		color: ${props => props.theme.White};
+`
+
+const DelButton = styled(Button)`
+	border-radius: 50%;
+	background: rgba(51, 170, 51, .1);
+	border: 1px solid;
+	border-color: ${props => props.theme.BackButton};
+	font-size: 25px;
+	color:${props => props.theme.BackButton};
+	padding:1px 10px 1px 10px;
+	margin:0px 1px 0px 1px;
+
+	&:hover{
+		background-color:${props => props.theme.BackButton};
+		color: ${props => props.theme.White};
+`
+
 const Logobar = styled(Container)`
 	background-color: ${props => props.theme.Primary};
 	color:white;
@@ -93,4 +124,9 @@ const FormContainer = styled(Container)`
 	overflow: hidden;
 `
 
-export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton,BackButton }
+const HrLine = styled.hr`
+	border-width: 1px;
+	background:black;
+`
+
+export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine }

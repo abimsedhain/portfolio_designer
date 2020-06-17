@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import { Label, Input, FormGroup, Button, ButtonGroup, InputGroup } from "reactstrap"
 import * as yup from 'yup';
-import {NextButton, BackButton} from '../styled/StyledComponents';
+import { NextButton, BackButton, AddButton, DelButton, HrLine } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// exp1Title:yup.string().required('Title is required'),
@@ -29,8 +29,6 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 				<Form>
 					<h1>Experience</h1>
 
-
-
 					<FieldArray name="experiences" render={
 						arrayHelpers => (
 							<>
@@ -38,7 +36,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 									<div key={index}>
 										<FormGroup>
 											<Label>Company Name</Label>
-											<ButtonGroup>
+											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >-</Button>
 												<Button className="bg-info" type="button"
@@ -49,7 +47,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 														EndDate: "",
 														Highlights: [""]
 													})}>+</Button>
-											</ButtonGroup>
+											</ButtonGroup> */}
 
 											<Field type="text" name={`experiences.${index}.CompanyName`} as={Input} placeholder="Enter Company Name"></Field>
 
@@ -69,7 +67,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 																<InputGroup>
 																	<Field name={`experiences.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
 																	<ButtonGroup>
-																		<Button
+																		{/* <Button
 																			type="button"
 																			onClick={() => { values.experiences[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
 																		>
@@ -79,7 +77,16 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 																			type="button"
 																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
 																		>+
-                      											</Button>
+                      											</Button> */}
+																		<AddButton type="button"
+																			onClick={() => arrayHelpers.insert(index2, '')} >
+																			&#43;
+																  </AddButton>
+
+																		<DelButton type="button"
+																			onClick={() => { values.experiences[index].Highlights.length > 1 && arrayHelpers.remove(index2) }}>
+																			&#8722;
+																  </DelButton>
 																	</ButtonGroup>
 																</InputGroup>
 															</FormGroup>
@@ -100,15 +107,32 @@ const Experience = ({ formData, setFormData, nextStep, prevStep }) => {
 											<Label>End Date</Label>
 											<Field type="text" name={`experiences.${index}.EndDate`} as={Input} placeholder="Enter End Date"></Field>
 										</FormGroup>
-									</div>
 
+										<ButtonGroup>
+
+											<BackButton type="button"
+												onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >
+												Delete Experience
+													</BackButton>
+
+											<NextButton type="button"
+												onClick={() => arrayHelpers.insert(index, {
+													CompanyName: "",
+													Position: "",
+													StartDate: "",
+													EndDate: "",
+													Highlights: [""]
+												})}>
+												Add Experience
+													</NextButton>
+										</ButtonGroup>
+									</div>
 								))}
 							</>
 						)
-
-
 					}>
 					</FieldArray>
+					<HrLine/>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep}> BACK </BackButton>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray} from 'formik';
 import {Label, Input, FormGroup, Button, ButtonGroup} from "reactstrap"
 import * as yup from 'yup';
-import {NextButton, BackButton} from '../styled/StyledComponents';
+import {NextButton, BackButton, HrLine} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// eduTitle:yup.string().required('Title is required'),
@@ -35,7 +35,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep }) => {
 									<div key={index}>
 										<FormGroup>
 											<Label>Institution Name</Label>
-											<ButtonGroup>
+											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >-</Button>
 												<Button className="bg-info" type="button"
@@ -45,7 +45,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep }) => {
 														EndDate: "",
 														Degree: ""
 													})}>+</Button>
-											</ButtonGroup>
+											</ButtonGroup> */}
 
 											<Field type="text" name={`education.${index}.InstitutionName`} as={Input} placeholder="Enter Institution Name"></Field>
 
@@ -62,6 +62,23 @@ const Education = ({ formData, setFormData, nextStep, prevStep }) => {
 											<Label>End Date</Label>
 											<Field type="text" name={`education.${index}.EndDate`} as={Input} placeholder="Enter End Date"></Field>
 										</FormGroup>
+
+										<ButtonGroup>
+													<BackButton type="button"
+													onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >
+													Delete Education
+													</BackButton>
+
+													<NextButton type="button"
+													onClick={() => arrayHelpers.insert(index, {
+														InstituteName: "",
+														StartDate: "",
+														EndDate: "",
+														Degree: ""
+													})}>
+														Add Education
+													</NextButton>
+											</ButtonGroup>
 									</div>
 
 								))}
@@ -71,6 +88,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep }) => {
 
 					}>
 					</FieldArray>
+<HrLine/>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep}> BACK </BackButton>

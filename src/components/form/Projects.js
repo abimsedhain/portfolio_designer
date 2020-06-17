@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
 import { ButtonGroup, Button, Label, Input, FormGroup, InputGroup } from 'reactstrap';
-import {NextButton, BackButton} from '../styled/StyledComponents';
+import {NextButton, BackButton, AddButton, DelButton, HrLine} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// pro1Title:yup.string().required('Title is required'),
@@ -40,7 +40,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 									<div key={index}>
 										<FormGroup>
 											<Label>Project Title</Label>
-											<ButtonGroup>
+											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }} >-</Button>
 												<Button className="bg-info" type="button"
@@ -51,7 +51,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 														DemoLink: "",
 														Highlights: [""]
 													})}>+</Button>
-											</ButtonGroup>
+											</ButtonGroup> */}
 
 											<Field type="text" name={`projects.${index}.Title`} as={Input} placeholder="Enter Project Title"></Field>
 
@@ -71,17 +71,28 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 																<InputGroup>
 																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
 																	<ButtonGroup>
-																		<Button
+																		{/* <Button
 																			type="button"
 																			onClick={() => { values.projects[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
 																		>
 																			-
                       											</Button>
+
+																 
 																		<Button
 																			type="button"
 																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
 																		>+
-                      											</Button>
+                      											</Button> */}
+
+																  <AddButton type="button"
+																			onClick={() => arrayHelpers.insert(index2, '')} >
+																  &#43;
+																  </AddButton>
+																  <DelButton type="button"
+																			onClick={() => { values.projects[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} >
+																  &#8722;
+																  </DelButton>
 																	</ButtonGroup>
 																</InputGroup>
 															</FormGroup>
@@ -102,6 +113,24 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 											<Label>Demo Link</Label>
 											<Field type="text" name={`projects.${index}.DemoLink`} as={Input} placeholder="Enter Project Demo Link"></Field>
 										</FormGroup>
+
+										<ButtonGroup>
+												<BackButton type="button"
+													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }}>
+													Delete Project
+												</BackButton>
+
+													<NextButton type="button"
+													onClick={() => arrayHelpers.insert(index, {
+														Title: "",
+														Description: "",
+														SourceLink: "",
+														DemoLink: "",
+														Highlights: [""]
+													})}>
+													Add Project
+													</NextButton>
+											</ButtonGroup>
 									</div>
 
 								))}
@@ -111,6 +140,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 
 					}>
 					</FieldArray>
+					<HrLine/>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep}> BACK </BackButton>

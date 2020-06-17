@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
 import { FormGroup, Label, Input, Button, ButtonGroup, InputGroup } from 'reactstrap';
-import {NextButton, BackButton} from '../styled/StyledComponents';
+import { NextButton, BackButton, AddButton, DelButton } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// github:yup.string().required('Github Link is required'),
@@ -40,16 +40,16 @@ const SocialMedia = ({ formData, setFormData, nextStep, prevStep }) => {
 						<ErrorMessage name='linkedin' />
 					</FormGroup>
 					<h1>Skills</h1>
-						<FieldArray name="skills" render={
-							arrayHelpers => (
-								<>
-									{
-										values.skills.map((skill, index) => (
-											<FormGroup key={index}>
-												<InputGroup>
-													<Field name={`skills.${index}`} type="input" as={Input} placeholder="Enter Skill" />
-													<ButtonGroup>
-														<Button
+					<FieldArray name="skills" render={
+						arrayHelpers => (
+							<>
+								{
+									values.skills.map((skill, index) => (
+										<FormGroup key={index}>
+											<InputGroup>
+												<Field name={`skills.${index}`} type="input" as={Input} placeholder="Enter Skill" />
+												<ButtonGroup>
+													{/* <Button
 															type="button"
 															onClick={() => { values.skills.length > 1 && arrayHelpers.remove(index) }} className="bg-danger"
 														>
@@ -59,19 +59,30 @@ const SocialMedia = ({ formData, setFormData, nextStep, prevStep }) => {
 															type="button"
 															onClick={() => arrayHelpers.insert(index, '')} className="bg-success"
 														>+
-                      											</Button>
-													</ButtonGroup>
-												</InputGroup>
-											</FormGroup>
-										))
-									}
-								</>
+                      											</Button> */}
 
-							)
+																	<AddButton type="button"
+															onClick={() => arrayHelpers.insert(index, '')}>
+																	&#43;
+																  </AddButton>
 
-						}>
+																  <DelButton type="button"
+															onClick={() => { values.skills.length > 1 && arrayHelpers.remove(index) }} >
+																	&#8722;
+																  </DelButton>
 
-						</FieldArray>
+												</ButtonGroup>
+											</InputGroup>
+										</FormGroup>
+									))
+								}
+							</>
+
+						)
+
+					}>
+
+					</FieldArray>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep}> BACK </BackButton>
