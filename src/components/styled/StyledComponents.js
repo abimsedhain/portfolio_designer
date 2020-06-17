@@ -48,9 +48,19 @@ const Button = styled.button`
 `
 
 const NavbarButton = styled(Button)`
-	margin-top: 5px;
+	margin: 0em;	
+	font-size: 1.2rem;
+	@media (min-width: 768px) {
+		margin: 1em;
+		margin-top: 5px;
+		font-size:1.1rem;
+	 }
 `
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7875060a3c83919ede93ad86d7a47520e92bfd37
 const NextButton = styled(Button)`
 	border: 1px solid;
 	border-color: ${props => props.theme.NextButton};
@@ -75,6 +85,7 @@ const BackButton = styled(Button)`
 		color: ${props => props.theme.White};
 }
 `
+<<<<<<< HEAD
 
 const AddButton = styled(Button)`
 	border-radius: 50%;
@@ -106,6 +117,8 @@ const DelButton = styled(Button)`
 		color: ${props => props.theme.White};
 `
 
+=======
+>>>>>>> 7875060a3c83919ede93ad86d7a47520e92bfd37
 const Logobar = styled(Container)`
 	background-color: ${props => props.theme.Primary};
 	color:white;

@@ -1,69 +1,40 @@
 import React from "react";
 import Theme from "./styled/Theme";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { Container, Col, Row } from "reactstrap";
 import { Header, Subheader, ColoredSpan, Description } from "./styled/StyledComponents"
 import EducationItem from "./components/EducationItem"
 import ProjectItem from "./components/ProjectItem"
 import WorkItem from "./components/WorkItem"
 import SkillItem from "./components/SkillItem";
+import TemplateNavbar from "./components/TemplateNavbar"
+
+import fb from '../../assets/facebook.svg'
+import github from '../../assets/github.svg'
+import twitter from '../../assets/twit.svg'
+import linkedin from '../../assets/linkedin.svg'
+import mail from '../../assets/email.svg'
+
+// import hexToFilter from "../utility/hexToFilter"
+
+// For testing purpose only
+import tempUser from "./TempUser"
+// For testing purpose only
 
 
+const linkIcons = [fb, github, twitter, linkedin, mail]
 
 
+const StyledImg = styled.img`
+	filter: ${props=> props.theme.PrimaryFilter}
+`
 
 
 function Template() {
-	const tempUser = {
-		fullName: 'Susan Lee',
-		email: 'SLee@gmail.com',
-		bio: 'Web Developer at FANNG',
 
-		github: '',
-		linkedin: '',
-
-		skills: ["Git", "JavaScript", "Docker", "Python", "HTML", "Databases"],
-
-		projects: [{
-			Title: "Chess Solver",
-			Description: "Automatic fault localization tool for multithreaded Java programs. CFLASH utilizes a combination of noise-based code injection and a heuristic search algorithm to identify potentially faulty code sections containing concurrency bugs.",
-			SourceLink: "",
-			DemoLink: "",
-			Highlights: ["10 users and adding more", "30% increase in productivity"],
-			StartDate: "May 1990",
-			EndDate: "June 1990"
-		}],
-		experiences: [{
-			CompanyName: "Amazon",
-			Position: "Web Developer",
-			StartDate: "June 2018",
-			EndDate: "Current",
-			Highlights: ["Created the front website.", "Redesigned the color scheme."]
-		}, {
-			CompanyName: "Google",
-			Position: "ML Engineer",
-			StartDate: "June 2020",
-			EndDate: "Current",
-			Highlights: ["Lead the Google Brain Team", "Made Billion dollar in profit."]
-		}],
-		education: [{
-			InstituteName: "Princton University",
-			StartDate: "May 1990",
-			EndDate: "Aug 1994",
-			Degree: "Phd in Super Cooking",
-			Courses: ["Big Data", "Machine Learning"]
-		}, {
-			InstituteName: "Harvard University",
-			StartDate: "May 1980",
-			EndDate: "Aug 1984",
-			Degree: "Bsc in Super Cooking",
-			Courses: ["A.I.", "Linear Algebra"]
-		}],
-		errorMsg: ''
-	}
-
-
+	// console.log(hexToFilter("#000000"))
 	return (<ThemeProvider theme={Theme}>
+		<TemplateNavbar/>
 		<Container className="text-left py-5">
 			<Row>
 				<Col >
@@ -75,7 +46,7 @@ function Template() {
 				</Col>
 			</Row>
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="education">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>education</Subheader>
@@ -83,7 +54,7 @@ function Template() {
 			</Row>
 			{tempUser.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="skills">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>skills</Subheader>
@@ -93,7 +64,7 @@ function Template() {
 				{tempUser.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
 			</Row>
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="experiences">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>work experiences</Subheader>
@@ -101,7 +72,7 @@ function Template() {
 			</Row>
 			{tempUser.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
 		</Container>
-		<Container className="text-left pt-5">
+		<Container className="text-left pt-5" id="projects">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>projects</Subheader>
@@ -109,7 +80,13 @@ function Template() {
 			</Row>
 			{tempUser.projects.map((project, index) => (<ProjectItem key={index} project={project} />))}
 		</Container>
-		<Container className="pt-5">
+		<Container className="pt-5" id="contact">
+			<Row className="justify-content-center pt-5">
+				{linkIcons.map((icon, index)=>(<Col className="col-2 col-sm-1" key={index}>
+							<StyledImg className="img-fluid" height="100%" width="100%" src={icon} alt={`icon_${index}`}/>
+						</Col>))}
+				</Row>
+
 			<Row className="pt-5">
 				<Col>
 					<Description White>

@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { Row, Badge } from "reactstrap";
+import { Row, Badge, Navbar } from "reactstrap";
+
+
+
 
 const Header = styled.h1`
 	font-family: ${props => props.theme.Header};
@@ -33,27 +36,6 @@ const Description = styled.p`
 const ColoredSpan = styled.span`
 	color: ${props => props.White || props.Primary ? (props.White ? props.theme.White : props.theme.Primary) : props.theme.Dark};
 `
-// const Button = styled.button`
-// 	font-size: ${props=> props.theme.ButtonSize};
-// 	font-size: ${props => props.Small && props.theme.SmallButtonSize};
-// 	font-size: ${props=> props.Large && props.theme.LargeButtonSize};
-// 	display: inline-block;
-// 	color: ${props=>props.White? props.theme.White: props.theme.Dark};
-// 	margin: 1em;
-// 	padding: 0.25em 1em;
-// 	border: 0px solid;
-// 	border-radius: 50px;
-// 	background-color: ${props=>props.theme.Primary};
-// 	background-color: ${props=> props.Secondary && props.theme.Secondary};
-// 	outline: none;
-// 	&:focus{
-// 		outline: none;
-// 	}	
-// 	&:hover{
-// 		background-color:${props=>props.theme.Special};
-// 		color: ${props=>props.theme.White};
-// 	}
-// `
 
 const StyledRow = styled(Row)`
 	margin-bottom: -20px;
@@ -87,4 +69,15 @@ const StyledBox = styled.div`
 		border-color: ${props => props.theme.Primary}
 	}
 `
-export { Header, Logo, Subheader, Description, ColoredSpan, StyledRow, Styleda, Styledli, StyledBadge, StyledBox }
+const StyledNavbar = styled(Navbar)`
+	background-color: ${props => props.theme.Background};
+	`
+	const StyledNavLink = styled(Description)`
+		display: block;
+		padding: .5rem 1rem;
+		margin-bottom:0rem;
+		&:hover{
+			color: ${props => props.theme.Primary};
+		}
+	`
+export { Header, Logo, Subheader, Description, ColoredSpan, StyledRow, Styleda, Styledli, StyledBadge, StyledBox, StyledNavLink, StyledNavbar}
