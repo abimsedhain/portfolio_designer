@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
-import { FormGroup, Label, Input, Button, ButtonGroup, InputGroup } from 'reactstrap';
+import { FormGroup, Label, Input, ButtonGroup, InputGroup } from 'reactstrap';
 import { NextButton, BackButton, AddButton, DelButton } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({

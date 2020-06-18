@@ -1,5 +1,5 @@
 import React from "react";
-import {StyledRow, Description, Styleda, Styledli} from "../styled/StyledComponents"
+import {StyledRow, Description, Styledli} from "../styled/StyledComponents"
 import {Row, Col} from "reactstrap"
 
 

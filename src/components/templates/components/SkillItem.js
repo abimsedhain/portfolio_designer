@@ -1,10 +1,6 @@
 import React from "react";
 import { Description, StyledBox } from "../styled/StyledComponents"
-import styled from "styled-components"
 import { Col } from "reactstrap"
-
-
-
 
 const SkillItem = (props) => {
 

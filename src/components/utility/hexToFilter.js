@@ -117,6 +117,7 @@ class Color {
     } else {
       const d = max - min;
       s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      // eslint-disable-next-line default-case
       switch (max) {
         case r:
           h = (g - b) / d + (g < b ? 6 : 0);

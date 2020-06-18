@@ -1,6 +1,6 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
-import { Label, Input, FormGroup, Button, ButtonGroup, InputGroup } from "reactstrap"
+import { Formik, Form, Field, FieldArray } from 'formik';
+import { Label, Input, FormGroup, ButtonGroup, InputGroup } from "reactstrap"
 import * as yup from 'yup';
 import { NextButton, BackButton, AddButton, DelButton, HrLine } from '../styled/StyledComponents';
 

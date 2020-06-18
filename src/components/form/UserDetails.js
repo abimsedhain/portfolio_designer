@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Container, Row, Col } from "reactstrap";
+import {Row, Col } from "reactstrap";
 import { Route, useHistory } from 'react-router-dom';
 import PersonalInfo from './PersonalInfo';
 import Projects from './Projects';
