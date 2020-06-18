@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
-import {Row, Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import { Route, useHistory } from 'react-router-dom';
 import PersonalInfo from './PersonalInfo';
 import Projects from './Projects';
@@ -12,13 +12,15 @@ import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
 
 import { FormContainer } from '../styled/StyledComponents';
-import {userContext} from "../utility/UserContext";
+import { userContext } from "../utility/UserContext";
 
 function UserDetails({ match }) {
 	const history = useHistory()
-	const [formData, setFormData] = useContext(userContext);	
+	const [formData, setFormData] = useContext(userContext);
 	// Creating an array for the components and react element array. then returning the selected array
-	const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit])
+	// const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit])
+
+	const FormComponents = useRef([PersonalInfo, Education, SocialMedia, Experience, Projects, Review, Submit])
 
 
 	return (
@@ -28,7 +30,7 @@ function UserDetails({ match }) {
 				<Row>
 					<Col className="mx-auto col-12 col-sm-8 col-md-6">
 						<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
-						<Route path={`${match.path}/:formId?`} render={(props) => {
+							<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
 								const id = parseInt(matchInner.params.formId) || 0
 								return React.createElement(FormComponents.current[id], { formData, setFormData, nextStep: () => history.push(`${match.url}/${id + 1}`), prevStep: () => history.goBack() })
@@ -37,9 +39,9 @@ function UserDetails({ match }) {
 					</Col>
 
 					<Col className="mx-auto col-12 col-sm-8 col-md-6">
-							<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+						<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
 							<Template />
-							</FormContainer>
+						</FormContainer>
 					</Col>
 				</Row>
 			</FormContainer>
