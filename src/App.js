@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import './App.css';
 
 // Importing Components
@@ -14,9 +14,13 @@ import { ThemeProvider } from "styled-components"
 
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import Template from './components/Template';
+
+
+// importing user context where all the data will be stored
+import { userContext, initialUser } from "./components/utility/UserContext"
 
 function App() {
+	const userState = useState(initialUser)
 	return (
 		<Router>
 			<div className="App">
@@ -24,8 +28,10 @@ function App() {
 					<Switch>
 						<Route path="/" exact component={Home} />
 						<Route path="/about" component={About} />
-						<Route path="/form" component={UserDetails} />
-						<Route path="/template" component={Template}/>
+						<userContext.Provider value={userState}>
+							<Route path="/form" component={UserDetails} />
+							<Route path="/template" component={Template} />
+						</userContext.Provider>
 					</Switch>
 				</ThemeProvider>
 			</div>

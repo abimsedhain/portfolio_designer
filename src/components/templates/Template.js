@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import Theme from "./styled/Theme";
 import styled, { ThemeProvider } from "styled-components";
 import { Container, Col, Row } from "reactstrap";
@@ -15,10 +15,9 @@ import twitter from '../../assets/twit.svg'
 import linkedin from '../../assets/linkedin.svg'
 import mail from '../../assets/email.svg'
 
-// import hexToFilter from "../utility/hexToFilter"
-
+import {userContext} from "../utility/UserContext"
 // For testing purpose only
-import tempUser from "./TempUser"
+// import user from "./TempUser"
 // For testing purpose only
 
 
@@ -32,17 +31,19 @@ const StyledImg = styled.img`
 
 function Template() {
 
+	const [user, setUser] = useContext(userContext);
+	// console.log(formData)
 	// console.log(hexToFilter("#000000"))
 	return (<ThemeProvider theme={Theme}>
 		<TemplateNavbar/>
 		<Container className="text-left py-5">
 			<Row>
 				<Col >
-					<Header Bold>hi, i'm <ColoredSpan Primary>{tempUser.fullName}</ColoredSpan>.</Header>
+					<Header Bold>hi, i'm <ColoredSpan Primary>{user.fullName}</ColoredSpan>.</Header>
 				</Col>
 			</Row>
 			<Row>
-				<Col ><Subheader White>{tempUser.bio.toLocaleLowerCase()}</Subheader>
+				<Col ><Subheader White>{user.bio.toLocaleLowerCase()}</Subheader>
 				</Col>
 			</Row>
 		</Container>
@@ -52,7 +53,7 @@ function Template() {
 					<Subheader Primary>education</Subheader>
 				</Col>
 			</Row>
-			{tempUser.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
+			{user.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
 		</Container>
 		<Container className="text-left pt-5" id="skills">
 			<Row className="pb-5 pt-3">
@@ -61,7 +62,7 @@ function Template() {
 				</Col>
 			</Row>
 			<Row>
-				{tempUser.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
+				{user.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
 			</Row>
 		</Container>
 		<Container className="text-left pt-5" id="experiences">
@@ -70,7 +71,7 @@ function Template() {
 					<Subheader Primary>work experiences</Subheader>
 				</Col>
 			</Row>
-			{tempUser.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
+			{user.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
 		</Container>
 		<Container className="text-left pt-5" id="projects">
 			<Row className="pb-5 pt-3">
@@ -78,7 +79,7 @@ function Template() {
 					<Subheader Primary>projects</Subheader>
 				</Col>
 			</Row>
-			{tempUser.projects.map((project, index) => (<ProjectItem key={index} project={project} />))}
+			{user.projects.map((project, index) => (<ProjectItem key={index} project={project} />))}
 		</Container>
 		<Container className="pt-5" id="contact">
 			<Row className="justify-content-center pt-5">
