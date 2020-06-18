@@ -57,10 +57,6 @@ const NavbarButton = styled(Button)`
 	 }
 `
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7875060a3c83919ede93ad86d7a47520e92bfd37
 const NextButton = styled(Button)`
 	border: 1px solid;
 	border-color: ${props => props.theme.NextButton};
@@ -85,7 +81,6 @@ const BackButton = styled(Button)`
 		color: ${props => props.theme.White};
 }
 `
-<<<<<<< HEAD
 
 const AddButton = styled(Button)`
 	border-radius: 50%;
@@ -117,8 +112,6 @@ const DelButton = styled(Button)`
 		color: ${props => props.theme.White};
 `
 
-=======
->>>>>>> 7875060a3c83919ede93ad86d7a47520e92bfd37
 const Logobar = styled(Container)`
 	background-color: ${props => props.theme.Primary};
 	color:white;
