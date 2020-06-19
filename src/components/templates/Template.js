@@ -31,7 +31,8 @@ const StyledImg = styled.img`
 
 function Template() {
 
-	const [formData, setFormData] = useContext(userContext);
+	const [formData] = useContext(userContext);
+
 	// console.log(formData)
 	// console.log(hexToFilter("#000000"))
 	return (<ThemeProvider theme={Theme}>
