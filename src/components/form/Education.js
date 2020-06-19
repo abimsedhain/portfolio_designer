@@ -47,7 +47,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep }) => {
 													})}>+</Button>
 											</ButtonGroup> */}
 
-											<Field type="text" name={`education.${index}.InstitutionName`} as={Input} placeholder="Enter Institution Name"></Field>
+											<Field type="text" name={`education.${index}.InstituteName`} as={Input} placeholder="Enter Institution Name"></Field>
 
 										</FormGroup>
 										<FormGroup>

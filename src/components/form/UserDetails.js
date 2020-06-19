@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import {Row, Col } from "reactstrap";
+import React, {  useRef, useContext } from 'react';
+import { Row, Col } from "reactstrap";
 import { Route, useHistory } from 'react-router-dom';
 import PersonalInfo from './PersonalInfo';
 import Projects from './Projects';
@@ -12,44 +12,15 @@ import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
 
 import { FormContainer } from '../styled/StyledComponents';
-
+import { userContext } from "../utility/UserContext";
 
 function UserDetails({ match }) {
 	const history = useHistory()
-	const [formData, setFormData] = useState({
-		fullName: '',
-		email: '',
-		bio: '',
-
-		github: '',
-		linkedin: '',
-
-		skills: [""],
-
-		projects: [{
-			Title: "",
-			Description: "",
-			SourceLink: "",
-			DemoLink: "",
-			Highlights: [""]
-		}],
-		experiences: [{
-			CompanyName: "",
-			Position: "",
-			StartDate: "",
-			EndDate: "",
-			Highlights: [""]
-		}],
-		education: [{
-			InstituteName: "",
-			StartDate: "",
-			EndDate: "",
-			Degree: ""
-		}],
-		errorMsg: ''
-	});
+	const [formData, setFormData] = useContext(userContext);
 	// Creating an array for the components and react element array. then returning the selected array
-	const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit])
+	// const FormComponents = useRef([PersonalInfo, SocialMedia, Projects, Experience, Education, Review, Submit])
+
+	const FormComponents = useRef([PersonalInfo, Education, SocialMedia, Experience, Projects, Review, Submit])
 
 
 	return (
