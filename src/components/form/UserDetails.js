@@ -12,7 +12,7 @@ import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
 
 import { FormContainer } from '../styled/StyledComponents';
-import { userContext } from "../utility/UserContext";
+import { userContext } from "../utility/userContext";
 
 function UserDetails({ match }) {
 	const history = useHistory()

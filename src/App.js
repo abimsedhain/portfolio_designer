@@ -17,7 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 // importing user context where all the data will be stored
-import { userContext, initialUser } from "./components/utility/UserContext"
+import { userContext, initialUser } from "./components/utility/userContext"
 
 function App() {
 	const userState = useState(initialUser)
