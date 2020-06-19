@@ -5,7 +5,7 @@ function AppNavbar() {
 
 	return (
 		<>
-		<Logobar Primary fluid={true}>
+		<Logobar fluid={true}>
 			<h1>Capos</h1>
 		</Logobar>
 		
