@@ -26,20 +26,20 @@ const PersonalInfo = ({ formData, setFormData, nextStep }) => {
 
 				<FormGroup>
 					{/* <Label>Full Name</Label> */}
-					<Field type="text" id="fullName" name="fullName" as={Input} placeholder="Enter Full Name"
+					<Field type="text" name="fullName" as={Input} placeholder="Enter Full Name"
 						></Field>
 					<ErrorMessage name='fullName' />
 				</FormGroup>
 
 				<FormGroup>
 					{/* <Label>Email</Label> */}
-					<Field type='email' id='email' name='email' as={Input} placeholder="Enter Email"/>
+					<Field type='email' name='email' as={Input} placeholder="Enter Email"/>
 					<ErrorMessage name='email' />
 				</FormGroup>
 
 				<FormGroup>
 					{/* <Label>Bio</Label> */}
-					<Field rows='5' id='bio' name='bio' as={() => (<Input type="textarea" rows="7" placeholder="Enter your Bio Here..."></Input>)} />
+					<Field rows='5' name='bio' as={() => (<Input type="textarea" rows="7" placeholder="Enter your Bio Here..."></Input>)} />
 					<ErrorMessage name='email' />
 				</FormGroup>
 				{/* 

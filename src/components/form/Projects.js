@@ -31,8 +31,6 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 				<Form>
 					<h1>Projects</h1>
 
-
-
 					<FieldArray name="projects" render={
 						arrayHelpers => (
 							<>
@@ -115,7 +113,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep }) => {
 										</FormGroup>
 
 										<ButtonGroup>
-												<BackButton type="button"
+												<BackButton type="button" disabled={true}
 													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }}>
 													Delete Project
 												</BackButton>

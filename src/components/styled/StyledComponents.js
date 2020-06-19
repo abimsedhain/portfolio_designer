@@ -58,6 +58,7 @@ const NavbarButton = styled(Button)`
 `
 
 const NextButton = styled(Button)`
+	font-size: ${props => props.theme.SmallButtonSize};
 	border: 1px solid;
 	border-color: ${props => props.theme.NextButton};
 	background-color: ${props => props.theme.White};
@@ -70,6 +71,7 @@ const NextButton = styled(Button)`
 
 `
 const BackButton = styled(Button)`
+	font-size: ${props => props.theme.SmallButtonSize};
 	border: 1px solid;
 	border-color: ${props => props.theme.BackButton}; 	
 	background-color: ${props => props.theme.White};
@@ -84,13 +86,14 @@ const BackButton = styled(Button)`
 
 const AddButton = styled(Button)`
 	border-radius: 50%;
-	background: rgba(51, 170, 51, .1);
+	background: rgba(255,255,255, .1);
 	border: 1px solid;
 	border-color: ${props => props.theme.NextButton};
 	font-size: 25px;
 	color:${props => props.theme.NextButton};
-	padding:1px 10px 1px 10px;
-	margin:0px 1px 0px 1px;
+	padding:1px 12px 1px 12px;
+	margin:0px 2px 0px 5px;
+	
 
 	&:hover{
 		background-color:${props => props.theme.NextButton};
@@ -99,12 +102,12 @@ const AddButton = styled(Button)`
 
 const DelButton = styled(Button)`
 	border-radius: 50%;
-	background: rgba(51, 170, 51, .1);
+	background: rgba(255,255,255, .1);
 	border: 1px solid;
 	border-color: ${props => props.theme.BackButton};
 	font-size: 25px;
 	color:${props => props.theme.BackButton};
-	padding:1px 10px 1px 10px;
+	padding:1px 12px 1px 12px;
 	margin:0px 1px 0px 1px;
 
 	&:hover{
@@ -128,6 +131,15 @@ const FormContainer = styled(Container)`
 	display: block;
 	height: 100%;
 	overflow: hidden;
+	scrollbar-width: none; 
+	-ms-overflow-style: none; 
+	
+	&::-webkit-scrollbar { 
+		display: none;}
+
+		padding-right:15px; 
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
 `
 
 const HrLine = styled.hr`

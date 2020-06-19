@@ -67,8 +67,8 @@ function UserDetails({ match }) {
 						</FormContainer>
 					</Col>
 
-					<Col className="mx-auto col-12 col-sm-8 col-md-6">
-							<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+					<Col className="mx-auto d-none d-sm-none d-md-none d-lg-block col-12 col-sm-8 col-md-6">
+							<FormContainer style={{ height: '85vh',borderLeft:'0px', overflow: 'scroll' }}>
 							<Template />
 							</FormContainer>
 					</Col>
