@@ -57,6 +57,18 @@ const NavbarButton = styled(Button)`
 	 }
 `
 
+const LoginBtn = styled(Button)`
+	border: 1px solid #fff;
+	background-color: ${props => props.theme.Primary};
+	color: white; 
+
+	&:hover{
+		background-color: ${props => props.theme.NextButton};
+		border: 1px solid #0275d8;
+	}
+
+`
+
 const NextButton = styled(Button)`
 	font-size: ${props => props.theme.SmallButtonSize};
 	border: 1px solid;
@@ -68,6 +80,7 @@ const NextButton = styled(Button)`
 	&:hover{
 		background-color:${props => props.theme.NextButton};
 		color: ${props => props.theme.White};
+	}
 
 `
 const BackButton = styled(Button)`
@@ -81,7 +94,8 @@ const BackButton = styled(Button)`
 	&:hover{
 		background-color: ${props => props.theme.BackButton};
 		color: ${props => props.theme.White};
-}
+	}
+
 `
 
 const AddButton = styled(Button)`
@@ -92,12 +106,13 @@ const AddButton = styled(Button)`
 	font-size: 25px;
 	color:${props => props.theme.NextButton};
 	padding:1px 12px 1px 12px;
-	margin:0px 2px 0px 5px;
+	margin:0px 2px 0px 2px;
 	
 
 	&:hover{
 		background-color:${props => props.theme.NextButton};
 		color: ${props => props.theme.White};
+	}
 `
 
 const DelButton = styled(Button)`
@@ -113,6 +128,7 @@ const DelButton = styled(Button)`
 	&:hover{
 		background-color:${props => props.theme.BackButton};
 		color: ${props => props.theme.White};
+	}
 `
 
 const Logobar = styled(Container)`
@@ -121,11 +137,15 @@ const Logobar = styled(Container)`
 	padding:5px;
 	padding-left: 0px;
 	left:50%;
-	transform: 'translateX(-50%)',
+	transform: 'translateX(-50%)';
 	top:'10px';
 	width:'100%';
 	margin-bottom: 15px;
 	font-family:${props => props.theme.Header};
+
+	&:link{
+		color:red;
+	}
 `
 const FormContainer = styled(Container)`
 	display: block;
@@ -143,8 +163,24 @@ const FormContainer = styled(Container)`
 `
 
 const HrLine = styled.hr`
-	border-width: 1px;
-	background:black;
+	border-width: 5px;
+	background:#5f5f5f;
+`
+const StyledInput = styled.input`
+	background: transparent;
+	border: none;	
+	border-bottom: 1px solid #000000;
+	padding:10px;
+	width:100%;
 `
 
-export { Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine }
+const FormTitle = styled.h1`
+	font-size: ${props => props.theme.SubheaderSize};
+	font-family:${props => props.theme.Header};
+`
+const FormLabel = styled.h1`
+	font-size: ${props => props.theme.SmallDescriptionSize};
+	font-family:${props => props.theme.Subheader};
+`
+
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel}
