@@ -6,7 +6,7 @@ import styled from "styled-components"
 import login from '../assets/login.svg';
 import signup from '../assets/signup.svg';
 import type from '../assets/typing.svg';
-import {Header, Description, Button} from "./styled/StyledComponents"
+import {Header, Description, LoginBtn} from "./styled/StyledComponents"
 
 
 function Instruction() {
@@ -78,9 +78,7 @@ function Instruction() {
 				<Row>
 					<Col>
 						<Link to='/form'>
-							<Button Secondary >Login&nbsp;
-             					   <span>/ Signup &#8594;  </span>
-							</Button>
+							<LoginBtn>Login / Signup &#8594;</LoginBtn>
 						</Link>
 					</Col>
 				</Row>

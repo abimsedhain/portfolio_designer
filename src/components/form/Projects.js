@@ -1,8 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field, FieldArray } from 'formik';
 import * as yup from 'yup';
-import { ButtonGroup, Label, Input, FormGroup, InputGroup } from 'reactstrap';
-import {NextButton, BackButton, AddButton, DelButton, HrLine} from '../styled/StyledComponents';
+import { ButtonGroup, FormGroup, InputGroup } from 'reactstrap';
+import {NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// pro1Title:yup.string().required('Title is required'),
@@ -29,7 +29,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 		>
 			{({ values }) => (
 				<Form>
-					<h1>Projects</h1>
+					<FormTitle>Projects</FormTitle>
 
 					<FieldArray name="projects" render={
 						arrayHelpers => (
@@ -37,7 +37,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 								{values.projects.map((project, index) => (
 									<div key={index}>
 										<FormGroup>
-											<Label>Project Title</Label>
+											<FormLabel>Project Title</FormLabel>
 											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }} >-</Button>
@@ -51,15 +51,15 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 													})}>+</Button>
 											</ButtonGroup> */}
 
-											<Field type="text" name={`projects.${index}.Title`} as={Input} placeholder="Enter Project Title"></Field>
+											<Field type="text" name={`projects.${index}.Title`} as={StyledInput} placeholder="Enter Project Title"></Field>
 
 										</FormGroup>
 										<FormGroup>
-											<Label>Project Description</Label>
-											<Field type="text" name={`projects.${index}.Description`} as={Input} placeholder="Enter Project Description"></Field>
+											<FormLabel>Project Description</FormLabel>
+											<Field type="text" name={`projects.${index}.Description`} as={StyledInput} placeholder="Enter Project Description"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>Highlights</Label>
+											<FormLabel>Highlights</FormLabel>
 
 											<FieldArray name={`projects.${index}.Highlights`} render={
 												arrayHelpers => (
@@ -67,7 +67,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 														{values.projects[index].Highlights.map((highlight, index2) => (
 															<FormGroup key={index2}>
 																<InputGroup>
-																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
+																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Highlight" />
 																	<ButtonGroup>
 																		{/* <Button
 																			type="button"
@@ -104,12 +104,12 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 
 										</FormGroup>
 										<FormGroup>
-											<Label>Source Link</Label>
-											<Field type="text" name={`projects.${index}.SourceLink`} as={Input} placeholder="Enter Project Source Link"></Field>
+											<FormLabel>Source Link</FormLabel>
+											<Field type="text" name={`projects.${index}.SourceLink`} as={StyledInput} placeholder="Enter Project Source Link"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>Demo Link</Label>
-											<Field type="text" name={`projects.${index}.DemoLink`} as={Input} placeholder="Enter Project Demo Link"></Field>
+											<FormLabel>Demo Link</FormLabel>
+											<Field type="text" name={`projects.${index}.DemoLink`} as={StyledInput} placeholder="Enter Project Demo Link"></Field>
 										</FormGroup>
 
 										<ButtonGroup>

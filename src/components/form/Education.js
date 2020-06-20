@@ -1,8 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field,FieldArray} from 'formik';
-import {Label, Input, FormGroup,ButtonGroup} from "reactstrap"
+import {FormGroup,ButtonGroup} from "reactstrap"
 import * as yup from 'yup';
-import {NextButton, BackButton, HrLine} from '../styled/StyledComponents';
+import {NextButton, BackButton, HrLine, StyledInput, FormTitle, FormLabel} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// eduTitle:yup.string().required('Title is required'),
@@ -24,9 +24,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 
 			{({ values }) => (
 				<Form>
-					<h1>Education</h1>
-
-
+					<FormTitle>Education</FormTitle>
 
 					<FieldArray name="education" render={
 						arrayHelpers => (
@@ -34,7 +32,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 								{values.education.map((edu, index) => (
 									<div key={index}>
 										<FormGroup>
-											<Label>Institution Name</Label>
+											<FormLabel>Institution Name</FormLabel>
 											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >-</Button>
@@ -47,20 +45,20 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 													})}>+</Button>
 											</ButtonGroup> */}
 
-											<Field type="text" name={`education.${index}.InstituteName`} as={Input} placeholder="Enter Institution Name"></Field>
+											<Field type="text" name={`education.${index}.InstituteName`} as={StyledInput} placeholder="Enter Institution Name"></Field>
 
 										</FormGroup>
 										<FormGroup>
-											<Label>Degree</Label>
-											<Field type="text" name={`education.${index}.Degree`} as={Input} placeholder="Enter Degree"></Field>
+											<FormLabel>Degree</FormLabel>
+											<Field type="text" name={`education.${index}.Degree`} as={StyledInput} placeholder="Enter Degree"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>Start Date</Label>
-											<Field type="text" name={`education.${index}.StartDate`} as={Input} placeholder="Enter Start Date"></Field>
+											<FormLabel>Start Date</FormLabel>
+											<Field type="text" name={`education.${index}.StartDate`} as={StyledInput} placeholder="Enter Start Date"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>End Date</Label>
-											<Field type="text" name={`education.${index}.EndDate`} as={Input} placeholder="Enter End Date"></Field>
+											<FormLabel>End Date</FormLabel>
+											<Field type="text" name={`education.${index}.EndDate`} as={StyledInput} placeholder="Enter End Date"></Field>
 										</FormGroup>
 
 										<ButtonGroup>

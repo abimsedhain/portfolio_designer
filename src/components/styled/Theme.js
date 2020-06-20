@@ -17,7 +17,7 @@ const Theme={
 	ButtonSize: "1.5rem",
 	SmallButtonSize: "1.2rem",
 
-	NextButton: "#24a0ed",
+	NextButton: "#0275d8",
 	BackButton: "#CF0820"
 }
 

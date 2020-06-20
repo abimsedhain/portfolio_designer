@@ -5,8 +5,8 @@ function AppNavbar() {
 
 	return (
 		<>
-		<Logobar fluid={true}>
-			<h1>Capos</h1>
+		<Logobar Primary fluid={true}>
+			<h1><a href="/" style={{color:'white', textDecoration:'none'}}>Capos</a></h1>
 		</Logobar>
 		
 		</>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field, FieldArray } from 'formik';
-import { Label, Input, FormGroup, ButtonGroup, InputGroup } from "reactstrap"
+import { FormGroup, ButtonGroup, InputGroup } from "reactstrap"
 import * as yup from 'yup';
-import { NextButton, BackButton, AddButton, DelButton, HrLine } from '../styled/StyledComponents';
+import { NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel  } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// exp1Title:yup.string().required('Title is required'),
@@ -27,7 +27,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 
 			{({ values }) => (
 				<Form>
-					<h1>Experience</h1>
+					<FormTitle>Experience</FormTitle>
 
 					<FieldArray name="experiences" render={
 						arrayHelpers => (
@@ -35,7 +35,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 								{values.experiences.map((experience, index) => (
 									<div key={index}>
 										<FormGroup>
-											<Label>Company Name</Label>
+											<FormLabel>Company Name</FormLabel>
 											{/* <ButtonGroup>
 												<Button className="bg-danger" type="button"
 													onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >-</Button>
@@ -49,23 +49,22 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 													})}>+</Button>
 											</ButtonGroup> */}
 
-											<Field type="text" name={`experiences.${index}.CompanyName`} as={Input} placeholder="Enter Company Name"></Field>
+											<Field type="text" name={`experiences.${index}.CompanyName`} as={StyledInput} placeholder="Enter Company Name"></Field>
 
 										</FormGroup>
 										<FormGroup>
-											<Label>Position</Label>
-											<Field type="text" name={`experiences.${index}.Position`} as={Input} placeholder="Enter Position"></Field>
+											<FormLabel>Position</FormLabel>
+											<Field type="text" name={`experiences.${index}.Position`} as={StyledInput} placeholder="Enter Position"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>Highlights</Label>
-
+											<FormLabel>Highlights</FormLabel>
 											<FieldArray name={`experiences.${index}.Highlights`} render={
 												arrayHelpers => (
 													<>
 														{values.experiences[index].Highlights.map((highlight, index2) => (
 															<FormGroup key={index2}>
 																<InputGroup>
-																	<Field name={`experiences.${index}.Highlights.${index2}`} type="input" as={Input} placeholder="Enter Highlight" />
+																	<Field name={`experiences.${index}.Highlights.${index2}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Highlight" />
 																	<ButtonGroup>
 																		{/* <Button
 																			type="button"
@@ -100,12 +99,12 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 
 										</FormGroup>
 										<FormGroup>
-											<Label>Start Date</Label>
-											<Field type="text" name={`experiences.${index}.StartDate`} as={Input} placeholder="Enter Start Date"></Field>
+											<FormLabel>Start Date</FormLabel>
+											<Field type="text" name={`experiences.${index}.StartDate`} as={StyledInput} placeholder="Enter Start Date"></Field>
 										</FormGroup>
 										<FormGroup>
-											<Label>End Date</Label>
-											<Field type="text" name={`experiences.${index}.EndDate`} as={Input} placeholder="Enter End Date"></Field>
+											<FormLabel>End Date</FormLabel>
+											<Field type="text" name={`experiences.${index}.EndDate`} as={StyledInput} placeholder="Enter End Date"></Field>
 										</FormGroup>
 
 										<ButtonGroup>

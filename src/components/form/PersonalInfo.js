@@ -2,8 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Input, FormGroup } from "reactstrap"
-import {NextButton} from '../styled/StyledComponents';
-
+import { NextButton, StyledInput, FormTitle, FormLabel } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// fullName: yup.string().required('Name is required').max(20),
@@ -11,7 +10,8 @@ const validationSchema = yup.object({
 	// bio: yup.string().required('Description should be less than 240 words').max(240)
 });
 
-const PersonalInfo = ({ formData, setFormData, nextStep, setUserState }) => {
+
+const PersonalInfo = ({ formData, setFormData, nextStep , setUserState}) => {
 	return (
 		<Formik
 			initialValues={formData}
@@ -22,24 +22,25 @@ const PersonalInfo = ({ formData, setFormData, nextStep, setUserState }) => {
 			}}
 			validationSchema={validationSchema}>
 			<Form>
-				<h1>Personal Information</h1>
+				<FormTitle>Personal Information</FormTitle>
 
 				<FormGroup>
-					{/* <Label>Full Name</Label> */}
-					<Field type="text" name="fullName" as={Input} placeholder="Enter Full Name"
-						></Field>
+					<FormLabel>Full Name</FormLabel>
+					<Field type="text" name="fullName" as={StyledInput} placeholder="Enter Full Name"
+					></Field>
 					<ErrorMessage name='fullName' />
 				</FormGroup>
 
 				<FormGroup>
-					{/* <Label>Email</Label> */}
-					<Field type='email' name='email' as={Input} placeholder="Enter Email"/>
+					<FormLabel>Email</FormLabel>
+					<Field type='email' name='email' as={StyledInput} placeholder="Enter Email" />
+					{/* <StyledInput type='email' name='email' as={StyledInput} placeholder="Enter Email" ></StyledInput> */}
 					<ErrorMessage name='email' />
 				</FormGroup>
 
 				<FormGroup>
-					{/* <Label>Bio</Label> */}
-					<Field rows='7' name='bio' as={Input} type="textarea"  placeholder="Enter your Bio Here..."/>
+					<FormLabel>Bio</FormLabel>
+					<Field rows='7' name='bio' as={Input} type="textarea" placeholder="Enter your Bio Here..." />
 					<ErrorMessage name='email' />
 				</FormGroup>
 				{/* 
