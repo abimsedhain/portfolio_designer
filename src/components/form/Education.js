@@ -10,14 +10,14 @@ const validationSchema = yup.object({
 });
 
 
-const Education = ({ formData, setFormData, nextStep, prevStep }) => {
+const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) => {
 	return (
 		<Formik
 			initialValues={formData}
 			onSubmit={values => {
 				setFormData(values);
+				setUserState(values)
 				nextStep();
-				console.log(values);
 			}}
 			validationSchema={validationSchema}
 		>

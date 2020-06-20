@@ -1,9 +1,5 @@
-import {createContext} from 'react';
-
-const userStateContext = createContext();
-const userDispatchContext = createContext();
-const initialUser = {
-		fullName: 'asim sedhain',
+const initialFormData = {
+		fullName: '',
 		email: '',
 		bio: '',
 
@@ -35,4 +31,5 @@ const initialUser = {
 		}],
 		errorMsg: ''
 	};
-export {userStateContext, userDispatchContext, initialUser };
+
+export default initialFormData

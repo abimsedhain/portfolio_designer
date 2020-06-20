@@ -20,7 +20,6 @@ const Review = ({ formData, setFormData, nextStep, prevStep }) => {
 			onSubmit={values => {
 				// nextStep();
 
-				console.log(values);
 
 				// going to templates route
 				history.push("../template")

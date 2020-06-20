@@ -11,14 +11,14 @@ const validationSchema = yup.object({
 	// bio: yup.string().required('Description should be less than 240 words').max(240)
 });
 
-const PersonalInfo = ({ formData, setFormData, nextStep }) => {
+const PersonalInfo = ({ formData, setFormData, nextStep, setUserState }) => {
 	return (
 		<Formik
 			initialValues={formData}
 			onSubmit={values => {
 				setFormData(values);
+				setUserState(values)
 				nextStep();
-				console.log(values);
 			}}
 			validationSchema={validationSchema}>
 			<Form>
