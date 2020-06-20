@@ -11,14 +11,14 @@ const validationSchema = yup.object({
 });
 
 
-const SocialMedia = ({ formData, setFormData, nextStep, prevStep }) => {
+const SocialMedia = ({ formData, setFormData, nextStep, prevStep, setUserState }) => {
 	return (
 		<Formik
 			initialValues={formData}
 			onSubmit={values => {
 				setFormData(values);
+				setUserState(values)
 				nextStep();
-				console.log(values);
 			}}
 			validationSchema={validationSchema}
 		>

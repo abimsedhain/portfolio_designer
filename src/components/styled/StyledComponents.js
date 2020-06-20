@@ -184,3 +184,4 @@ const FormLabel = styled.h1`
 `
 
 export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel}
+

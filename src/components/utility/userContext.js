@@ -1,8 +1,9 @@
 import {createContext} from 'react';
 
-const userContext = createContext();
+const userStateContext = createContext();
+const userDispatchContext = createContext();
 const initialUser = {
-		fullName: '',
+		fullName: 'asim sedhain',
 		email: '',
 		bio: '',
 
@@ -34,4 +35,4 @@ const initialUser = {
 		}],
 		errorMsg: ''
 	};
-export {userContext, initialUser };
+export {userStateContext, userDispatchContext, initialUser };

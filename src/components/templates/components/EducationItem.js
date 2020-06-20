@@ -1,6 +1,7 @@
 import React from "react";
 import {StyledRow, Description, StyledBadge} from "../styled/StyledComponents"
 import {Row, Col} from "reactstrap"
+import { isEmpty } from "../../utility/reducer";
 
 const EducationItem = (props) => {
 	return (<div className="pb-4">
@@ -9,7 +10,7 @@ const EducationItem = (props) => {
 				<Description Bold>{props.education.Degree}</Description>
 			</Col>
 			<Col className="text-right">
-				<Description>{`${props.education.StartDate} - ${props.education.EndDate}`}</Description>
+<Description>{!isEmpty(props.education.StartDate) && `${ props.education.StartDate}`}{!isEmpty(props.education.StartDate) && !isEmpty(props.education.EndDate) &&` - `}{!isEmpty(props.education.EndDate)&& `${props.education.EndDate}`}</Description>
 			</Col>
 		</StyledRow>
 		<StyledRow>
@@ -19,11 +20,11 @@ const EducationItem = (props) => {
 				</Description>
 			</Col>
 		</StyledRow>
-		<Row className="py-2">
+		{!isEmpty(props.education.Courses) && <Row className="py-2">
 			<Col>
 				{props.education.Courses.map((course, index) => (<StyledBadge key={index}>{course}</StyledBadge>))}
 			</Col>
-		</Row>
+		</Row>}
 	</div>)
 }
 
