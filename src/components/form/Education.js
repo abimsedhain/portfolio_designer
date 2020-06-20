@@ -70,7 +70,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 													</BackButton>
 
 													<NextButton type="button"
-													onClick={() => arrayHelpers.insert(index, {
+													onClick={() => arrayHelpers.insert(index+1, {
 														InstituteName: "",
 														StartDate: "",
 														EndDate: "",
