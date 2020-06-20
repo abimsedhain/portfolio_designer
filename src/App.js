@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import './App.css';
 
 // Importing Components
@@ -14,11 +14,12 @@ import { ThemeProvider } from "styled-components"
 
 //React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// importing tempuser and reducer
 import tempUser from './components/utility/tempUser';
 import reducer from "./components/utility/reducer"
 
 // importing user context where all the data will be stored
-// import { userContext, initialUser } from "./components/utility/userContext"
 import { userStateContext, userDispatchContext } from "./components/utility/userContext"
 
 function App() {
