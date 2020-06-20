@@ -11,7 +11,9 @@ const reducer = (state, action) => {
 
 
 const isEmpty = (value) => {
-	if (typeof (value) === "string") {
+	if(value === null || value === undefined){
+		return true
+	} else if (typeof (value) === "string") {
 		return value.trim() === ""
 	} else {
 		return Object.values(value).reduce((acc, value) => acc && isEmpty(value), true)
