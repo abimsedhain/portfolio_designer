@@ -59,7 +59,7 @@ const SocialMedia = ({ formData, setFormData, nextStep, prevStep, setUserState }
                       											</Button> */}
 
 																	<AddButton type="button"
-															onClick={() => arrayHelpers.insert(index, '')}>
+															onClick={() => arrayHelpers.insert(index+1, '')}>
 																	&#43;
 																  </AddButton>
 

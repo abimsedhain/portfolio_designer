@@ -78,7 +78,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 																		>+
                       											</Button> */}
 																		<AddButton type="button"
-																			onClick={() => arrayHelpers.insert(index2, '')} >
+																			onClick={() => arrayHelpers.insert(index2+1, '')} >
 																			&#43;
 																  </AddButton>
 
@@ -115,7 +115,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 													</BackButton>
 
 											<NextButton type="button"
-												onClick={() => arrayHelpers.insert(index, {
+												onClick={() => arrayHelpers.insert(index+1, {
 													CompanyName: "",
 													Position: "",
 													StartDate: "",
