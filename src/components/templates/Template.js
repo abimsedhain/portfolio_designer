@@ -29,14 +29,8 @@ const StyledImg = styled.img`
 
 function Template() {
 
-	// Current problem: the data gets dispatched before it is updated
-	// const [formData] = useContext(userContext);
 	const userData = useContext(userStateContext)
-	console.log(userData)
-	// const userData = user
 
-	// console.log(formData)
-	// console.log(hexToFilter("#000000"))
 	return (<ThemeProvider theme={Theme}>
 		<TemplateNavbar />
 		<Container className="text-left py-5">
