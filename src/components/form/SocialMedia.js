@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as yup from 'yup';
 import { FormGroup, ButtonGroup, InputGroup } from 'reactstrap';
-import { NextButton, BackButton, AddButton, DelButton, StyledInput, FormTitle, FormLabel } from '../styled/StyledComponents';
+import { NextButton, BackButton, AddButton, DelButton, StyledInput, FormTitle, FormLabel, HrLine } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// github:yup.string().required('Github Link is required'),
@@ -80,6 +80,7 @@ const SocialMedia = ({ formData, setFormData, nextStep, prevStep, setUserState }
 					}>
 
 					</FieldArray>
+					<HrLine/>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep} type="button"> BACK </BackButton>

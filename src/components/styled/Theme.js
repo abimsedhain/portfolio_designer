@@ -16,7 +16,7 @@ const Theme={
 	LargeButtonSize: "2rem",
 	ButtonSize: "1.5rem",
 	SmallButtonSize: "1.2rem",
-
+	FormLabelWeight: "400",
 	NextButton: "#0275d8",
 	BackButton: "#CF0820"
 }

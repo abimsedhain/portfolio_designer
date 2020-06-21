@@ -20,11 +20,13 @@ const Subheader = styled.h2`
 	font-size: ${props => props.theme.SubheaderSize};
 	color: ${props => props.White ? props.theme.White : props.theme.Dark}
 `
+
 const Description = styled.p`
 	font-family: ${props => props.theme.Description};
 	font-size: ${props => props.Small ? props.theme.SmallDescriptionSize : props.theme.DescriptionSize};
 	color: ${props => props.White ? props.theme.White : props.theme.Dark}
 `
+
 const Button = styled.button`
 	font-size: ${props => props.theme.ButtonSize};
 	font-size: ${props => props.Small && props.theme.SmallButtonSize};
@@ -39,7 +41,7 @@ const Button = styled.button`
 	background-color: ${props => props.Secondary && props.theme.Secondary};
 	outline: none;
 	&:focus{
-		outline: none;
+		outline-color: ${props=> props.theme.Primary} ;
 	}	
 	&:hover{
 		background-color:${props => props.theme.Special};
@@ -83,6 +85,7 @@ const NextButton = styled(Button)`
 	}
 
 `
+
 const BackButton = styled(Button)`
 	font-size: ${props => props.theme.SmallButtonSize};
 	border: 1px solid;
@@ -147,6 +150,7 @@ const Logobar = styled(Container)`
 		color:red;
 	}
 `
+
 const FormContainer = styled(Container)`
 	display: block;
 	height: 100%;
@@ -158,29 +162,58 @@ const FormContainer = styled(Container)`
 		display: none;}
 
 		padding-right:15px; 
-		border-right: 1px solid #ccc;
-		border-left: 1px solid #ccc;
+		// border-right: 1px solid #ccc;
+		// border-left: 1px solid #ccc;
 `
 
 const HrLine = styled.hr`
-	border-width: 5px;
-	background:#5f5f5f;
+	margin: 5em 0em 0.5em;
+	border-width: 4px;
+	background: ${props=>props.theme.Primary};
 `
+
 const StyledInput = styled.input`
 	background: transparent;
 	border: none;	
 	border-bottom: 1px solid #000000;
 	padding:10px;
 	width:100%;
+	&:focus{
+		outline: none;
+		border-bottom: ${props=> `2px solid ${props.theme.Primary}`};
+		margin-bottom: -1px;
+	}
+`
+
+const StyledTextarea = styled.textarea`
+	background: transparent;
+	border: none;	
+	border-bottom: 1px solid #000000;
+	padding:10px;
+	width:100%;
+	&:focus{
+		outline: none;
+		border-bottom: ${props=> `2px solid ${props.theme.Primary}`};
+		margin-bottom: -1px;
+	}
 `
 
 const FormTitle = styled.h1`
 	font-size: ${props => props.theme.SubheaderSize};
 	font-family:${props => props.theme.Header};
-`
-const FormLabel = styled.h1`
-	font-size: ${props => props.theme.SmallDescriptionSize};
-	font-family:${props => props.theme.Subheader};
+	color: ${props => props.White ? props.theme.White : props.theme.Dark};
+	margin: 0.5em 0em 1em;
+	// float: inline-end;
+	// display: inline-block;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel}
+const FormLabel = styled.h1`
+	font-size: ${props => props.theme.SmallDescriptionSize};
+	font-family:${props => props.theme.Description};
+	font-weight: ${props=>props.theme.FormLabelWeight};
+	color: ${props => props.White ? props.theme.White : props.theme.Dark};
+	float: left;
+	padding: 0px 10px;
+`
+
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea }

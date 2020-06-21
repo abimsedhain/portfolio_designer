@@ -1,8 +1,8 @@
 import React from 'react'
-import { Formik, Form, Field,FieldArray} from 'formik';
-import {FormGroup,ButtonGroup, InputGroup} from "reactstrap"
+import { Formik, Form, Field, FieldArray } from 'formik';
+import { FormGroup, ButtonGroup, InputGroup } from "reactstrap"
 import * as yup from 'yup';
-import {NextButton, BackButton, HrLine, StyledInput, FormTitle, FormLabel, AddButton, DelButton} from '../styled/StyledComponents';
+import { NextButton, BackButton, HrLine, StyledInput, FormTitle, FormLabel, AddButton, DelButton } from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// eduTitle:yup.string().required('Title is required'),
@@ -26,7 +26,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 				<Form>
 					<FormTitle>Education</FormTitle>
 
-					<FieldArray name="education" render={
+					<FieldArray name="education"  render={
 						arrayHelpers => (
 							<>
 								{values.education.map((edu, index) => (
@@ -68,10 +68,10 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 														{values.education[index].Courses.map((highlight, index2) => (
 															<FormGroup key={index2}>
 																<InputGroup>
-																	<Field name={`education.${index}.Courses.${index2}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Courses" />
+																	<Field name={`education.${index}.Courses.${index2}`} type="input" as={StyledInput} style={{ width: '86%' }} placeholder="Enter Courses" />
 																	<ButtonGroup>
 																		<AddButton type="button"
-																			onClick={() => arrayHelpers.insert(index2+1, '')} >
+																			onClick={() => arrayHelpers.insert(index2 + 1, '')} >
 																			&#43;
 																  </AddButton>
 
@@ -93,21 +93,21 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 										</FormGroup>
 
 										<ButtonGroup>
-													<BackButton type="button"
-													onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >
-													Delete Education
+											<BackButton type="button"
+												onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >
+												Delete Education
 													</BackButton>
 
-													<NextButton type="button"
-													onClick={() => arrayHelpers.insert(index+1, {
-														InstituteName: "",
-														StartDate: "",
-														EndDate: "",
-														Degree: ""
-													})}>
-														Add Education
+											<NextButton type="button"
+												onClick={() => arrayHelpers.insert(index + 1, {
+													InstituteName: "",
+													StartDate: "",
+													EndDate: "",
+													Degree: ""
+												})}>
+												Add Education
 													</NextButton>
-											</ButtonGroup>
+										</ButtonGroup>
 									</div>
 
 								))}
@@ -117,7 +117,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 
 					}>
 					</FieldArray>
-<HrLine/>
+					<HrLine />
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
 						<BackButton onClick={prevStep} type="button"> BACK </BackButton>
