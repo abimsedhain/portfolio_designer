@@ -68,9 +68,9 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 														{values.education[index].Courses.map((highlight, index2) => (
 															<FormGroup key={index2}>
 																<InputGroup>
-																	<Field name={`education.${index}.Courses.${index2}`} type="input" as={StyledInput} style={{ width: '86%' }} placeholder="Enter Courses" />
+																	<Field name={`education.${index}.Courses.${index2}`} type="input" as={StyledInput} placeholder="Enter Courses" className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"/>
 																	<ButtonGroup>
-																		<AddButton type="button"
+																		<AddButton type="button" 
 																			onClick={() => arrayHelpers.insert(index2 + 1, '')} >
 																			&#43;
 																  </AddButton>

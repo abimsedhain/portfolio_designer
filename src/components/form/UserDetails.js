@@ -35,7 +35,7 @@ function UserDetails({ match }) {
 			<FormContainer fluid={true}>
 				<Row>
 					<Col className="mx-auto col-12 col-sm-12 col-md-6">
-						<FormContainer style={{ height: '85vh', overflow: 'scroll' }}>
+						<FormContainer borderRight>
 							<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
 								const id = parseInt(matchInner.params.formId) || 0
@@ -45,7 +45,7 @@ function UserDetails({ match }) {
 					</Col>
 
 					<Col className="mx-auto d-none d-sm-none d-md-block d-lg-block col-12 col-sm-8 col-md-6">
-						<FormContainer style={{ height: '85vh', borderLeft: '0px', overflow: 'scroll' }}>
+						<FormContainer>
 							<Template />
 						</FormContainer>
 					</Col>

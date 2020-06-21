@@ -67,7 +67,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 														{values.projects[index].Highlights.map((highlight, index2) => (
 															<FormGroup key={index2}>
 																<InputGroup>
-																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Highlight" />
+																	<Field name={`projects.${index}.Highlights.${index2}`} type="input" as={StyledInput} className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10" placeholder="Enter Highlight" />
 																	<ButtonGroup>
 																		{/* <Button
 																			type="button"

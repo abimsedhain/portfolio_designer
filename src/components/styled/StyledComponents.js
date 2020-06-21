@@ -41,7 +41,8 @@ const Button = styled.button`
 	background-color: ${props => props.Secondary && props.theme.Secondary};
 	outline: none;
 	&:focus{
-		outline-color: ${props=> props.theme.Primary} ;
+		outline: none;
+		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.Special};
 	}	
 	&:hover{
 		background-color:${props => props.theme.Special};
@@ -65,7 +66,7 @@ const LoginBtn = styled(Button)`
 	color: white; 
 
 	&:hover{
-		background-color: ${props => props.theme.NextButton};
+		background-color: ${props => props.theme.Special};
 		border: 1px solid #0275d8;
 	}
 
@@ -83,7 +84,9 @@ const NextButton = styled(Button)`
 		background-color:${props => props.theme.NextButton};
 		color: ${props => props.theme.White};
 	}
-
+	&:focus{
+		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.NextButton};
+	}
 `
 
 const BackButton = styled(Button)`
@@ -98,7 +101,9 @@ const BackButton = styled(Button)`
 		background-color: ${props => props.theme.BackButton};
 		color: ${props => props.theme.White};
 	}
-
+	&:focus{
+		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.BackButton};
+	}
 `
 
 const AddButton = styled(Button)`
@@ -116,6 +121,9 @@ const AddButton = styled(Button)`
 		background-color:${props => props.theme.NextButton};
 		color: ${props => props.theme.White};
 	}
+&:focus{
+		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.NextButton};
+	}
 `
 
 const DelButton = styled(Button)`
@@ -132,7 +140,9 @@ const DelButton = styled(Button)`
 		background-color:${props => props.theme.BackButton};
 		color: ${props => props.theme.White};
 	}
-`
+&:focus{
+		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.BackButton};
+	}`
 
 const Logobar = styled(Container)`
 	background-color: ${props => props.theme.Primary};
@@ -156,14 +166,20 @@ const FormContainer = styled(Container)`
 	height: 100%;
 	overflow: hidden;
 	scrollbar-width: none; 
-	-ms-overflow-style: none; 
+	-ms-overflow-style: none;
+	height: 85vh;
+	overflow: scroll;
 	
 	&::-webkit-scrollbar { 
 		display: none;}
 
 		padding-right:15px; 
-		// border-right: 1px solid #ccc;
-		// border-left: 1px solid #ccc;
+		@media (min-width: 768px){
+
+		border-right: ${props=> props.borderRight? "1px": "0px"} solid #ccc;
+		border-left: ${props=> props.borderLeft? "1px": "0px"} solid #ccc;
+		}
+	
 `
 
 const HrLine = styled.hr`

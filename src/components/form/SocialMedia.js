@@ -44,7 +44,7 @@ const SocialMedia = ({ formData, setFormData, nextStep, prevStep, setUserState }
 									values.skills.map((skill, index) => (
 										<FormGroup key={index}>
 											<InputGroup>
-												<Field name={`skills.${index}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Skill" />
+												<Field name={`skills.${index}`} type="input" as={StyledInput} className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10" placeholder="Enter Skill" />
 												<ButtonGroup>
 													{/* <Button
 															type="button"
