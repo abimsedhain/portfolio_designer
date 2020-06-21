@@ -1,8 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field,FieldArray} from 'formik';
-import {FormGroup,ButtonGroup} from "reactstrap"
+import {FormGroup,ButtonGroup, InputGroup} from "reactstrap"
 import * as yup from 'yup';
-import {NextButton, BackButton, HrLine, StyledInput, FormTitle, FormLabel} from '../styled/StyledComponents';
+import {NextButton, BackButton, HrLine, StyledInput, FormTitle, FormLabel, AddButton, DelButton} from '../styled/StyledComponents';
 
 const validationSchema = yup.object({
 	// eduTitle:yup.string().required('Title is required'),
@@ -59,6 +59,37 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 										<FormGroup>
 											<FormLabel>End Date</FormLabel>
 											<Field type="text" name={`education.${index}.EndDate`} as={StyledInput} placeholder="Enter End Date"></Field>
+										</FormGroup>
+										<FormGroup>
+											<FormLabel>Courses</FormLabel>
+											<FieldArray name={`education.${index}.Courses`} render={
+												arrayHelpers => (
+													<>
+														{values.education[index].Courses.map((highlight, index2) => (
+															<FormGroup key={index2}>
+																<InputGroup>
+																	<Field name={`education.${index}.Courses.${index2}`} type="input" as={StyledInput} style={{width:'86%'}} placeholder="Enter Courses" />
+																	<ButtonGroup>
+																		<AddButton type="button"
+																			onClick={() => arrayHelpers.insert(index2+1, '')} >
+																			&#43;
+																  </AddButton>
+
+																		<DelButton type="button"
+																			onClick={() => { values.education[index].Courses.length > 1 && arrayHelpers.remove(index2) }}>
+																			&#8722;
+																  </DelButton>
+																	</ButtonGroup>
+																</InputGroup>
+															</FormGroup>
+														))}
+													</>
+												)
+
+											}>
+
+											</FieldArray>
+
 										</FormGroup>
 
 										<ButtonGroup>
