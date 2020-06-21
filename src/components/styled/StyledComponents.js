@@ -217,9 +217,8 @@ const FormTitle = styled.h1`
 	font-size: ${props => props.theme.SubheaderSize};
 	font-family:${props => props.theme.Header};
 	color: ${props => props.White ? props.theme.White : props.theme.Dark};
+	font-weight: ${props => props.theme.HeaderWeight};
 	margin: 0.5em 0em 1em;
-	// float: inline-end;
-	// display: inline-block;
 `
 
 const FormLabel = styled.h1`
