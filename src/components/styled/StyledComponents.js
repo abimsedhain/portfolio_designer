@@ -67,7 +67,6 @@ const LoginBtn = styled(Button)`
 
 	&:hover{
 		background-color: ${props => props.theme.Special};
-		border: 1px solid #0275d8;
 	}
 
 `
