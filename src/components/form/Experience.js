@@ -108,7 +108,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 										</FormGroup>
 
 										<ButtonGroup>
-
+											
 											<BackButton type="button"
 												onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >
 												Delete Experience
