@@ -107,7 +107,7 @@ const Experience = ({ formData, setFormData, nextStep, prevStep, setUserState })
 											<Field type="text" name={`experiences.${index}.EndDate`} as={StyledInput} placeholder="Enter End Date"></Field>
 										</FormGroup>
 
-										<ButtonGroup>
+										<ButtonGroup className="d-flex justify-content-center">
 
 											<BackButton type="button"
 												onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >

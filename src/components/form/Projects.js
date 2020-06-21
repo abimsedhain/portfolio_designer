@@ -112,7 +112,7 @@ const Projects = ({ formData, setFormData, nextStep, prevStep,  setUserState}) =
 											<Field type="text" name={`projects.${index}.DemoLink`} as={StyledInput} placeholder="Enter Project Demo Link"></Field>
 										</FormGroup>
 
-										<ButtonGroup>
+										<ButtonGroup className="d-flex justify-content-center">
 												<BackButton type="button" disabled={true}
 													onClick={() => { values.projects.length > 1 && arrayHelpers.remove(index) }}>
 													Delete Project

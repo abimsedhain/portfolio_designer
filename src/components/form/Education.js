@@ -92,7 +92,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 
 										</FormGroup>
 
-										<ButtonGroup>
+										<ButtonGroup className="d-flex justify-content-center">
 											<BackButton type="button"
 												onClick={() => { values.education.length > 1 && arrayHelpers.remove(index) }} >
 												Delete Education
