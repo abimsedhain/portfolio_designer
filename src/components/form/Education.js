@@ -120,7 +120,7 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 <HrLine/>
 					<ButtonGroup>
 						{/* <Button onClick={prevStep}>BACK</Button> */}
-						<BackButton onClick={prevStep}> BACK </BackButton>
+						<BackButton onClick={prevStep} type="button"> BACK </BackButton>
 						{/* <Button type="submit">NEXT</Button> */}
 						<NextButton type="submit">NEXT</NextButton>
 					</ButtonGroup>
