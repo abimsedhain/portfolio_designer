@@ -103,7 +103,8 @@ const Education = ({ formData, setFormData, nextStep, prevStep, setUserState }) 
 													InstituteName: "",
 													StartDate: "",
 													EndDate: "",
-													Degree: ""
+													Degree: "",
+													Courses:[""]
 												})}>
 												Add Education
 													</NextButton>
