@@ -16,7 +16,7 @@ import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // importing tempuser and reducer
-import tempUser from './components/utility/tempUser';
+import initialState from './components/utility/initialState';
 import reducer from "./components/utility/reducer"
 
 // importing user context where all the data will be stored
@@ -25,7 +25,7 @@ import Authenticate from './components/Authentication/Authenticate';
 
 function App() {
 	const userState = useState("asim")
-	const [state, dispatch] = useReducer(reducer, tempUser)
+	const [state, dispatch] = useReducer(reducer, initialState)
 	return (
 		<Router>
 			<div className="App">

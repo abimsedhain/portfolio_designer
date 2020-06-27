@@ -3,7 +3,7 @@ import types from "./types"
 const reducer = (state, action) => {
 	switch (action.type) {
 		case types.PREVIEW:
-			return isEmpty(action.payload) ? state : removeEmptyFields(action.payload)
+			return isEmpty(action.payload) ? state : {...state, templateState: removeEmptyFields(action.payload)}
 		default:
 			return state
 	}
