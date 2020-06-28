@@ -1,10 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import useQuery from '../utility/userQuery';
 import { useLocation, useHistory } from 'react-router-dom';
-import {userContext} from "../utility/userContext"
+import { userDispatchContext } from '../utility/userContext';
+import types from '../utility/types';
 
-const GoogleAuthentication = (match) => {
-	const [user, setUser] = useContext(userContext)
+const GoogleAuthentication = () => {
+	const dispatch = useContext(userDispatchContext)
 	const query = useQuery(useLocation())
 	const history = useHistory()
 	useEffect(() => {
@@ -13,13 +14,11 @@ const GoogleAuthentication = (match) => {
 				credentials: "include",
 				headers: {
 					'Content-Type': 'application/json'
-					// 'Content-Type': 'application/x-www-form-urlencoded',
 				},
 				body: JSON.stringify({ code: query.get("code") })
 			}).then(async data =>{
 				data = await data.json()
-				console.log(data)
-				setUser(data.awt)
+				dispatch({type: types.SET_USER, payload: data.awt})
 				history.push("/")
 			})
 

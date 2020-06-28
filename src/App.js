@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import './App.css';
 
 // Importing Components
@@ -20,28 +20,36 @@ import initialState from './components/utility/initialState';
 import reducer from "./components/utility/reducer"
 
 // importing user context where all the data will be stored
-import { userContext, userStateContext, userDispatchContext } from "./components/utility/userContext"
+import { userStateContext, userDispatchContext } from "./components/utility/userContext"
 import Authenticate from './components/Authentication/Authenticate';
+import types from './components/utility/types';
+
 
 function App() {
-	const userState = useState("asim")
 	const [state, dispatch] = useReducer(reducer, initialState)
+	useEffect(() => {
+		fetch("http://localhost:5000/user/refresh_token", {
+			method: "GET",
+			credentials: "include",
+		}).then(async data => {
+			data = await data.json()
+			dispatch({ type: types.SET_USER, payload: data.awt })
+		})
+	}, [])
 	return (
 		<Router>
 			<div className="App">
 				<ThemeProvider theme={Theme}>
 					<Switch>
-						<userContext.Provider value={userState}>
-							<Route path="/" exact component={Home} />
-							<Route path="/about" component={About} />
-							<Route path="/authenticate" component={Authenticate} />
-							<userStateContext.Provider value={state}>
-								<userDispatchContext.Provider value={dispatch}>
-									<Route path="/form" component={UserDetails} />
-									<Route path="/template" component={Template} />
-								</userDispatchContext.Provider>
-							</userStateContext.Provider>
-						</userContext.Provider>
+						<userStateContext.Provider value={state}>
+							<userDispatchContext.Provider value={dispatch}>
+								<Route path="/" exact component={Home} />
+								<Route path="/about" component={About} />
+								<Route path="/authenticate" component={Authenticate} />
+								<Route path="/form" component={UserDetails} />
+								<Route path="/template" component={Template} />
+							</userDispatchContext.Provider>
+						</userStateContext.Provider>
 					</Switch>
 				</ThemeProvider>
 			</div>

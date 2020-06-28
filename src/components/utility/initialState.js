@@ -1,13 +1,10 @@
 import initialTemplateState from "./initialTemplateState";
+import initialUserState from "./initialUserState";
 
 
 const initialState = {
 	templateState: initialTemplateState,
-	userState: {
-		token: "",
-		name: "",
-		email: ""
-	}
+	userState: initialUserState
 }
 
 
