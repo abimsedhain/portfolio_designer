@@ -17,7 +17,7 @@ import mail from '../../assets/email.svg'
 
 // import { userContext } from "../utility/userContext"
 
-import { userStateContext } from "../utility/userContext";
+import { userStateContext } from "../../state management/userContext";
 
 const linkIcons = [fb, github, twitter, linkedin, mail]
 

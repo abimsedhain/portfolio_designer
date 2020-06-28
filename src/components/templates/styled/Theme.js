@@ -1,4 +1,4 @@
-import hexToFilter from "../../utility/hexToFilter"
+import hexToFilter from "../../../utility/hexToFilter"
 
 
 const Theme = {

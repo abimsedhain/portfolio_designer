@@ -15,8 +15,8 @@ import { FormContainer } from '../styled/StyledComponents';
 
 
 import initialFormData from './initialFormState';
-import { userDispatchContext } from '../utility/userContext';
-import types from "../utility/types"
+import { userDispatchContext } from '../../state management/userContext';
+import types from "../../state management/types"
 
 
 function UserDetails({ match }) {

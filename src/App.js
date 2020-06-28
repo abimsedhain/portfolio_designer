@@ -16,13 +16,13 @@ import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // importing tempuser and reducer
-import initialState from './components/utility/initialState';
-import reducer from "./components/utility/reducer"
+import initialState from './state/initialState';
+import reducer from "./state management/reducer"
 
 // importing user context where all the data will be stored
-import { userStateContext, userDispatchContext } from "./components/utility/userContext"
+import { userStateContext, userDispatchContext } from "./state management/userContext"
 import Authenticate from './components/Authentication/Authenticate';
-import types from './components/utility/types';
+import types from './state management/types';
 
 
 function App() {

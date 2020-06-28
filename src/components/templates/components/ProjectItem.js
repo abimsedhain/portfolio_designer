@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledRow, Description, Styleda, Styledli } from "../styled/StyledComponents"
 import { Row, Col } from "reactstrap"
-import { isEmpty } from "../../utility/reducer";
+import { isEmpty } from "../../../state management/reducer";
 
 
 const ProjectItem = (props) => {

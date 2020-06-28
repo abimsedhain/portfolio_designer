@@ -11,8 +11,8 @@ import {
 	Container
 } from 'reactstrap';
 import { Logo, NavbarButton } from "./styled/StyledComponents"
-import { userStateContext, userDispatchContext } from './utility/userContext';
-import types from './utility/types';
+import { userStateContext, userDispatchContext } from '../state management/userContext';
+import types from '../state management/types';
 
 function AppNavbar() {
 

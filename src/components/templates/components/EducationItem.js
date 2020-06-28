@@ -1,7 +1,7 @@
 import React from "react";
 import {StyledRow, Description, StyledBadge} from "../styled/StyledComponents"
 import {Row, Col} from "reactstrap"
-import { isEmpty } from "../../utility/reducer";
+import { isEmpty } from "../../../state management/reducer";
 
 const EducationItem = (props) => {
 	return (<div className="pb-4">
