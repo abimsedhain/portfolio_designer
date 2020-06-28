@@ -23,7 +23,7 @@ const GoogleAuthentication = () => {
 			})
 
 
-
+// eslint-disable-next-line
 	}, [])
 	return (<>
 		Loading
