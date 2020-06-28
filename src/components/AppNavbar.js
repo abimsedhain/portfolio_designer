@@ -11,13 +11,14 @@ import {
 	Container
 } from 'reactstrap';
 import { Logo, NavbarButton } from "./styled/StyledComponents"
-import { userStateContext } from './utility/userContext';
+import { userStateContext, userDispatchContext } from './utility/userContext';
+import types from './utility/types';
 
 function AppNavbar() {
 
 
 	const userState = useContext(userStateContext).userState
-
+	const dispatch = useContext(userDispatchContext)
 	// Local state
 	const [isOpen, setIsOpen] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);
@@ -58,14 +59,25 @@ function AppNavbar() {
 							</Link>
 						</NavItem>
 						<NavItem>
-							{userState.name ==="" ?
-								<a href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&client_id=711007651880-qtfh4lfqkt13jl0tu1i3fb9dm49p3q7c.apps.googleusercontent.com&prompt=consent&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauthenticate%2Fgoogle&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile">
+							{userState.name === "" ?
+								<a href={`${process.env.REACT_APP_GOOGLE_AUTH_URL}`}>
 									<NavbarButton Small White>Login/Signup
                                     </NavbarButton>
 								</a>
-								: <a href="/"><NavbarButton Small White>Logout
+								: <NavbarButton Small White onClick={async () => {
+									try {
+										await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, {
+											method: "GET",
+											credentials: "include"
+										})
+
+									} catch (error) {
+										console.log(error)
+									} finally {
+										dispatch({ type: types.REMOVE_USER })
+									}
+								}}>Logout
                                     </NavbarButton>
-								</a>
 							}
 						</NavItem>
 					</Nav>

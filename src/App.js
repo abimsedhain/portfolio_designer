@@ -28,13 +28,20 @@ import types from './components/utility/types';
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState)
 	useEffect(() => {
-		fetch("http://localhost:5000/user/refresh_token", {
-			method: "GET",
-			credentials: "include",
-		}).then(async data => {
-			data = await data.json()
-			dispatch({ type: types.SET_USER, payload: data.awt })
-		})
+		try {
+			fetch(`${process.env.REACT_APP_BACKEND_URL}/user/refresh_token`, {
+				method: "GET",
+				credentials: "include",
+			}).then(async data => {
+				data = await data.json()
+				if (data.awt) {
+					dispatch({ type: types.SET_USER, payload: data.awt })
+				}
+			})
+		}catch(error){
+			dispatch({type: types.REMOVE_USER})
+		}
+
 	}, [])
 	return (
 		<Router>

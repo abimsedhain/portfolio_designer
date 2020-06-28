@@ -9,7 +9,7 @@ const GoogleAuthentication = () => {
 	const query = useQuery(useLocation())
 	const history = useHistory()
 	useEffect(() => {
-		fetch("http://localhost:5000/authenticate/google", {
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/authenticate/google`, {
 				method: "POST",
 				credentials: "include",
 				headers: {
