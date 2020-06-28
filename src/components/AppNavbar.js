@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-scroll';
 import {
 	Collapse,
@@ -10,11 +10,17 @@ import {
 	NavLink,
 	Container
 } from 'reactstrap';
-import { Logo, NavbarButton} from "./styled/StyledComponents"
+import { Logo, NavbarButton } from "./styled/StyledComponents"
+import { userStateContext, userDispatchContext } from './utility/userContext';
+import types from './utility/types';
 
 function AppNavbar() {
-	const [isOpen, setIsOpen] = useState(false);
 
+
+	const userState = useContext(userStateContext).userState
+	const dispatch = useContext(userDispatchContext)
+	// Local state
+	const [isOpen, setIsOpen] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
@@ -52,11 +58,27 @@ function AppNavbar() {
 								</NavLink>
 							</Link>
 						</NavItem>
-
 						<NavItem>
-								<NavbarButton Small White>Login/Signup
+							{userState.name === "" ?
+								<a href={`${process.env.REACT_APP_GOOGLE_AUTH_URL}`}>
+									<NavbarButton Small White>Login/Signup
                                     </NavbarButton>
+								</a>
+								: <NavbarButton Small White onClick={async () => {
+									try {
+										await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, {
+											method: "GET",
+											credentials: "include"
+										})
 
+									} catch (error) {
+										console.log(error)
+									} finally {
+										dispatch({ type: types.REMOVE_USER })
+									}
+								}}>Logout
+                                    </NavbarButton>
+							}
 						</NavItem>
 					</Nav>
 				</Collapse>

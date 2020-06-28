@@ -29,57 +29,57 @@ const StyledImg = styled.img`
 
 function Template() {
 
-	const userData = useContext(userStateContext)
+	const templateState = useContext(userStateContext).templateState;
 
 	return (<ThemeProvider theme={Theme}>
 		<TemplateNavbar />
 		<Container className="text-left py-5">
-			{userData.fullName && (<Row>
+			{templateState.fullName && (<Row>
 				<Col >
-					<Header Bold>hi, i'm <ColoredSpan Primary>{userData.fullName}</ColoredSpan>.</Header>
+					<Header Bold>hi, i'm <ColoredSpan Primary>{templateState.fullName}</ColoredSpan>.</Header>
 				</Col>
 			</Row>)}
 
-			{ userData.bio &&(<Row>
-				<Col ><Subheader White>{userData.bio.toLocaleLowerCase()}</Subheader>
+			{ templateState.bio &&(<Row>
+				<Col ><Subheader White>{templateState.bio.toLocaleLowerCase()}</Subheader>
 				</Col>
 			</Row>)}
 
 		</Container>
-		{userData.education &&<Container className="text-left pt-5" id="education">
+		{templateState.education &&<Container className="text-left pt-5" id="education">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>education</Subheader>
 				</Col>
 			</Row>
-			{userData.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
+			{templateState.education.map((edu, index) => (<EducationItem key={index} education={edu} />))}
 		</Container>}
 
-		{userData.skills && <Container className="text-left pt-5" id="skills">
+		{templateState.skills && <Container className="text-left pt-5" id="skills">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>skills</Subheader>
 				</Col>
 			</Row>
 			<Row>
-				{userData.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
+				{templateState.skills.map((skill, index) => (<SkillItem key={index} skill={skill} />))}
 			</Row>
 		</Container>}
-		{userData.experiences &&<Container className="text-left pt-5" id="experiences">
+		{templateState.experiences &&<Container className="text-left pt-5" id="experiences">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>work experiences</Subheader>
 				</Col>
 			</Row>
-			{userData.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
+			{templateState.experiences.map((experience, index) => (<WorkItem key={index} experience={experience} />))}
 		</Container>}
-		{userData.projects && <Container className="text-left pt-5" id="projects">
+		{templateState.projects && <Container className="text-left pt-5" id="projects">
 			<Row className="pb-5 pt-3">
 				<Col>
 					<Subheader Primary>projects</Subheader>
 				</Col>
 			</Row>
-			{userData.projects.map((project, index) => (<ProjectItem key={index} project={project} />))}
+			{templateState.projects.map((project, index) => (<ProjectItem key={index} project={project} />))}
 		</Container>}
 		<Container className="pt-5" id="contact">
 			<Row className="justify-content-center pt-5">

@@ -1,3 +1,4 @@
-const PREVIEW = "PREVIEW"
-
-export default {PREVIEW}
+const PREVIEW_TEMPLATE = "PREVIEW"
+const SET_USER = "SET_USER"
+const REMOVE_USER = "REMOVE_USER"
+export default {PREVIEW_TEMPLATE, SET_USER, REMOVE_USER}

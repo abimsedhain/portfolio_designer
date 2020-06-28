@@ -1,9 +1,19 @@
 import types from "./types"
+import JwtDecode from "jwt-decode"
+import initialUserState from "./initialUserState"
 
 const reducer = (state, action) => {
 	switch (action.type) {
 		case types.PREVIEW:
-			return isEmpty(action.payload) ? state : removeEmptyFields(action.payload)
+			return isEmpty(action.payload) ? state : {...state, templateState: removeEmptyFields(action.payload)}
+		case types.SET_USER:
+			const user = JwtDecode(action.payload)
+			return {...state, userState:{
+				name: user.name,
+				token: action.payload
+			}}
+		case types.REMOVE_USER:
+			return {...state, userState:initialUserState}
 		default:
 			return state
 	}

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import './App.css';
 
 // Importing Components
@@ -16,23 +16,43 @@ import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // importing tempuser and reducer
-import tempUser from './components/utility/tempUser';
+import initialState from './components/utility/initialState';
 import reducer from "./components/utility/reducer"
 
 // importing user context where all the data will be stored
 import { userStateContext, userDispatchContext } from "./components/utility/userContext"
+import Authenticate from './components/Authentication/Authenticate';
+import types from './components/utility/types';
+
 
 function App() {
-	const [state, dispatch] = useReducer(reducer, tempUser)
+	const [state, dispatch] = useReducer(reducer, initialState)
+	useEffect(() => {
+		try {
+			fetch(`${process.env.REACT_APP_BACKEND_URL}/user/refresh_token`, {
+				method: "GET",
+				credentials: "include",
+			}).then(async data => {
+				data = await data.json()
+				if (data.awt) {
+					dispatch({ type: types.SET_USER, payload: data.awt })
+				}
+			})
+		}catch(error){
+			dispatch({type: types.REMOVE_USER})
+		}
+
+	}, [])
 	return (
 		<Router>
 			<div className="App">
 				<ThemeProvider theme={Theme}>
 					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/about" component={About} />
 						<userStateContext.Provider value={state}>
 							<userDispatchContext.Provider value={dispatch}>
+								<Route path="/" exact component={Home} />
+								<Route path="/about" component={About} />
+								<Route path="/authenticate" component={Authenticate} />
 								<Route path="/form" component={UserDetails} />
 								<Route path="/template" component={Template} />
 							</userDispatchContext.Provider>
