@@ -11,11 +11,15 @@ import {
 	Container
 } from 'reactstrap';
 import { Logo, NavbarButton } from "./styled/StyledComponents"
-import { userContext } from './utility/userContext';
+import { userStateContext } from './utility/userContext';
 
 function AppNavbar() {
+
+
+	const userState = useContext(userStateContext).userState
+
+	// Local state
 	const [isOpen, setIsOpen] = useState(false);
-	const [user] = useContext(userContext)
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
@@ -53,14 +57,17 @@ function AppNavbar() {
 								</NavLink>
 							</Link>
 						</NavItem>
-
 						<NavItem>
-							<a href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&client_id=711007651880-qtfh4lfqkt13jl0tu1i3fb9dm49p3q7c.apps.googleusercontent.com&prompt=consent&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauthenticate%2Fgoogle&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile">
-								<NavbarButton Small White>Login/Signup
+							{userState.name ==="" ?
+								<a href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&client_id=711007651880-qtfh4lfqkt13jl0tu1i3fb9dm49p3q7c.apps.googleusercontent.com&prompt=consent&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauthenticate%2Fgoogle&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile">
+									<NavbarButton Small White>Login/Signup
                                     </NavbarButton>
-							</a>
+								</a>
+								: <a href="/"><NavbarButton Small White>Logout
+                                    </NavbarButton>
+								</a>
+							}
 						</NavItem>
-						{user ? <NavItem>{`${user}`}</NavItem> : <></>}
 					</Nav>
 				</Collapse>
 			</Navbar>
