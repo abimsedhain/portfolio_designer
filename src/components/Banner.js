@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col} from 'reactstrap';
 import {Link} from "react-scroll";
 import AppNavbar from "./AppNavbar"
-import mainlogo from '../assets/mainlogo2.png';
+import mainlogo from '../assets/logo2.svg';
 import {Header, Description, Button} from "./styled/StyledComponents"
 
 function Banner() {
