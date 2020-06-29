@@ -51,7 +51,6 @@ function App() {
 						<userStateContext.Provider value={state}>
 							<userDispatchContext.Provider value={dispatch}>
 								<Route path="/" exact component={Home} />
-								<Route path="/about" component={About} />
 								<Route path="/authenticate" component={Authenticate} />
 								<Route path="/form" component={UserDetails} />
 								<Route path="/template" component={Template} />

@@ -11,9 +11,6 @@ function Home() {
     return (
         <React.Fragment>
             <Banner />
-            <Instruction/>
-            <About/>
-            <AppFooter/>
         </React.Fragment>
     )
 }

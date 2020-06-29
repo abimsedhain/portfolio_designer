@@ -33,6 +33,7 @@ const Button = styled.button`
 	font-size: ${props => props.Large && props.theme.LargeButtonSize};
 	display: inline-block;
 	color: ${props => props.White ? props.theme.White : props.theme.Dark};
+	display: ${props => props.Block && "block"};
 	margin: 1em;
 	padding: 0.25em 1em;
 	border: 0px solid;
@@ -40,6 +41,7 @@ const Button = styled.button`
 	background-color: ${props => props.theme.Primary};
 	background-color: ${props => props.Secondary && props.theme.Secondary};
 	outline: none;
+	text-align: center;
 	&:focus{
 		outline: none;
 		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.Special};
@@ -50,6 +52,24 @@ const Button = styled.button`
 	}
 `
 
+const FixedSizeButton = styled(Button)`
+	height: 2em;
+	width: 12em;
+`
+
+const HomepageButton = styled(FixedSizeButton)`
+	margin: 1em auto;
+	@media (min-width: 768px){
+		margin: 1em;
+	}
+
+`
+
+const FullSizeContainer = styled(Container)`
+	min-height: 85vh; /* These two lines are counted as one :-)       */
+	display: flex;
+	align-items: center;
+`
 const NavbarButton = styled(Button)`
 	margin: 0em;	
 	font-size: 1.2rem;
@@ -230,4 +250,4 @@ const FormLabel = styled.h1`
 	padding: 0px 10px;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea }
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer , HomepageButton}
