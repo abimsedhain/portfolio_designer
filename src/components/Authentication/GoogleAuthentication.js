@@ -23,7 +23,6 @@ const GoogleAuthentication = () => {
 				history.push("/")
 			})
 		}catch(error){
-				dispatch({type: types.SET_USER, payload: ""})
 				history.push("/")
 		}
 

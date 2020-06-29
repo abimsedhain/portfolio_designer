@@ -7,11 +7,16 @@ const reducer = (state, action) => {
 		case types.PREVIEW:
 			return isEmpty(action.payload) ? state : {...state, templateState: removeEmptyFields(action.payload)}
 		case types.SET_USER:
+			try{
 			const user = JwtDecode(action.payload)
 			return {...state, userState:{
 				name: user.name,
 				token: action.payload
 			}}
+			}catch(error){
+				return state
+			}
+
 		case types.REMOVE_USER:
 			return {...state, userState:initialUserState}
 		default:
