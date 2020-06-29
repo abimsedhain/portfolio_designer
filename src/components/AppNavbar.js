@@ -14,8 +14,7 @@ import { Logo, NavbarButton } from "./styled/StyledComponents"
 import { userStateContext, userDispatchContext } from '../state management/userContext';
 import types from '../state management/types';
 
-function AppNavbar() {
-
+function AppNavbar({setShowLoginCard}) {
 
 	const userState = useContext(userStateContext).userState
 	const dispatch = useContext(userDispatchContext)
@@ -60,10 +59,11 @@ function AppNavbar() {
 						</NavItem>
 						<NavItem>
 							{userState.name === "" ?
-								<a href={`${process.env.REACT_APP_GOOGLE_AUTH_URL}`}>
-									<NavbarButton Small White>Login/Signup
+								<Link to="LoginCard" spy={true} smooth={true} offset={0} duration={1000}>
+									<NavbarButton Small White onClick={()=>{
+									setShowLoginCard(true)}}>Login/Signup
                                     </NavbarButton>
-								</a>
+								</Link>
 								: <NavbarButton Small White onClick={async () => {
 									try {
 										await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, {

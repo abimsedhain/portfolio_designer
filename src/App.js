@@ -2,7 +2,6 @@ import React, { useReducer, useEffect } from 'react';
 import './App.css';
 
 // Importing Components
-import About from './components/About';
 import Home from './components/Home';
 import UserDetails from "./components/form/UserDetails"
 import Template from "./components/templates/Template"
