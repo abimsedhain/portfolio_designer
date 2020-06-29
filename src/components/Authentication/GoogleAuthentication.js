@@ -9,6 +9,7 @@ const GoogleAuthentication = () => {
 	const query = useQuery(useLocation())
 	const history = useHistory()
 	useEffect(() => {
+		try{
 		fetch(`${process.env.REACT_APP_BACKEND_URL}/authenticate/google`, {
 				method: "POST",
 				credentials: "include",
@@ -21,7 +22,10 @@ const GoogleAuthentication = () => {
 				dispatch({type: types.SET_USER, payload: data.awt})
 				history.push("/")
 			})
-
+		}catch(error){
+				dispatch({type: types.SET_USER, payload: ""})
+				history.push("/")
+		}
 
 // eslint-disable-next-line
 	}, [])
