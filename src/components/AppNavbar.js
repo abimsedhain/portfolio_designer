@@ -9,7 +9,7 @@ import {
 	NavLink,
 	Container,
 } from "reactstrap";
-import {scroller} from "react-scroll"
+import { scroller } from "react-scroll";
 import { Logo, NavbarButton } from "./styled/StyledComponents";
 import {
 	userStateContext,
@@ -17,7 +17,7 @@ import {
 } from "../state management/userContext";
 import types from "../state management/types";
 
-function AppNavbar({ setShowLoginCard }) {
+function AppNavbar() {
 	const userState = useContext(userStateContext).userState;
 	const dispatch = useContext(userDispatchContext);
 	// Local state
@@ -58,12 +58,11 @@ function AppNavbar({ setShowLoginCard }) {
 									Small
 									White
 									onClick={() => {
-										setShowLoginCard(true);
 										scroller.scrollTo("LoginCard", {
 											duration: 1000,
 											spy: true,
-											smooth: true
-										})
+											smooth: true,
+										});
 									}}
 								>
 									Login/Signup

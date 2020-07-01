@@ -15,11 +15,10 @@ import {
 
 function Home() {
 	const userState = useContext(userStateContext).userState;
-	const [showLoginCard, setShowLoginCard] = useState(false);
 	const history = useHistory();
 	return (
 		<>
-			<AppNavbar setShowLoginCard={setShowLoginCard} />
+			<AppNavbar />
 			<FullSizeContainer>
 				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
@@ -28,7 +27,15 @@ function Home() {
 							Build a simple and elegant Portfolio Website under
 							10 minutes.
 						</Description>
-						{showLoginCard ? (
+								<HomepageButton
+									White
+									Small
+									Block
+									onClick={() => history.push("/form")}
+								>
+									Let's Build a Portfolio
+								</HomepageButton>
+								{userState.name === "" ? (
 							<>
 								<GoogleSignInButton
 									White
@@ -47,34 +54,11 @@ function Home() {
 									Login with Facebook
 								</FackbookSignInButton>
 							</>
-						) : (
-							<>
-								<HomepageButton
-									White
-									Small
-									Block
-									onClick={() => history.push("/form")}
-								>
-									Let's Build a Portfolio
-								</HomepageButton>
-								{userState.name === "" ? (
-									<HomepageButton
-										White
-										Small
-										Block
-										onClick={() => {
-											setShowLoginCard(true);
-										}}
-									>
-										Login/Signup
-									</HomepageButton>
 								) : (
 									<HomepageButton White Small Block>
 										Go to Dashboard
 									</HomepageButton>
 								)}
-							</>
-						)}
 					</Col>
 					<Col className="d-none d-sm-none d-md-block">
 						<img
