@@ -21,7 +21,7 @@ function Home() {
 		<>
 			<AppNavbar setShowLoginCard={setShowLoginCard} />
 			<FullSizeContainer>
-				<Row>
+				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-md-left text-center col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
 						<Header>Capos</Header>
 						<Description id="LoginCard">
