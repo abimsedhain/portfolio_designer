@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-scroll';
 import {
 	Collapse,
 	Navbar,
@@ -32,38 +31,30 @@ function AppNavbar({setShowLoginCard}) {
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<Link className="nav-links" to="instruction" spy={true} smooth={true} offset={0} duration={1000}>
 								<NavLink>
 									<Logo Small>{userState.name===""? "Get Started":`Hi, ${userState.name}`}</Logo>
 								</NavLink>
-							</Link>
 						</NavItem>
 						<NavItem>
 
-							<Link className="nav-links" to="about" spy={true} smooth={true} offset={0} duration={1000}>
 								<NavLink><Logo Small>
 									About
 								</Logo>
 								</NavLink>
-							</Link>
 						</NavItem>
 						<NavItem>
 
-							<Link className="nav-links" to="contact" spy={true} smooth={true} offset={0} duration={1000}>
 								<NavLink>
 									<Logo Small>
 										Contact
 									</Logo>
 								</NavLink>
-							</Link>
 						</NavItem>
 						<NavItem>
 							{userState.name === "" ?
-								<Link to="LoginCard" spy={true} smooth={true} offset={0} duration={1000}>
 									<NavbarButton Small White onClick={()=>{
 									setShowLoginCard(true)}}>Login/Signup
                                     </NavbarButton>
-								</Link>
 								: <NavbarButton Small White onClick={async () => {
 									try {
 										await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, {
