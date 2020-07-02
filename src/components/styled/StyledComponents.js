@@ -44,7 +44,7 @@ const Button = styled.button`
 	text-align: center;
 	&:focus{
 		outline: none;
-		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.Special};
+		 box-shadow: 0 0 0pt 1pt ${props => props.theme.Special};
 	}	
 	&:hover{
 		background-color:${props => props.theme.Special};
@@ -104,7 +104,7 @@ const NextButton = styled(Button)`
 		color: ${props => props.theme.White};
 	}
 	&:focus{
-		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.NextButton};
+		 box-shadow: 0 0 0pt 1pt ${props => props.theme.NextButton};
 	}
 `
 
@@ -121,7 +121,7 @@ const BackButton = styled(Button)`
 		color: ${props => props.theme.White};
 	}
 	&:focus{
-		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.BackButton};
+		 box-shadow: 0 0 0pt 1pt ${props => props.theme.BackButton};
 	}
 `
 
@@ -141,7 +141,7 @@ const AddButton = styled(Button)`
 		color: ${props => props.theme.White};
 	}
 &:focus{
-		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.NextButton};
+		 box-shadow: 0 0 0pt 1pt ${props => props.theme.NextButton};
 	}
 `
 
@@ -160,24 +160,29 @@ const DelButton = styled(Button)`
 		color: ${props => props.theme.White};
 	}
 &:focus{
-		 box-shadow: 0 0 0pt 1pt ${props=>props.theme.BackButton};
+		 box-shadow: 0 0 0pt 1pt ${props => props.theme.BackButton};
 	}`
 
 const Logobar = styled(Container)`
 	background-color: ${props => props.theme.Primary};
 	color:white;
-	padding:5px;
+	padding:1px;
 	padding-left: 0px;
 	left:50%;
 	transform: 'translateX(-50%)';
 	top:'10px';
 	width:'100%';
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	font-family:${props => props.theme.Header};
 
 	&:link{
 		color:red;
 	}
+`
+const LogoText = styled.h1`
+	font-size:40px;
+	color:white;
+	text-decoration:none;
 `
 
 const FormContainer = styled(Container)`
@@ -186,7 +191,8 @@ const FormContainer = styled(Container)`
 	overflow: hidden;
 	scrollbar-width: none; 
 	-ms-overflow-style: none;
-	height: 85vh;
+	height: 78vh;
+	margin-bottom:10px;
 	overflow: scroll;
 	
 	&::-webkit-scrollbar { 
@@ -195,8 +201,8 @@ const FormContainer = styled(Container)`
 		padding-right:15px; 
 		@media (min-width: 768px){
 
-		border-right: ${props=> props.borderRight? "1px": "0px"} solid #ccc;
-		border-left: ${props=> props.borderLeft? "1px": "0px"} solid #ccc;
+		border-right: ${props => props.borderRight ? "1px" : "0px"} solid #ccc;
+		border-left: ${props => props.borderLeft ? "1px" : "0px"} solid #ccc;
 		}
 	
 `
@@ -204,7 +210,7 @@ const FormContainer = styled(Container)`
 const HrLine = styled.hr`
 	margin: 5em 0em 0.5em;
 	border-width: 4px;
-	background: ${props=>props.theme.Primary};
+	background: ${props => props.theme.Primary};
 `
 
 const StyledInput = styled.input`
@@ -215,7 +221,7 @@ const StyledInput = styled.input`
 	width:100%;
 	&:focus{
 		outline: none;
-		border-bottom: ${props=> `2px solid ${props.theme.Primary}`};
+		border-bottom: ${props => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
 	}
 `
@@ -228,7 +234,7 @@ const StyledTextarea = styled.textarea`
 	width:100%;
 	&:focus{
 		outline: none;
-		border-bottom: ${props=> `2px solid ${props.theme.Primary}`};
+		border-bottom: ${props => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
 	}
 `
@@ -242,12 +248,17 @@ const FormTitle = styled.h1`
 `
 
 const FormLabel = styled.h1`
-	font-size: ${props => props.theme.SmallDescriptionSize};
-	font-family:${props => props.theme.Description};
-	font-weight: ${props=>props.theme.FormLabelWeight};
-	color: ${props => props.White ? props.theme.White : props.theme.Dark};
+	font-size: ${props => props.FooterSize ? props.theme.FooterSize : props.theme.SmallDescriptionSize};
+	font-family:${props => props.Header ? props.theme.Header : props.theme.Description};
+	font-weight: ${props => props.FooterWeight ? props.theme.FooterWeight : props.theme.FormLabelWeight};
+	color: ${props => props.Grey || props.White ? (props.White? props.theme.White: props.theme.Grey) : props.theme.Dark};
 	float: left;
 	padding: 0px 10px;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer , HomepageButton}
+const StyledFooter = styled.div`
+	background-color: ${props => props.theme.Primary};
+	padding-top: 3px;
+`
+
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText }

@@ -2,7 +2,8 @@ import React, { useState, useContext } from 'react';
 import {userStateContext} from "../state management/userContext"
 import { Row, Col} from 'reactstrap';
 import {Link} from "react-router-dom"
-import AppNavbar from "./AppNavbar"
+import AppNavbar from "./AppNavbar";
+import HomeFooter from "./HomeFooter";
 import mainlogo from '../assets/logo2.svg';
 import {Header, Description, HomepageButton, FullSizeContainer} from "./styled/StyledComponents"
 
@@ -44,6 +45,7 @@ function Home() {
 				</Col>
 			</Row>
 		</FullSizeContainer>
+        <HomeFooter />
         </>
     )
 }

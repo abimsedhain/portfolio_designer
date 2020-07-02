@@ -8,8 +8,10 @@ const Theme={
 	DescriptionSize: "2rem",
 	SmallDescriptionSize: "1.5rem",
 	LogoSize: "2rem",
+	FooterSize: "0.8rem",
 	Dark: "#3b3b3b",
 	White: "#fff",
+	Grey: "#ccc",
 	Primary: "#485f71",
 	Secondary: "#f4f9ff",
 	Special: "#4549b1",
@@ -17,6 +19,7 @@ const Theme={
 	ButtonSize: "1.5rem",
 	SmallButtonSize: "1.2rem",
 	FormLabelWeight: "600",
+	FooterWeight: "400",
 	NextButton: "#0275d8",
 	BackButton: "#CF0820"
 }
