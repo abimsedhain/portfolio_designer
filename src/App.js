@@ -5,6 +5,7 @@ import './App.css';
 import Home from './components/Home';
 import UserDetails from "./components/form/UserDetails"
 import Template from "./components/templates/Template"
+import Lost from "./components/Lost"
 
 // Theme and ThemeProvider from styled folder and components
 import Theme from "./components/styled/Theme"
@@ -53,6 +54,7 @@ function App() {
 								<Route path="/authenticate" component={Authenticate} />
 								<Route path="/form" component={UserDetails} />
 								<Route path="/template" component={Template} />
+								<Route path="/404" component={Lost} />
 							</userDispatchContext.Provider>
 						</userStateContext.Provider>
 					</Switch>
