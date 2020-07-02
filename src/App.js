@@ -21,7 +21,7 @@ import reducer from "./state management/reducer"
 
 // importing user context where all the data will be stored
 import { userStateContext, userDispatchContext } from "./state management/userContext"
-import Authenticate from './components/Authentication/Authenticate';
+import Authenticate from './components/authentication/Authenticate';
 import types from './state management/types';
 
 

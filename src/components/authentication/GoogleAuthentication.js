@@ -23,6 +23,8 @@ const GoogleAuthentication = () => {
 				history.push("/")
 			})
 		}catch(error){
+		}finally{
+
 				history.push("/")
 		}
 

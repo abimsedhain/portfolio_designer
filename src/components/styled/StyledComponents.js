@@ -62,8 +62,16 @@ const HomepageButton = styled(FixedSizeButton)`
 	@media (min-width: 768px){
 		margin: 1em;
 	}
-
 `
+
+const GoogleSignInButton = styled(HomepageButton)`
+	background: #DB4437;
+`
+const FackbookSignInButton = styled(HomepageButton)`
+	background: #3b5998;
+`
+
+
 
 const FullSizeContainer = styled(Container)`
 	min-height: 85vh; /* These two lines are counted as one :-)       */
@@ -261,4 +269,4 @@ const StyledFooter = styled.div`
 	padding-top: 3px;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText }
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton }
