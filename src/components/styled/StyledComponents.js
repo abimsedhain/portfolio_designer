@@ -3,7 +3,10 @@ import { Container } from "reactstrap";
 
 const Header = styled.h1`
 	font-family: ${props => props.theme.Header};
-	font-size: ${props => props.Small ? props.theme.SubheaderSize : props.theme.HeaderSize};
+	font-size: ${props=> props.theme.HeaderSize};
+	//font-size: ${props => (props.Small || props.Large) ? (props.Small? props.theme.SubheaderSize: props.LargeHeaderSize) : props.theme.HeaderSize};
+	font-size: ${props => props.Small && props.theme.SubheaderSize};
+	font-size: ${props => props.Large && props.theme.LargeHeaderSize};
 	font-weight: ${props => props.theme.HeaderWeight};
 	color: ${props => props.White ? props.theme.White : props.theme.Dark}
 `

@@ -7,6 +7,7 @@ const Theme={
 	SubheaderSize: "2.5rem",
 	DescriptionSize: "2rem",
 	SmallDescriptionSize: "1.5rem",
+	LargeHeaderSize: "9rem",
 	LogoSize: "2rem",
 	FooterSize: "0.8rem",
 	Dark: "#3b3b3b",
