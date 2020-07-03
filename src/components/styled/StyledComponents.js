@@ -267,6 +267,9 @@ const FormLabel = styled.h1`
 const StyledFooter = styled.div`
 	background-color: ${props => props.theme.Primary};
 	padding-top: 3px;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 `
 
 export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton }
