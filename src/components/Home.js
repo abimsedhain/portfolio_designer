@@ -12,14 +12,18 @@ import {
 	GoogleSignInButton,
 	FackbookSignInButton,
 	HomepageContainer,
-	HomeContainer
+	HomeContainer,
+	ClipPathBackground
 } from "./styled/StyledComponents";
 
-function Home() {
+function Home({theme}) {
 	const userState = useContext(userStateContext).userState;
 	const history = useHistory();
 	return (
 		<HomeContainer>
+
+			<ClipPathBackground Primary Index="-2" Opacity="15%"/>
+			<ClipPathBackground  Mask Index="-1" Opacity="100%"/>
 			<AppNavbar />
 			<HomepageContainer>
 				<Row className="mb-auto mt-5 m-md-auto">
@@ -73,6 +77,7 @@ function Home() {
 			</HomepageContainer>
 			<HomeFooter />
 		</HomeContainer>
+
 	);
 }
 

@@ -286,4 +286,19 @@ const HomepageContainer = styled(FullSizeContainer)`
 	flex: 1;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton, HomeContainer, HomepageContainer }
+const ClipPathBackground = styled.div`
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	background-color: ${props=> props.Primary && props.theme.Primary};
+	background-color: ${props=> props.Secondary && props.theme.Secondary};
+	opacity: ${props=> props.Opacity? props.Opacity: "25%"};
+	z-index: ${props=> props.Index? props.Index: "0"};
+	clip-path: ${props=> props.Mask && `ellipse(100% 84% at 99% 12%)`};
+`
+
+
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton, HomeContainer, HomepageContainer, ClipPathBackground }
