@@ -11,16 +11,17 @@ import {
 	HomepageButton,
 	GoogleSignInButton,
 	FackbookSignInButton,
-	FullSizeContainer,
+	HomepageContainer,
+	HomeContainer
 } from "./styled/StyledComponents";
 
 function Home() {
 	const userState = useContext(userStateContext).userState;
 	const history = useHistory();
 	return (
-		<>
+		<HomeContainer>
 			<AppNavbar />
-			<FullSizeContainer>
+			<HomepageContainer>
 				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
 						<Header>Capos</Header>
@@ -69,9 +70,9 @@ function Home() {
 						></img>
 					</Col>
 				</Row>
-			</FullSizeContainer>
+			</HomepageContainer>
 			<HomeFooter />
-		</>
+		</HomeContainer>
 	);
 }
 
