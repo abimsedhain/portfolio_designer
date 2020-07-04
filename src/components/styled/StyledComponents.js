@@ -308,7 +308,7 @@ const ClipPathBackground = styled.div`
 	position: absolute;
 	left: 0%;
 	top: 0%;
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	background-color: white;
 	background-color: ${(props) => props.Primary && props.theme.Primary};
