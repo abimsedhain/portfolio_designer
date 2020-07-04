@@ -75,6 +75,12 @@ const FackbookSignInButton = styled(HomepageButton)`
 `
 
 
+const HomeContainer = styled.div`
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+`
 
 const FullSizeContainer = styled(Container)`
 	min-height: 85vh; /* These two lines are counted as one :-)       */
@@ -270,9 +276,14 @@ const FormLabel = styled.h1`
 const StyledFooter = styled.div`
 	background-color: ${props => props.theme.Primary};
 	padding-top: 3px;
-	position: absolute;
 	width: 100%;
-	bottom: 0;
+	display: flex;
 `
 
-export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton }
+
+const HomepageContainer = styled(FullSizeContainer)`
+	display: flex;
+	flex: 1;
+`
+
+export { LoginBtn, Header, Logo, Subheader, Description, Button, NavbarButton, Logobar, FormContainer, NextButton, BackButton, AddButton, DelButton, HrLine, StyledInput, FormTitle, FormLabel, StyledTextarea, FixedSizeButton, FullSizeContainer, HomepageButton, StyledFooter, LogoText,GoogleSignInButton, FackbookSignInButton, HomeContainer, HomepageContainer }
