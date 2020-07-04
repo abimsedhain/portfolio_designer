@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import { userStateContext } from "../state management/userContext";
 import { Row, Col } from "reactstrap";
 import { useHistory } from "react-router-dom";
@@ -13,17 +13,17 @@ import {
 	FackbookSignInButton,
 	HomepageContainer,
 	HomeContainer,
-	ClipPathBackground
+	ClipPathBackground,
 } from "./styled/StyledComponents";
 
-function Home({theme}) {
+function Home() {
 	const userState = useContext(userStateContext).userState;
 	const history = useHistory();
 	return (
 		<HomeContainer>
-
-			<ClipPathBackground Primary Index="-2" Opacity="15%"/>
-			<ClipPathBackground  Mask Index="-1" Opacity="100%"/>
+			{/** Adding the clip background **/}
+			<ClipPathBackground Primary Index="-2" Opacity="15%" />
+			<ClipPathBackground Mask Index="-1" Opacity="100%" />
 			<AppNavbar />
 			<HomepageContainer>
 				<Row className="mb-auto mt-5 m-md-auto">
@@ -33,15 +33,15 @@ function Home({theme}) {
 							Build a simple and elegant Portfolio Website under
 							10 minutes.
 						</Description>
-								<HomepageButton
-									White
-									Small
-									Block
-									onClick={() => history.push("/form")}
-								>
-									Let's Build a Portfolio
-								</HomepageButton>
-								{userState.name === "" ? (
+						<HomepageButton
+							White
+							Small
+							Block
+							onClick={() => history.push("/form")}
+						>
+							Let's Build a Portfolio
+						</HomepageButton>
+						{userState.name === "" ? (
 							<>
 								<GoogleSignInButton
 									White
@@ -60,11 +60,11 @@ function Home({theme}) {
 									Login with Facebook
 								</FackbookSignInButton>
 							</>
-								) : (
-									<HomepageButton White Small Block>
-										Go to Dashboard
-									</HomepageButton>
-								)}
+						) : (
+							<HomepageButton White Small Block>
+								Go to Dashboard
+							</HomepageButton>
+						)}
 					</Col>
 					<Col className="d-none d-sm-none d-md-block">
 						<img
@@ -77,7 +77,6 @@ function Home({theme}) {
 			</HomepageContainer>
 			<HomeFooter />
 		</HomeContainer>
-
 	);
 }
 
