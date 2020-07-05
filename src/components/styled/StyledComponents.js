@@ -215,7 +215,7 @@ const FormContainer = styled(Container)`
 	overflow: hidden;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	height: 78vh;
+	height: 79vh;
 	margin-bottom: 10px;
 	overflow: scroll;
 
@@ -293,7 +293,8 @@ const FormLabel = styled.h1`
 `;
 
 const StyledFooter = styled.div`
-	background-color: ${(props) => props.theme.Primary};
+	// background-color: ${(props) => props.theme.Primary};
+	background-color: ${(props) => (props.White ? props.theme.White : props.theme.Primary)};
 	padding-top: 3px;
 	width: 100%;
 	display: flex;

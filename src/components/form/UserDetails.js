@@ -10,6 +10,7 @@ import Education from './Education';
 import Submit from './Submit';
 import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
+import FormFooter from "../FormFooter";
 
 import { FormContainer } from '../styled/StyledComponents';
 
@@ -51,6 +52,7 @@ function UserDetails({ match }) {
 					</Col>
 				</Row>
 			</FormContainer>
+			<FormFooter />
 
 		</>
 	)
