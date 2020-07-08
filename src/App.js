@@ -49,17 +49,19 @@ function App() {
 		<Router>
 			<div className="App">
 				<ThemeProvider theme={Theme}>
-					<Switch>
+					
 						<userStateContext.Provider value={state}>
 							<userDispatchContext.Provider value={dispatch}>
+ <Switch>
 								<Route path="/" exact component={Home} />
 								<Route path="/authenticate" component={Authenticate} />
 								<Route path="/form" component={UserDetails} />
 								<Route path="/template" component={Template} />
 								<Route component={Lost} />
+</Switch>
 							</userDispatchContext.Provider>
 						</userStateContext.Provider>
-					</Switch>
+					
 				</ThemeProvider>
 			</div>
 
