@@ -56,7 +56,7 @@ function App() {
 								<Route path="/authenticate" component={Authenticate} />
 								<Route path="/form" component={UserDetails} />
 								<Route path="/template" component={Template} />
-								<Route path="/404" component={Lost} />
+								<Route path="*" component={Lost} />
 							</userDispatchContext.Provider>
 						</userStateContext.Provider>
 					</Switch>
