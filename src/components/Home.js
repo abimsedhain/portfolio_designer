@@ -14,6 +14,7 @@ import {
 	HomepageContainer,
 	HomeContainer,
 	ClipPathBackground,
+	BoldSpan
 } from "./styled/StyledComponents";
 
 function Home() {
@@ -29,9 +30,8 @@ function Home() {
 				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
 						<Header>Capos</Header>
-						<Description id="LoginCard">
-							Build a simple and elegant Portfolio Website under
-							10 minutes.
+						<Description Lighter id="LoginCard">
+							Build a simple and elegant <BoldSpan>Portfolio Website</BoldSpan> under 10 minutes.
 						</Description>
 						<HomepageButton
 							White

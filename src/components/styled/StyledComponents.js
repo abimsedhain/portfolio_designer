@@ -26,6 +26,8 @@ const Logo = styled.h2`
 
 const Subheader = styled.h2`
 	font-family: ${(props) => props.theme.Subheader};
+	font-weight: ${(props) => props.Bold && "bold"};
+	font-weight: ${(props) => props.Lighter && "lighter"};
 	font-size: ${(props) => props.theme.SubheaderSize};
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
 `;
@@ -36,6 +38,8 @@ const Description = styled.p`
 		props.Small
 			? props.theme.SmallDescriptionSize
 			: props.theme.DescriptionSize};
+	font-weight: ${(props) => props.Bold && "bold"};
+	font-weight: ${(props) => props.Lighter && "lighter"};
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
 `;
 
@@ -318,6 +322,10 @@ const ClipPathBackground = styled.div`
 	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
 `;
 
+const BoldSpan = styled.span`
+	font-weight: bold;
+`;
+
 export {
 	LoginBtn,
 	Header,
@@ -347,4 +355,5 @@ export {
 	HomeContainer,
 	HomepageContainer,
 	ClipPathBackground,
+	BoldSpan,
 };
