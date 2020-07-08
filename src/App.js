@@ -23,16 +23,16 @@ import reducer from "./state management/reducer"
 import { userStateContext, userDispatchContext } from "./state management/userContext"
 import Authenticate from './components/authentication/Authenticate';
 import types from './state management/types';
+import {fetchAwt} from "./utility/authenticate"
 
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState)
 	useEffect(() => {
+
+		//refreshs access token on refresh
 		try {
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/user/refresh_token`, {
-				method: "GET",
-				credentials: "include",
-			}).then(async data => {
+			fetchAwt().then(async data => {
 				data = await data.json()
 				if (data.awt) {
 					dispatch({ type: types.SET_USER, payload: data.awt })
@@ -43,6 +43,8 @@ function App() {
 		}
 
 	}, [])
+
+
 	return (
 		<Router>
 			<div className="App">

@@ -16,6 +16,8 @@ import {
 	ClipPathBackground,
 } from "./styled/StyledComponents";
 
+
+
 function Home() {
 	const userState = useContext(userStateContext).userState;
 	const history = useHistory();
