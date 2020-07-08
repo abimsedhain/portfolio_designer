@@ -11,7 +11,8 @@ const reducer = (state, action) => {
 			const user = JwtDecode(action.payload)
 			return {...state, userState:{
 				name: user.name,
-				token: action.payload
+				token: action.payload,
+				exp: user.exp
 			}}
 			}catch(error){
 				return state
