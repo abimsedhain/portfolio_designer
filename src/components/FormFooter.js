@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Navbar, Nav, NavItem } from 'reactstrap';
+import { Container} from 'reactstrap';
 
 import { StyledFooter, FooterButton } from "./styled/StyledComponents";
 
