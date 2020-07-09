@@ -289,12 +289,14 @@ const FormLabel = styled.h1`
 const StyledFooter = styled.div`
 	// background-color: ${(props) => props.theme.Primary};
 	background-color: ${(props) => (props.White ? props.theme.White : props.theme.Primary)};
-	padding-top: 0.5em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-bottom: ${props=> props.Fixed && "0.5em"};
+	padding-top: ${props=> props.Fixed && "0.5em"};
 	width: 100%;
 	display: flex;
 	position: ${props=> props.Fixed && "fixed"};
 	bottom: 0;
-	padding-bottom: 0.5em;
 	@media (min-width: 768px) {
 		padding-bottom: ${props=> props.Fixed && "1em"};
 	}
