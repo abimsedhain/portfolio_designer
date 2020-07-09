@@ -10,6 +10,7 @@ import Education from './Education';
 import Submit from './Submit';
 import LogoBar from '../LogoBar';
 import Template from '../templates/Template';
+import FormFooter from "../FormFooter";
 
 import { FormContainer } from '../styled/StyledComponents';
 
@@ -32,9 +33,9 @@ function UserDetails({ match }) {
 	return (
 		<>
 			<LogoBar />
-			<FormContainer fluid={true}>
+			<FormContainer fluid={true} OverflowHidden>
 				<Row>
-					<Col className="mx-auto col-12 col-sm-12 col-md-6">
+					<Col className="mx-auto col-12 col-sm-12 col-md-6 border-right border-secondary">
 						<FormContainer borderRight>
 							<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
@@ -51,6 +52,7 @@ function UserDetails({ match }) {
 					</Col>
 				</Row>
 			</FormContainer>
+			<FormFooter />
 
 		</>
 	)

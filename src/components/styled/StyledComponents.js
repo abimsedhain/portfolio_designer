@@ -215,24 +215,18 @@ const LogoText = styled.h1`
 
 const FormContainer = styled(Container)`
 	display: block;
-	height: 100%;
 	overflow: hidden;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	height: 78vh;
-	margin-bottom: 10px;
+	height:${props=> !props.OverflowHidden && "82vh"};
 	overflow: scroll;
-
+	overflow: ${props=> props.OverflowHidden && "hidden"};
+		
 	&::-webkit-scrollbar {
 		display: none;
 	}
 
 	padding-right: 15px;
-	@media (min-width: 768px) {
-		border-right: ${(props) => (props.borderRight ? "1px" : "0px")} solid
-			#ccc;
-		border-left: ${(props) => (props.borderLeft ? "1px" : "0px")} solid #ccc;
-	}
 `;
 
 const HrLine = styled.hr`
@@ -297,10 +291,19 @@ const FormLabel = styled.h1`
 `;
 
 const StyledFooter = styled.div`
-	background-color: ${(props) => props.theme.Primary};
-	padding-top: 3px;
+	// background-color: ${(props) => props.theme.Primary};
+	background-color: ${(props) => (props.White ? props.theme.White : props.theme.Primary)};
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-bottom: ${props=> props.Fixed && "0.5em"};
+	padding-top: ${props=> props.Fixed && "0.5em"};
 	width: 100%;
 	display: flex;
+	position: ${props=> props.Fixed && "fixed"};
+	bottom: 0;
+	@media (min-width: 768px) {
+		padding-bottom: ${props=> props.Fixed && "1em"};
+	}
 `;
 
 const HomepageContainer = styled(FullSizeContainer)`
@@ -325,6 +328,21 @@ const ClipPathBackground = styled.div`
 const BoldSpan = styled.span`
 	font-weight: bold;
 `;
+
+const FooterButton = styled(Button)`
+	margin: 0px;
+	margin-right: ${props=> props.Right && "1em"};
+	margin-right: ${props=> props.Left && "auto"};
+	margin-left: ${props=> props.Right && "auto"};
+	margin-left: ${props=> props.Left && "1em"};
+	@media (min-width: 768px) {
+		margin-right: ${props=> props.Right && "auto"};
+		margin-right: ${props=> props.Left && "5em"};
+		margin-left: ${props=> props.Right && "5em"};
+		margin-left: ${props=> props.Left && "auto"};
+	}
+
+`
 
 export {
 	LoginBtn,
@@ -356,4 +374,5 @@ export {
 	HomepageContainer,
 	ClipPathBackground,
 	BoldSpan,
+	FooterButton
 };
