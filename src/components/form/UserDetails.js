@@ -33,9 +33,9 @@ function UserDetails({ match }) {
 	return (
 		<>
 			<LogoBar />
-			<FormContainer fluid={true}>
+			<FormContainer fluid={true} OverflowHidden>
 				<Row>
-					<Col className="mx-auto col-12 col-sm-12 col-md-6">
+					<Col className="mx-auto col-12 col-sm-12 col-md-6 border-right border-secondary">
 						<FormContainer borderRight>
 							<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
