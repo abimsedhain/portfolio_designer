@@ -296,7 +296,7 @@ const StyledFooter = styled.div`
 	bottom: 0;
 	padding-bottom: 0.5em;
 	@media (min-width: 768px) {
-		padding-bottom: 0.5em;
+		padding-bottom: ${props=> props.Fixed && "1em"};
 	}
 `;
 
