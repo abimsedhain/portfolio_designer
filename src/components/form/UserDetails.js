@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState } from 'react';
+import React, { useRef, useContext, useState, useEffect } from 'react';
 import { Row, Col } from "reactstrap";
 import { Route, useHistory } from 'react-router-dom';
 import PersonalInfo from './PersonalInfo';
@@ -14,17 +14,25 @@ import FormFooter from "../FormFooter";
 
 import { FormContainer } from '../styled/StyledComponents';
 
-
 import initialFormData from './initialFormState';
 import { userDispatchContext } from '../../state management/userContext';
-import types from "../../state management/types"
+import types from "../../state management/types";
 
+import Loader from "../Loader/Loader";
 
 function UserDetails({ match }) {
 	const history = useHistory()
 	const [formData, setFormData] = useState(initialFormData);
-	const dispatch = useContext(userDispatchContext)
+	const dispatch = useContext(userDispatchContext);
 
+	const [isLoaded, setIsLoaded] = useState(false);
+
+
+	useEffect(() => {
+		setTimeout(() => {
+				setIsLoaded(true);
+		}, 800)
+	}, []);
 
 	// Creating an array for the components and react element array. then returning the selected array
 	const FormComponents = useRef([PersonalInfo, Education, SocialMedia, Experience, Projects, Review, Submit])
@@ -32,27 +40,31 @@ function UserDetails({ match }) {
 
 	return (
 		<>
-			<LogoBar />
-			<FormContainer fluid={true} OverflowHidden>
-				<Row>
-					<Col className="mx-auto col-12 col-sm-12 col-md-6 border-right border-secondary">
-						<FormContainer borderRight>
-							<Route path={`${match.path}/:formId?`} render={(props) => {
-								const matchInner = props.match
-								const id = parseInt(matchInner.params.formId) || 0
-								return React.createElement(FormComponents.current[id], { formData, setFormData, nextStep: () => history.push(`${match.url}/${id + 1}`), prevStep: () => history.goBack(), setUserState: (values) => dispatch({ type: types.PREVIEW, payload: values }) })
-							}} />
-						</FormContainer>
-					</Col>
+			{!isLoaded ? <Loader/> :
+				<>
+					<LogoBar />
+					<FormContainer fluid={true}>
+						<Row>
+							<Col className="mx-auto col-12 col-sm-12 col-md-6">
+								<FormContainer borderRight>
+									<Route path={`${match.path}/:formId?`} render={(props) => {
+										const matchInner = props.match
+										const id = parseInt(matchInner.params.formId) || 0
+										return React.createElement(FormComponents.current[id], { formData, setFormData, nextStep: () => history.push(`${match.url}/${id + 1}`), prevStep: () => history.goBack(), setUserState: (values) => dispatch({ type: types.PREVIEW, payload: values }) })
+									}} />
+								</FormContainer>
+							</Col>
 
-					<Col className="mx-auto d-none d-sm-none d-md-block d-lg-block col-12 col-sm-8 col-md-6">
-						<FormContainer>
-							<Template />
-						</FormContainer>
-					</Col>
-				</Row>
-			</FormContainer>
-			<FormFooter />
+							<Col className="mx-auto d-none d-sm-none d-md-block d-lg-block col-12 col-sm-8 col-md-6">
+								<FormContainer>
+									<Template />
+								</FormContainer>
+							</Col>
+						</Row>
+					</FormContainer>
+					<FormFooter />
+				</>
+			}
 
 		</>
 	)
