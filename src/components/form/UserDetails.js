@@ -8,7 +8,6 @@ import SocialMedia from './SocialMedia';
 import Experience from './Experience';
 import Education from './Education';
 import Submit from './Submit';
-import LogoBar from '../LogoBar';
 import AppNavbar from "../AppNavbar"
 import Template from '../templates/Template';
 import FormFooter from "../FormFooter";
