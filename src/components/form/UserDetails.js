@@ -9,6 +9,7 @@ import Experience from './Experience';
 import Education from './Education';
 import Submit from './Submit';
 import LogoBar from '../LogoBar';
+import AppNavbar from "../AppNavbar"
 import Template from '../templates/Template';
 import FormFooter from "../FormFooter";
 
@@ -31,7 +32,7 @@ function UserDetails({ match }) {
 
 	return (
 		<>
-			<LogoBar />
+			<AppNavbar />
 			<FormContainer fluid={true} >
 				<Row>
 					<Col className="mx-auto col-12 col-sm-12 col-md-6 border-right border-secondary">
