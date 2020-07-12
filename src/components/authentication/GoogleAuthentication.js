@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import useQuery from '../../utility/userQuery';
+import useQuery from '../../utility/useQuery';
 import { useLocation, useHistory } from 'react-router-dom';
 import { userDispatchContext } from '../../state management/userContext';
 import types from '../../state management/types';
