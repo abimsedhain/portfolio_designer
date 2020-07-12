@@ -6,7 +6,7 @@ function AppNavbar() {
 
 	return (
 		<>
-			<Logobar Primary fluid={true}>
+			<Logobar fluid={true}>
 				<Link to="/">
 					<LogoText>
 						Capos

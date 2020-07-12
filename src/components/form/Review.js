@@ -1,12 +1,9 @@
 import React from 'react'
-import { Container, Col, Table, ButtonGroup} from 'reactstrap';
+import { Container, Col, Table} from 'reactstrap';
 import { Formik, Form } from 'formik';
-import { useHistory } from 'react-router-dom';
-import {NextButton, BackButton} from '../styled/StyledComponents';
 
 
-const Review = ({ formData, setFormData, nextStep, prevStep }) => {
-	const history = useHistory()
+const Review = ({ formRef, formData}) => {
 	const { fullName, email, bio, github, linkedin, skills,
 		pro1Title, pro1Description,
 		pro2Title, pro2Description,
@@ -15,16 +12,8 @@ const Review = ({ formData, setFormData, nextStep, prevStep }) => {
 		exp2Title, exp2Description,
 		eduTitle, eduDescription } = formData
 	return (
-		<Formik
-			initialValues={formData}
-			onSubmit={values => {
-				// nextStep();
-
-
-				// going to templates route
-				history.push("../template")
-				// remove this later
-			}}>
+		<Formik innerRef={formRef}
+			initialValues={formData}>
 
 			<Container fluid="md" style={{ marginTop: '20px' }}>
 				<h1>Confirm your Information</h1>
@@ -135,13 +124,7 @@ const Review = ({ formData, setFormData, nextStep, prevStep }) => {
 						</div>
 					</Col> */}
 
-					<ButtonGroup>
-						{/* <Button onClick={prevStep}>BACK</Button> */}
-						<BackButton onClick={prevStep} type="button"> BACK </BackButton>
-						{/* <Button type="submit">NEXT</Button> */}
-						<NextButton type="submit">NEXT</NextButton>
-					</ButtonGroup>
-				</Form>
+			</Form>
 
 			</Container>
 		</Formik>
