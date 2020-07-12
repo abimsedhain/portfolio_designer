@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import {
 	Navbar,
 	NavbarBrand,
@@ -7,12 +8,13 @@ import {
 import { Logo} from "./styled/StyledComponents";
 
 function AppNavbar() {
-
 	return (
 		<Container fluid className="text-right">
 			<Navbar light navbar-inverse="true" expand="md">
-				<NavbarBrand href="/">
+				<NavbarBrand >
+		<Link to="/">
 					<Logo>Capos</Logo>
+		</Link>
 				</NavbarBrand>
 			</Navbar>
 		</Container>
