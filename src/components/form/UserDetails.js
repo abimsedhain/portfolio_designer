@@ -15,7 +15,7 @@ import FormFooter from "../FormFooter";
 import { FormContainer } from '../styled/StyledComponents';
 
 import initialFormData from './initialFormState';
-import { userDispatchContext } from '../../state management/userContext';
+import { userDispatchContext, userStateContext } from '../../state management/userContext';
 import types from "../../state management/types";
 
 
@@ -24,7 +24,11 @@ function UserDetails({ match }) {
 	const [formData, setFormData] = useState(initialFormData);
 	const dispatch = useContext(userDispatchContext)
 	const formRef = useRef()
-	const [formUrl, setFormUrl] = useState("")
+	const [formId, setFormId] = useState(0)
+	const formState = useContext(userStateContext).templateState
+	const [portfolioId, setPortfolioId] = useState("")
+
+
 	// Creating an array for the components and react element array. then returning the selected array
 	const FormComponents = useRef([PersonalInfo, Education, SocialMedia, Experience, Projects, Review, Submit])
 
@@ -39,8 +43,8 @@ function UserDetails({ match }) {
 							<Route path={`${match.path}/:formId?`} render={(props) => {
 								const matchInner = props.match
 								const id = parseInt(matchInner.params.formId) || 0
-								setFormUrl(`${match.url}/${id+1}`)
-								return React.createElement(FormComponents.current[id], {formRef, formData})
+								setFormId(id)
+								return React.createElement(FormComponents.current[id], {formRef, formData, portfolioId})
 							}} />
 						</FormContainer>
 					</Col>
@@ -52,11 +56,18 @@ function UserDetails({ match }) {
 					</Col>
 				</Row>
 			</FormContainer>
-			<FormFooter next={() => {
+			<FormFooter next={async() => {
 				if (formRef.current) {
 					setFormData(formRef.current.values)
 					dispatch({type: types.PREVIEW, payload: formRef.current.values})
-					history.push(formUrl)
+					history.push(`${match.path}/${formId+1}`)
+					console.log(FormComponents.current.length)
+					if(formId===FormComponents.current.length-2){
+						let data = await fetch(`${process.env.REACT_APP_BACKEND_URL}/portfolio`, {method: "POST", body: JSON.stringify(formState)})
+						data = data.status===200 && await data.json()
+						setPortfolioId(data.id)
+						console.log(portfolioId)
+					}
 				}
 			}} prev={history.goBack}/>
 		</>

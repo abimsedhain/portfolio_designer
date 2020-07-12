@@ -18,7 +18,7 @@ const Portfolio = ()=>{
 				data = await data.json()
 				dispatch({type: types.PREVIEW, payload: data})	
 				}else{
-				throw "404"
+				throw new Error("404")
 				}
 			}).catch(()=>{
 				history.push("/404")
