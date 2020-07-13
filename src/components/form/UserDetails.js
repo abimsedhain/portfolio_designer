@@ -61,12 +61,12 @@ function UserDetails({ match }) {
 					setFormData(formRef.current.values)
 					dispatch({type: types.PREVIEW, payload: formRef.current.values})
 					history.push(`${match.path}/${formId+1}`)
-					console.log(FormComponents.current.length)
 					if(formId===FormComponents.current.length-2){
-						let data = await fetch(`${process.env.REACT_APP_BACKEND_URL}/portfolio`, {method: "POST", body: JSON.stringify(formState)})
-						data = data.status===200 && await data.json()
-						setPortfolioId(data.id)
-						console.log(portfolioId)
+						let data = await fetch(`${process.env.REACT_APP_BACKEND_URL}/portfolio`, {method: "POST", headers: {'Content-Type': 'application/json'},body: JSON.stringify(formState)})
+						if(data.status===200){
+							data = await data.json()
+							setPortfolioId(data.id)
+						}
 					}
 				}
 			}} prev={history.goBack}/>
