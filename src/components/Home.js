@@ -6,18 +6,16 @@ import AppNavbar from "./AppNavbar";
 import HomeFooter from "./HomeFooter";
 import mainlogo from "../assets/logo2.svg";
 import {
-	Header,
-	Description,
 	HomepageButton,
 	GoogleSignInButton,
 	FackbookSignInButton,
-	HomepageContainer,
-	HomeContainer,
-	ClipPathBackground,
-	BoldSpan
 } from "./styled/StyledComponents";
-
-
+import {
+	HomeContainer,
+	HomepageContainer,
+	ClipPathBackground,
+} from "./styled/StyledContainers";
+import { Header, Description, BoldSpan } from "./styled/StyledText";
 
 function Home() {
 	const userState = useContext(userStateContext).userState;
@@ -33,7 +31,9 @@ function Home() {
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
 						<Header>Capos</Header>
 						<Description Lighter id="LoginCard">
-							Build a simple and elegant <BoldSpan>Portfolio Website</BoldSpan> under 10 minutes.
+							Build a simple and elegant{" "}
+							<BoldSpan>Portfolio Website</BoldSpan> under 10
+							minutes.
 						</Description>
 						<HomepageButton
 							White
@@ -43,6 +43,7 @@ function Home() {
 						>
 							Let's Build a Portfolio
 						</HomepageButton>
+						{/** Show login button if the user is not login, else shows dashboard button**/}
 						{userState.name === "" ? (
 							<>
 								<GoogleSignInButton

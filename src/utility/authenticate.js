@@ -5,6 +5,7 @@ import {
 } from "../state management/userContext";
 import types from "../state management/types";
 
+//checks if jwt has expired or not
 const isTokenExpired = (exp) => {
 	if (Date.now() >= exp * 1000) {
 		console.log("expired");
@@ -30,7 +31,7 @@ const useAuthFetch = () => {
 		if (isTokenExpired(exp)) {
 			let data = await fetchAwt();
 			if (data.status === 200) {
-				data = await data.json()
+				data = await data.json();
 				dispatch({ type: types.SET_USER, payload: data.awt });
 				token = data.awt;
 			} else {

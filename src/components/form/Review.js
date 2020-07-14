@@ -1,46 +1,58 @@
-import React from 'react'
-import { Container, Col, Table} from 'reactstrap';
-import { Formik, Form } from 'formik';
+import React from "react";
+import { Container, Col, Table } from "reactstrap";
+import { Formik, Form } from "formik";
 
-
-const Review = ({ formRef, formData}) => {
-	const { fullName, email, bio, github, linkedin, skills,
-		pro1Title, pro1Description,
-		pro2Title, pro2Description,
-		pro3Title, pro3Description,
-		exp1Title, exp1Description,
-		exp2Title, exp2Description,
-		eduTitle, eduDescription } = formData
+const Review = ({ formRef, formData }) => {
+	const {
+		fullName,
+		email,
+		bio,
+		github,
+		linkedin,
+		skills,
+		pro1Title,
+		pro1Description,
+		pro2Title,
+		pro2Description,
+		pro3Title,
+		pro3Description,
+		exp1Title,
+		exp1Description,
+		exp2Title,
+		exp2Description,
+		eduTitle,
+		eduDescription,
+	} = formData;
 	return (
-		<Formik innerRef={formRef}
-			initialValues={formData}>
-
-			<Container fluid="md" style={{ marginTop: '20px' }}>
+		<Formik innerRef={formRef} initialValues={formData}>
+			<Container fluid="md" style={{ marginTop: "20px" }}>
 				<h1>Confirm your Information</h1>
-				<Col xs={{ size: 12, offset: 0 }} sm={{ size: 10, offset: 1 }} md={{ size: 10, offset: 1 }} lg={{ size: 8, offset: 2 }} xl={{ size: 10, offset: 1 }} >
+				<Col
+					xs={{ size: 12, offset: 0 }}
+					sm={{ size: 10, offset: 1 }}
+					md={{ size: 10, offset: 1 }}
+					lg={{ size: 8, offset: 2 }}
+					xl={{ size: 10, offset: 1 }}
+				>
 					<Table bordered responsive>
 						<thead>
 							<tr>
 								<th scope="row">Fields</th>
 								<th scope="row">Information</th>
-
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>Full Name</td>
 								<td>{fullName}</td>
-
 							</tr>
 							<tr>
 								<td>Email</td>
 								<td>{email}</td>
-
 							</tr>
 							<tr>
 								<td>Bio</td>
 								<td>{bio}</td>
-
 							</tr>
 							<tr>
 								<td>Github Link</td>
@@ -106,13 +118,11 @@ const Review = ({ formRef, formData}) => {
 								<td>Education Description</td>
 								<td>{eduDescription}</td>
 							</tr>
-
 						</tbody>
 					</Table>
-					<br /><br />
-
+					<br />
+					<br />
 				</Col>
-
 
 				<Form>
 					{/* <Col>
@@ -123,12 +133,10 @@ const Review = ({ formRef, formData}) => {
 							<button onClick={prevStep}> BACK</button>
 						</div>
 					</Col> */}
-
-			</Form>
-
+				</Form>
 			</Container>
 		</Formik>
-	)
-}
+	);
+};
 
 export default Review;

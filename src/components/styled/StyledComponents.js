@@ -1,48 +1,6 @@
 import styled from "styled-components";
 import { Container } from "reactstrap";
 
-const Header = styled.h1`
-	font-family: ${(props) => props.theme.Header};
-	font-size: ${(props) => props.theme.HeaderSize};
-	//font-size: ${(props) =>
-		props.Small || props.Large
-			? props.Small
-				? props.theme.SubheaderSize
-				: props.LargeHeaderSize
-			: props.theme.HeaderSize};
-	font-size: ${(props) => props.Small && props.theme.SubheaderSize};
-	font-size: ${(props) => props.Large && props.theme.LargeHeaderSize};
-	font-weight: ${(props) => props.theme.HeaderWeight};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)}
-`;
-
-const Logo = styled.h2`
-	font-family: ${(props) => props.theme.Header};
-	font-weight: ${(props) => props.theme.HeaderSize};
-	font-size: ${(props) =>
-		props.Small ? props.theme.SmallDescriptionSize : props.theme.LogoSize};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-`;
-
-const Subheader = styled.h2`
-	font-family: ${(props) => props.theme.Subheader};
-	font-weight: ${(props) => props.Bold && "bold"};
-	font-weight: ${(props) => props.Lighter && "lighter"};
-	font-size: ${(props) => props.theme.SubheaderSize};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-`;
-
-const Description = styled.p`
-	font-family: ${(props) => props.theme.Description};
-	font-size: ${(props) =>
-		props.Small
-			? props.theme.SmallDescriptionSize
-			: props.theme.DescriptionSize};
-	font-weight: ${(props) => props.Bold && "bold"};
-	font-weight: ${(props) => props.Lighter && "lighter"};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-`;
-
 const Button = styled.button`
 	font-size: ${(props) => props.theme.ButtonSize};
 	font-size: ${(props) => props.Small && props.theme.SmallButtonSize};
@@ -87,18 +45,6 @@ const FackbookSignInButton = styled(HomepageButton)`
 	background: #3b5998;
 `;
 
-const HomeContainer = styled.div`
-	min-height: 100vh;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-`;
-
-const FullSizeContainer = styled(Container)`
-	min-height: 85vh; /* These two lines are counted as one :-)       */
-	display: flex;
-	align-items: center;
-`;
 const NavbarButton = styled(Button)`
 	margin: 0em;
 	font-size: 1.2rem;
@@ -191,44 +137,6 @@ const DelButton = styled(Button)`
 	}
 `;
 
-const Logobar = styled(Container)`
-	background-color: ${(props) => props.theme.Primary};
-	color: white;
-	padding: 1px;
-	padding-left: 0px;
-	left: 50%;
-	transform: "translateX(-50%)";
-	top: "10px";
-	width: "100%";
-	margin-bottom: 10px;
-	font-family: ${(props) => props.theme.Header};
-
-	&:link {
-		color: red;
-	}
-`;
-const LogoText = styled.h1`
-	font-size: 40px;
-	color: white;
-	text-decoration: none;
-`;
-
-const FormContainer = styled(Container)`
-	display: block;
-	overflow: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	height:${props=> !props.OverflowHidden && "82vh"};
-	overflow: scroll;
-	overflow: ${props=> props.OverflowHidden && "hidden"};
-		
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	padding-right: 15px;
-`;
-
 const HrLine = styled.hr`
 	margin: 5em 0em 0.5em;
 	border-width: 4px;
@@ -261,118 +169,34 @@ const StyledTextarea = styled.textarea`
 	}
 `;
 
-const FormTitle = styled.h1`
-	font-size: ${(props) => props.theme.SubheaderSize};
-	font-family: ${(props) => props.theme.Header};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-	font-weight: ${(props) => props.theme.HeaderWeight};
-	margin: 0.5em 0em 1em;
-`;
-
-const FormLabel = styled.h1`
-	font-size: ${(props) =>
-		props.FooterSize
-			? props.theme.FooterSize
-			: props.theme.SmallDescriptionSize};
-	font-family: ${(props) =>
-		props.Header ? props.theme.Header : props.theme.Description};
-	font-weight: ${(props) =>
-		props.FooterWeight
-			? props.theme.FooterWeight
-			: props.theme.FormLabelWeight};
-	color: ${(props) =>
-		props.Grey || props.White
-			? props.White
-				? props.theme.White
-				: props.theme.Grey
-			: props.theme.Dark};
-	float: left;
-	padding: 0px 10px;
-`;
-
-const StyledFooter = styled.div`
-	// background-color: ${(props) => props.theme.Primary};
-	background-color: ${(props) => (props.White ? props.theme.White : props.theme.Primary)};
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	padding-bottom: ${props=> props.Fixed && "0.5em"};
-	padding-top: ${props=> props.Fixed && "0.5em"};
-	width: 100%;
-	display: flex;
-	position: ${props=> props.Fixed && "fixed"};
-	bottom: 0;
-	@media (min-width: 768px) {
-		padding-bottom: ${props=> props.Fixed && "1em"};
-	}
-`;
-
-const HomepageContainer = styled(FullSizeContainer)`
-	display: flex;
-	flex: 1;
-`;
-
-const ClipPathBackground = styled.div`
-	position: absolute;
-	left: 0%;
-	top: 0%;
-	height: 100vh;
-	width: 100%;
-	background-color: white;
-	background-color: ${(props) => props.Primary && props.theme.Primary};
-	background-color: ${(props) => props.Secondary && props.theme.Secondary};
-	opacity: ${(props) => (props.Opacity ? props.Opacity : "25%")};
-	z-index: ${(props) => (props.Index ? props.Index : "0")};
-	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
-`;
-
-const BoldSpan = styled.span`
-	font-weight: bold;
-`;
-
 const FooterButton = styled(Button)`
 	margin: 0px;
-	margin-right: ${props=> props.Right && "1em"};
-	margin-right: ${props=> props.Left && "auto"};
-	margin-left: ${props=> props.Right && "auto"};
-	margin-left: ${props=> props.Left && "1em"};
+	margin-right: ${(props) => props.Right && "1em"};
+	margin-right: ${(props) => props.Left && "auto"};
+	margin-left: ${(props) => props.Right && "auto"};
+	margin-left: ${(props) => props.Left && "1em"};
 	@media (min-width: 768px) {
-		margin-right: ${props=> props.Right && "auto"};
-		margin-right: ${props=> props.Left && "5em"};
-		margin-left: ${props=> props.Right && "5em"};
-		margin-left: ${props=> props.Left && "auto"};
+		margin-right: ${(props) => props.Right && "auto"};
+		margin-right: ${(props) => props.Left && "5em"};
+		margin-left: ${(props) => props.Right && "5em"};
+		margin-left: ${(props) => props.Left && "auto"};
 	}
-
-`
+`;
 
 export {
 	LoginBtn,
-	Header,
-	Logo,
-	Subheader,
-	Description,
 	Button,
 	NavbarButton,
-	Logobar,
-	FormContainer,
 	NextButton,
 	BackButton,
 	AddButton,
 	DelButton,
 	HrLine,
 	StyledInput,
-	FormTitle,
-	FormLabel,
 	StyledTextarea,
 	FixedSizeButton,
-	FullSizeContainer,
 	HomepageButton,
-	StyledFooter,
-	LogoText,
 	GoogleSignInButton,
 	FackbookSignInButton,
-	HomeContainer,
-	HomepageContainer,
-	ClipPathBackground,
-	BoldSpan,
-	FooterButton
+	FooterButton,
 };

@@ -5,7 +5,7 @@ import {
 	NavbarBrand,
 	Container,
 } from "reactstrap";
-import { Logo} from "./styled/StyledComponents";
+import { Logo} from "./styled/StyledText";
 
 function AppNavbar() {
 	return (

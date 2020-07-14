@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container} from 'reactstrap';
 
-import { StyledFooter, FooterButton } from "./styled/StyledComponents";
+import { FooterButton } from "../styled/StyledComponents";
+import {StyledFooter} from "../styled/StyledContainers"
 
 function FormFooter({next, prev}) {
     return (
