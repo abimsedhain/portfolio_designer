@@ -52,7 +52,10 @@ const StyledGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: max-content auto;
-	height: calc(100vh - 55px);
+	height: calc(100vh - 60px);
+	@media (max-width:767px){
+		height:calc(100vh - 65px);
+	}
 `;
 
 const StyledGridElement = styled.div`
