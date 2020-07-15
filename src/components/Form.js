@@ -1,7 +1,12 @@
 import React, { useRef, useContext, useState } from "react";
 import { StyledLogo } from "./styled/StyledText";
 import { FooterButton } from "./styled/StyledComponents";
-import { StyledFormFooterContainer,StyledGrid, StyledGridElement, StyledFormFooter} from "./styled/StyledContainers";
+import {
+	StyledFormFooterContainer,
+	StyledGrid,
+	StyledGridElement,
+	StyledFormFooter,
+} from "./styled/StyledContainers";
 import { Route, useHistory } from "react-router-dom";
 import PersonalInfo from "./form/PersonalInfo";
 import Projects from "./form/Projects";
@@ -12,19 +17,12 @@ import Education from "./form/Education";
 import Submit from "./form/Submit";
 import Template from "./templates/Template";
 
-
 import initialFormData from "./form/initialFormState";
 import {
 	userDispatchContext,
 	userStateContext,
 } from "../state management/userContext";
 import types from "../state management/types";
-
-
-
-
-
-
 
 const Form = ({ match }) => {
 	const history = useHistory();
@@ -34,8 +32,8 @@ const Form = ({ match }) => {
 	const [formId, setFormId] = useState(0);
 	const formState = useContext(userStateContext).templateState;
 	const [portfolioId, setPortfolioId] = useState("");
+	const [isBeingPreviewed, setIsBeingPreviewed] = useState(false);
 
-	
 	const onNext = async () => {
 		if (formRef.current) {
 			setFormData(formRef.current.values);
@@ -63,8 +61,6 @@ const Form = ({ match }) => {
 		}
 	};
 
-
-
 	// Creating an array for the components and react element array. then returning the selected array
 	const FormComponents = useRef([
 		PersonalInfo,
@@ -76,47 +72,87 @@ const Form = ({ match }) => {
 		Submit,
 	]);
 
+	return (
+		<>
+			<StyledGrid>
+				<StyledGridElement columnSpan={2}>
+					<StyledLogo>
+						<span onClick={() => history.push("/")}>Capos</span>
+					</StyledLogo>
+				</StyledGridElement>
+				<StyledGridElement
+					overflow="scroll"
+					smSize="2"
+					smDisplay={isBeingPreviewed && "none"}
+					padding="2em"
+				>
+					<Route
+						path={`${match.path}/:formId?`}
+						render={(props) => {
+							const matchInner = props.match;
+							const id = parseInt(matchInner.params.formId) || 0;
+							setFormId(id);
+							return React.createElement(
+								FormComponents.current[id],
+								{
+									formRef,
+									formData,
+									portfolioId,
+								}
+							);
+						}}
+					/>
+				</StyledGridElement>
+				<StyledGridElement
+					overflow="scroll"
+					smSize="2"
+					smDisplay={!isBeingPreviewed && "none"}
+				>
+					<Template />
+				</StyledGridElement>
+			</StyledGrid>
+			<StyledFormFooterContainer>
+				<StyledFormFooter>
+					<FooterButton
+						Secondary
+						Small
+						onClick={() => {
+							history.goBack();
+							setIsBeingPreviewed(false);
+						}}
+					>
+						← Prev
+					</FooterButton>
+					<FooterButton
+						Secondary
+						Small
+						mdDisplay="none"
+						smDisplay="inline-block"
+						onClick={() => {
+							!isBeingPreviewed &&
+								dispatch({
+									type: types.PREVIEW,
+									payload: formRef.current.values,
+								});
 
-
-
-	return (<>
-		<StyledGrid>
-			<StyledGridElement columnSpan={2}>
-				<StyledLogo ><span onClick={()=>history.push("/")}>Capos</span></StyledLogo>
-			</StyledGridElement>
-			<StyledGridElement overflow="scroll" smSize="2" padding="2em">
-				<Route
-					path={`${match.path}/:formId?`}
-					render={(props) => {
-						const matchInner = props.match;
-						const id = parseInt(matchInner.params.formId) || 0;
-						setFormId(id);
-						return React.createElement(FormComponents.current[id], {
-							formRef,
-							formData,
-							portfolioId,
-						});
-					}}
-				/>
-			</StyledGridElement>
-			<StyledGridElement overflow="scroll" smDisplay="none">
-				<Template />
-			</StyledGridElement>
-			
-		</StyledGrid>
-		<StyledFormFooterContainer>
-<StyledFormFooter >
-				<FooterButton Secondary Small onClick={history.goBack}>
-					← Prev
-				</FooterButton>
-		<FooterButton Secondary Small mdDisplay="none" smDisplay="inline-block">Preview</FooterButton>
-				<FooterButton Secondary Small onClick={onNext}>
-					Next →
-				</FooterButton>
-			</StyledFormFooter>
-</StyledFormFooterContainer>
+							setIsBeingPreviewed(!isBeingPreviewed);
+						}}
+					>
+						{isBeingPreviewed ? <>Go Back</> : <>Preview</>}
+					</FooterButton>
+					<FooterButton
+						Secondary
+						Small
+						onClick={() => {
+							onNext();
+							setIsBeingPreviewed(false);
+						}}
+					>
+						Next →
+					</FooterButton>
+				</StyledFormFooter>
+			</StyledFormFooterContainer>
 		</>
-		
 	);
 };
 
