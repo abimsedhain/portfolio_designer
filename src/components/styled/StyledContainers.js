@@ -14,24 +14,8 @@ const FullSizeContainer = styled(Container)`
 	align-items: center;
 `;
 
-const FormContainer = styled(Container)`
-	display: block;
-	overflow: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	height: ${(props) => !props.OverflowHidden && "82vh"};
-	overflow: scroll;
-	overflow: ${(props) => props.OverflowHidden && "hidden"};
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	padding-right: 15px;
-`;
 
 const StyledFooter = styled.div`
-	// background-color: ${(props) => props.theme.Primary};
 	background-color: ${(props) =>
 		props.White ? props.theme.White : props.theme.Primary};
 	padding-top: 0.2em;
@@ -47,7 +31,7 @@ const StyledFooter = styled.div`
 	}
 `;
 
-const HomepageContainer = styled(FullSizeContainer)`
+const HomepageContain = styled(FullSizeContainer)`
 	display: flex;
 	flex: 1;
 `;
@@ -65,12 +49,53 @@ const ClipPathBackground = styled.div`
 	z-index: ${(props) => (props.Index ? props.Index : "0")};
 	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
 `;
+const StyledGrid = styled.div`
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: max-content auto minmax(max-content, 60px);
+`;
+
+const StyledGridElement = styled.div`
+	background-color: ${(props) => props.color};
+	padding: ${(props) => props.padding && props.padding};
+	grid-row: ${(props) => props.rowSpan && `span ${props.rowSpan}`};
+	grid-column: ${(props) => props.columnSpan && `span ${props.columnSpan}`};
+	overflow: ${(props) => props.overflow && props.overflow};
+	@media (max-width: 767px) {
+		display: ${(props) => props.smDisplay && props.smDisplay};
+		grid-column: ${(props) => props.smSize && `span ${props.smSize}`};
+	}
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+	::-webkit-scrollbar-track {
+		background-color: white;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #aaa;
+		border-radius: 4px;
+	}
+`;
+const StyledFormFooter = styled(StyledGridElement)`
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	@media (max-width: 767px) {
+		justify-content: space-between;
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+`;
 
 export {
-	FormContainer,
 	FullSizeContainer,
 	HomeContainer,
 	StyledFooter,
-	HomepageContainer,
+	HomepageContain,
 	ClipPathBackground,
+	StyledGrid,
+	StyledFormFooter,
+	StyledGridElement,
 };

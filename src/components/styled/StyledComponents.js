@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Container } from "reactstrap";
 
 const Button = styled.button`
 	font-size: ${(props) => props.theme.ButtonSize};

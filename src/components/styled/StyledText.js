@@ -15,13 +15,6 @@ const Header = styled.h1`
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)}
 `;
 
-const Logo = styled.h2`
-	font-family: ${(props) => props.theme.Header};
-	font-weight: ${(props) => props.theme.HeaderSize};
-	font-size: ${(props) =>
-		props.Small ? props.theme.SmallDescriptionSize : props.theme.LogoSize};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-`;
 
 const Subheader = styled.h2`
 	font-family: ${(props) => props.theme.Subheader};
@@ -80,7 +73,16 @@ const FormLabel = styled.h1`
 const BoldSpan = styled.span`
 	font-weight: bold;
 `;
-
+const StyledLogo = styled.h2`
+	font-family: ${(props) => props.theme.Header};
+	font-weight: ${(props) => props.theme.HeaderSize};
+	font-size: ${(props) =>
+		props.Small ? props.theme.SmallDescriptionSize : props.theme.LogoSize};
+	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
+	padding: 1rem 2rem;
+	text-align: left;
+	margin: 0;
+`;
 export {
 	Header,
 	Subheader,
@@ -89,5 +91,5 @@ export {
 	FormLabel,
 	LogoText,
 	BoldSpan,
-	Logo,
+	StyledLogo
 };
