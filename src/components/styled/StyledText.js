@@ -71,7 +71,14 @@ const FormLabel = styled.h1`
 `;
 
 const BoldSpan = styled.span`
+	
 	font-weight: bold;
+
+	background-image: linear-gradient(120deg, ${props=>props.theme.Grey} 0%, ${props=>props.theme.Grey} 100%);
+	//background-color: ${props=>props.theme.Primary}
+	background-repeat: no-repeat;
+	background-size: 100% 0.3em;
+	background-position: 0 80%;
 `;
 const StyledLogo = styled.h2`
 	font-family: ${(props) => props.theme.Header};
