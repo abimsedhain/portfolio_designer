@@ -14,7 +14,6 @@ const FullSizeContainer = styled(Container)`
 	align-items: center;
 `;
 
-
 const StyledFooter = styled.div`
 	background-color: ${(props) =>
 		props.White ? props.theme.White : props.theme.Primary};
@@ -50,10 +49,10 @@ const ClipPathBackground = styled.div`
 	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
 `;
 const StyledGrid = styled.div`
-	height: 100vh;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: max-content auto minmax(max-content, 60px);
+	grid-template-rows: max-content auto;
+	height: calc(100vh - 60px);
 `;
 
 const StyledGridElement = styled.div`
@@ -80,6 +79,7 @@ const StyledGridElement = styled.div`
 `;
 const StyledFormFooter = styled(StyledGridElement)`
 	display: flex;
+	height: 100%;
 	justify-content: space-evenly;
 	align-items: center;
 	@media (max-width: 767px) {
@@ -87,6 +87,15 @@ const StyledFormFooter = styled(StyledGridElement)`
 		padding-left: 2em;
 		padding-right: 2em;
 	}
+`;
+
+const StyledFooterContainer = styled.div`
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 `;
 
 export {
@@ -98,4 +107,5 @@ export {
 	StyledGrid,
 	StyledFormFooter,
 	StyledGridElement,
+	StyledFooterContainer
 };

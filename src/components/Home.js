@@ -24,7 +24,7 @@ function Home() {
 			{/** Adding the clip background **/}
 			<ClipPathBackground Primary Index="-2" Opacity="15%" />
 			<ClipPathBackground Mask Index="-1" Opacity="100%" />
-			<StyledLogo>Capos</StyledLogo>
+			<StyledLogo onClick={()=>history.push("/")}>Capos</StyledLogo>
 			<HomepageContain>
 				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">

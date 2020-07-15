@@ -1,7 +1,7 @@
 import React, { useRef, useContext, useState } from "react";
 import { StyledLogo } from "./styled/StyledText";
 import { FooterButton } from "./styled/StyledComponents";
-import {StyledGrid, StyledGridElement, StyledFormFooter} from "./styled/StyledContainers";
+import { StyledFooterContainer,StyledGrid, StyledGridElement, StyledFormFooter} from "./styled/StyledContainers";
 import { Route, useHistory } from "react-router-dom";
 import PersonalInfo from "./form/PersonalInfo";
 import Projects from "./form/Projects";
@@ -62,6 +62,9 @@ const Form = ({ match }) => {
 			}
 		}
 	};
+
+
+
 	// Creating an array for the components and react element array. then returning the selected array
 	const FormComponents = useRef([
 		PersonalInfo,
@@ -73,10 +76,13 @@ const Form = ({ match }) => {
 		Submit,
 	]);
 
-	return (
+
+
+
+	return (<>
 		<StyledGrid>
 			<StyledGridElement columnSpan={2}>
-				<StyledLogo>Capos</StyledLogo>
+				<StyledLogo ><span onClick={()=>history.push("/")}>Capos</span></StyledLogo>
 			</StyledGridElement>
 			<StyledGridElement overflow="scroll" smSize="2" padding="2em">
 				<Route
@@ -96,7 +102,10 @@ const Form = ({ match }) => {
 			<StyledGridElement overflow="scroll" smDisplay="none">
 				<Template />
 			</StyledGridElement>
-			<StyledFormFooter columnSpan={2}>
+			
+		</StyledGrid>
+		<StyledFooterContainer>
+<StyledFormFooter >
 				<FooterButton White Small onClick={history.goBack}>
 					Prev
 				</FooterButton>
@@ -104,7 +113,9 @@ const Form = ({ match }) => {
 					Next
 				</FooterButton>
 			</StyledFormFooter>
-		</StyledGrid>
+</StyledFooterContainer>
+		</>
+		
 	);
 };
 
