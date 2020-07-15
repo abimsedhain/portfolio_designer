@@ -72,7 +72,7 @@ const NextButton = styled(Button)`
 	color: ${(props) => props.theme.NextButton};
 	border-radius: 4px;
 
-	&:hover {
+ 	&:hover {
 		background-color: ${(props) => props.theme.NextButton};
 		color: ${(props) => props.theme.White};
 	}
@@ -170,15 +170,10 @@ const StyledTextarea = styled.textarea`
 
 const FooterButton = styled(Button)`
 	margin: 0px;
-	margin-right: ${(props) => props.Right && "1em"};
-	margin-right: ${(props) => props.Left && "auto"};
-	margin-left: ${(props) => props.Right && "auto"};
-	margin-left: ${(props) => props.Left && "1em"};
-	@media (min-width: 768px) {
-		margin-right: ${(props) => props.Right && "auto"};
-		margin-right: ${(props) => props.Left && "5em"};
-		margin-left: ${(props) => props.Right && "5em"};
-		margin-left: ${(props) => props.Left && "auto"};
+	padding: 0.1em 1em;	
+	display: ${props=>props.mdDisplay&&props.mdDisplay};
+	@media (max-width: 767px) {
+	display: ${props=>props.smDisplay&&props.smDisplay};
 	}
 `;
 

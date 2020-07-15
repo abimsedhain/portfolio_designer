@@ -1,7 +1,7 @@
 import React, { useRef, useContext, useState } from "react";
 import { StyledLogo } from "./styled/StyledText";
 import { FooterButton } from "./styled/StyledComponents";
-import { StyledFooterContainer,StyledGrid, StyledGridElement, StyledFormFooter} from "./styled/StyledContainers";
+import { StyledFormFooterContainer,StyledGrid, StyledGridElement, StyledFormFooter} from "./styled/StyledContainers";
 import { Route, useHistory } from "react-router-dom";
 import PersonalInfo from "./form/PersonalInfo";
 import Projects from "./form/Projects";
@@ -104,16 +104,17 @@ const Form = ({ match }) => {
 			</StyledGridElement>
 			
 		</StyledGrid>
-		<StyledFooterContainer>
+		<StyledFormFooterContainer>
 <StyledFormFooter >
-				<FooterButton White Small onClick={history.goBack}>
-					Prev
+				<FooterButton Secondary Small onClick={history.goBack}>
+					← Prev
 				</FooterButton>
-				<FooterButton White Small onClick={onNext}>
-					Next
+		<FooterButton Secondary Small mdDisplay="none" smDisplay="inline-block">Preview</FooterButton>
+				<FooterButton Secondary Small onClick={onNext}>
+					Next →
 				</FooterButton>
 			</StyledFormFooter>
-</StyledFooterContainer>
+</StyledFormFooterContainer>
 		</>
 		
 	);

@@ -82,14 +82,16 @@ const StyledFormFooter = styled(StyledGridElement)`
 	height: 100%;
 	justify-content: space-evenly;
 	align-items: center;
+	display: ${props=>props.mdDisplay&&props.mdDisplay};
 	@media (max-width: 767px) {
+		width:95%;
 		justify-content: space-between;
-		padding-left: 2em;
-		padding-right: 2em;
+		margin: 0 auto;
 	}
 `;
 
-const StyledFooterContainer = styled.div`
+const StyledFormFooterContainer = styled.div`
+	background-color: ${props=>props.theme.Primary};
 	width: 100%;
 	height: 60px;
 	position: fixed;
@@ -107,5 +109,5 @@ export {
 	StyledGrid,
 	StyledFormFooter,
 	StyledGridElement,
-	StyledFooterContainer
+	StyledFormFooterContainer
 };
