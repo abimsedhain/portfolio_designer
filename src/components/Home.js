@@ -7,7 +7,7 @@ import mainlogo from "../assets/logo2.svg";
 import {
 	HomepageButton,
 	GoogleSignInButton,
-	FackbookSignInButton,
+	FacebookSignInButton,
 } from "./styled/StyledComponents";
 import {
 	HomeContainer,
@@ -58,9 +58,9 @@ function Home() {
 								>
 									Login with Google
 								</GoogleSignInButton>
-								<FackbookSignInButton White Small Block>
+								<FacebookSignInButton White Small Block>
 									Login with Facebook
-								</FackbookSignInButton>
+								</FacebookSignInButton>
 							</>
 						) : (
 							<HomepageButton White Small Block>

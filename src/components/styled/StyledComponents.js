@@ -40,7 +40,7 @@ const HomepageButton = styled(FixedSizeButton)`
 const GoogleSignInButton = styled(HomepageButton)`
 	background: #db4437;
 `;
-const FackbookSignInButton = styled(HomepageButton)`
+const FacebookSignInButton = styled(HomepageButton)`
 	background: #3b5998;
 `;
 
@@ -191,6 +191,6 @@ export {
 	FixedSizeButton,
 	HomepageButton,
 	GoogleSignInButton,
-	FackbookSignInButton,
+	FacebookSignInButton,
 	FooterButton,
 };
