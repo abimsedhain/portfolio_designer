@@ -42,7 +42,7 @@ const LogoText = styled.h1`
 `;
 
 const FormTitle = styled.h1`
-	font-size: ${(props) => props.theme.SubheaderSize};
+	font-size: ${(props) => props.theme.DescriptionSize};
 	font-family: ${(props) => props.theme.Header};
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
 	font-weight: ${(props) => props.theme.HeaderWeight};
