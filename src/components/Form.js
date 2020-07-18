@@ -1,10 +1,11 @@
 import React, { useRef, useContext, useState } from "react";
+import {CSSTransition} from "react-transition-group"
 import { StyledLogo } from "./styled/StyledText";
 import { FooterButton } from "./styled/StyledComponents";
 import {
 	StyledFormFooterContainer,
-	StyledGrid,
-	StyledGridElement,
+	StyledFormGrid,
+	StyledFormGridElement,
 	StyledFormFooter,
 } from "./styled/StyledContainers";
 import { Route, useHistory } from "react-router-dom";
@@ -74,16 +75,16 @@ const Form = ({ match }) => {
 
 	return (
 		<>
-			<StyledGrid>
-				<StyledGridElement columnSpan={2}>
+			<StyledFormGrid>
+				<StyledFormGridElement columnSpan={2} navbar>
 					<StyledLogo>
 						<span onClick={() => history.push("/")}>Capos</span>
 					</StyledLogo>
-				</StyledGridElement>
-				<StyledGridElement
+				</StyledFormGridElement>
+				<CSSTransition in={!isBeingPreviewed} timeout={500} classNames="form-section">
+				<StyledFormGridElement
 					overflow="scroll"
-					smSize="2"
-					smDisplay={isBeingPreviewed && "none"}
+					isBeingPreviewed={isBeingPreviewed}	
 					padding="2em"
 				>
 					<Route
@@ -102,15 +103,19 @@ const Form = ({ match }) => {
 							);
 						}}
 					/>
-				</StyledGridElement>
-				<StyledGridElement
+				</StyledFormGridElement>
+		</CSSTransition>
+
+				<CSSTransition in={isBeingPreviewed} timeout={500} classNames="template-section">
+				<StyledFormGridElement
 					overflow="scroll"
 					smSize="2"
-					smDisplay={!isBeingPreviewed && "none"}
+					isBeingPreviewed={!isBeingPreviewed}	
 				>
 					<Template />
-				</StyledGridElement>
-			</StyledGrid>
+				</StyledFormGridElement>
+		</CSSTransition>
+			</StyledFormGrid>
 			<StyledFormFooterContainer>
 				<StyledFormFooter>
 					<FooterButton

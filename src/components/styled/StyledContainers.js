@@ -48,26 +48,28 @@ const ClipPathBackground = styled.div`
 	z-index: ${(props) => (props.Index ? props.Index : "0")};
 	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
 `;
-const StyledGrid = styled.div`
+const StyledFormGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: max-content auto;
 	height: calc(100vh - 60px);
-	@media (max-width:767px){
-		height:calc(100vh - 65px);
+	@media (max-width: 767px) {
+		height: calc(100vh - 65px);
 	}
 `;
 
-const StyledGridElement = styled.div`
+const StyledFormGridElement = styled.div`
 	background-color: ${(props) => props.color};
 	padding: ${(props) => props.padding && props.padding};
 	grid-row: ${(props) => props.rowSpan && `span ${props.rowSpan}`};
 	grid-column: ${(props) => props.columnSpan && `span ${props.columnSpan}`};
 	overflow: ${(props) => props.overflow && props.overflow};
 	@media (max-width: 767px) {
-		display: ${(props) => props.smDisplay && props.smDisplay};
-		grid-column: ${(props) => props.smSize && `span ${props.smSize}`};
+		grid-column: ${props=>!props.navbar && "1 / 3"};
+		grid-row: ${props=>!props.navbar && "2 / 3"};
+		transform: ${(props) => props.isBeingPreviewed && "translateX(100vw)"};
 	}
+
 	::-webkit-scrollbar {
 		width: 5px;
 		height: 5px;
@@ -79,22 +81,66 @@ const StyledGridElement = styled.div`
 		background-color: #aaa;
 		border-radius: 4px;
 	}
+
+
+	//Animation classes
+
+
+	--transition: transform 0.3s cubic-bezier(0, 0, 0.46, 1.53); 
+	&.form-section-enter {
+		
+		transform: translateX(-100vw);
+	}
+
+	&.form-section-enter-active {
+		transform: translateX(0px);
+		transition: var(--transition);
+	}
+	&.form-section-exit {
+		
+		transform: translateX(0px);
+	}
+	&.form-section-exit-active {
+		transform: translateX(-100vw);
+		transition: var(--transition);
+	}
+
+	&.template-section-enter {
+		transform: translateX(100vwpx);
+	}
+
+	&.template-section-enter{
+	
+		transform: translateX(100vw);
+	}
+	&.template-section-enter-active {
+		transform: translateX(0px);
+		transition: var(--transition);
+	}
+	&.template-section-exit{
+	
+		transform: translateX(0px);
+	}
+	&.template-section-exit-active {
+		transform: translateX(100vw);
+		transition: var(--transition);
+	}
 `;
-const StyledFormFooter = styled(StyledGridElement)`
+const StyledFormFooter = styled(StyledFormGridElement)`
 	display: flex;
 	height: 100%;
 	justify-content: space-evenly;
 	align-items: center;
-	display: ${props=>props.mdDisplay&&props.mdDisplay};
+	display: ${(props) => props.mdDisplay && props.mdDisplay};
 	@media (max-width: 767px) {
-		width:95%;
+		width: 95%;
 		justify-content: space-between;
 		margin: 0 auto;
 	}
 `;
 
 const StyledFormFooterContainer = styled.div`
-	background-color: ${props=>props.theme.Primary};
+	background-color: ${(props) => props.theme.Primary};
 	width: 100%;
 	height: 60px;
 	position: fixed;
@@ -109,8 +155,8 @@ export {
 	StyledFooter,
 	HomepageContain,
 	ClipPathBackground,
-	StyledGrid,
+	StyledFormGrid,
 	StyledFormFooter,
-	StyledGridElement,
-	StyledFormFooterContainer
+	StyledFormGridElement,
+	StyledFormFooterContainer,
 };
