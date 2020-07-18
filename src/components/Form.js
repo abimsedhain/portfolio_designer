@@ -76,8 +76,8 @@ const Form = ({ match }) => {
 	return (
 		<>
 			<StyledFormGrid>
-				<StyledFormGridElement columnSpan={2} navbar>
-					<StyledLogo>
+				<StyledFormGridElement columnSpan={2} navbar primary>
+					<StyledLogo White>
 						<span onClick={() => history.push("/")}>Capos</span>
 					</StyledLogo>
 				</StyledFormGridElement>

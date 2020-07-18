@@ -59,7 +59,7 @@ const StyledFormGrid = styled.div`
 `;
 
 const StyledFormGridElement = styled.div`
-	background-color: ${(props) => props.color};
+	background-color: ${(props) => props.primary&&props.theme.Primary};
 	padding: ${(props) => props.padding && props.padding};
 	grid-row: ${(props) => props.rowSpan && `span ${props.rowSpan}`};
 	grid-column: ${(props) => props.columnSpan && `span ${props.columnSpan}`};

@@ -66,16 +66,16 @@ const LoginBtn = styled(Button)`
 
 const NextButton = styled(Button)`
 	font-size: ${(props) => props.theme.SmallButtonSize};
-	border: 1px solid;
-	border-color: ${(props) => props.theme.NextButton};
-	background-color: ${(props) => props.theme.White};
-	color: ${(props) => props.theme.NextButton};
-	border-radius: 4px;
+	//border: 1px solid;
+	//border-color: ${(props) => props.theme.NextButton};
+	//background-color: ${(props) => props.theme.White};
+	color: ${(props) => props.theme.White};
+	//border-radius: 4px;
 
- 	&:hover {
-		background-color: ${(props) => props.theme.NextButton};
-		color: ${(props) => props.theme.White};
-	}
+	//&:hover {
+		//background-color: ${(props) => props.theme.NextButton};
+		//color: ${(props) => props.theme.White};
+	//}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
 	}
@@ -83,35 +83,40 @@ const NextButton = styled(Button)`
 
 const BackButton = styled(Button)`
 	font-size: ${(props) => props.theme.SmallButtonSize};
-	border: 1px solid;
-	border-color: ${(props) => props.theme.BackButton};
-	background-color: ${(props) => props.theme.White};
-	color: ${(props) => props.theme.BackButton};
-	border-radius: 4px;
+	//border: 1px solid;
+	//border-color: ${(props) => props.theme.BackButton};
+	//background-color: ${(props) => props.theme.White};
+	color: ${(props) => props.theme.White};
+	//border-radius: 4px;
 
-	&:hover {
-		background-color: ${(props) => props.theme.BackButton};
-		color: ${(props) => props.theme.White};
-	}
+	//&:hover {
+		//background-color: ${(props) => props.theme.BackButton};
+		//color: ${(props) => props.theme.White};
+	//}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
+	}
+	&:disabled{
+		background-color:#777;
+		border-color:#777;
+		color: black;
 	}
 `;
 
 const AddButton = styled(Button)`
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.1);
-	border: 1px solid;
-	border-color: ${(props) => props.theme.NextButton};
+	//background: rgba(255, 255, 255, 0.1);
+	//border: 1px solid;
+	//border-color: ${(props) => props.theme.NextButton};
 	font-size: 25px;
-	color: ${(props) => props.theme.NextButton};
+	color: ${(props) => props.theme.White};
 	padding: 1px 12px 1px 12px;
 	margin: 0px 2px 0px 2px;
 
-	&:hover {
-		background-color: ${(props) => props.theme.NextButton};
-		color: ${(props) => props.theme.White};
-	}
+	//&:hover {
+		//background-color: ${(props) => props.theme.NextButton};
+		//color: ${(props) => props.theme.White};
+	//}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
 	}
@@ -133,6 +138,11 @@ const DelButton = styled(Button)`
 	}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
+	}
+	&:disabled{
+		background-color:#777;
+		border-color:#777;
+		color: black;
 	}
 `;
 
@@ -170,10 +180,29 @@ const StyledTextarea = styled.textarea`
 
 const FooterButton = styled(Button)`
 	margin: 0px;
-	padding: 0.1em 1em;	
-	display: ${props=>props.mdDisplay&&props.mdDisplay};
+	padding: 0.1em 1em;
+	display: ${(props) => props.mdDisplay && props.mdDisplay};
 	@media (max-width: 767px) {
-	display: ${props=>props.smDisplay&&props.smDisplay};
+		display: ${(props) => props.smDisplay && props.smDisplay};
+	}
+`;
+
+const AnimatedFormItem = styled.div`
+	--transition: transform 0.3s cubic-bezier(0, 0, 0.46, 1.53),
+		opacity 0.2s linear;
+	&.field-item-enter {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	&.field-item-enter-active {
+		opacity: 1;
+		transform: translateY(0px);
+		transition: var(--transition);
+	}
+	&.field-item-exit-active {
+		opacity: 0;
+		transform: translateY(-50px);
+		transition: var(--transition);
 	}
 `;
 
@@ -193,4 +222,5 @@ export {
 	GoogleSignInButton,
 	FacebookSignInButton,
 	FooterButton,
+	AnimatedFormItem,
 };

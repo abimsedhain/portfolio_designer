@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as yup from "yup";
 import { FormGroup, ButtonGroup, InputGroup } from "reactstrap";
@@ -6,6 +7,7 @@ import {
 	AddButton,
 	DelButton,
 	StyledInput,
+	AnimatedFormItem,
 } from "../styled/StyledComponents";
 import { FormTitle, FormLabel } from "../styled/StyledText";
 
@@ -52,59 +54,57 @@ const SocialMedia = ({ formRef, formData }) => {
 					<FieldArray
 						name="skills"
 						render={(arrayHelpers) => (
-							<>
+							<TransitionGroup>
 								{values.skills.map((skill, index) => (
-									<FormGroup key={index}>
-										<InputGroup>
-											<Field
-												name={`skills.${index}`}
-												type="input"
-												as={StyledInput}
-												className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
-												placeholder="Enter Skill"
-											/>
-											<ButtonGroup>
-												{/* <Button
+									<CSSTransition
+										key={index}
+										classNames="field-item"
+										timeout={{ enter: 300, exit: 200 }}
+									>
+										<AnimatedFormItem>
+											<FormGroup key={index}>
+												<InputGroup>
+													<Field
+														name={`skills.${index}`}
+														type="input"
+														as={StyledInput}
+														className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
+														placeholder="Enter Skill"
+													/>
+													<ButtonGroup>
+														<AddButton
 															type="button"
-															onClick={() => { values.skills.length > 1 && arrayHelpers.remove(index) }} className="bg-danger"
+															onClick={() =>
+																arrayHelpers.insert(
+																	index + 1,
+																	""
+																)
+															}
 														>
-															-
-                      											</Button>
-														<Button
+															&#43;
+														</AddButton>
+
+														<DelButton
 															type="button"
-															onClick={() => arrayHelpers.insert(index, '')} className="bg-success"
-														>+
-                      											</Button> */}
-
-												<AddButton
-													type="button"
-													onClick={() =>
-														arrayHelpers.insert(
-															index + 1,
-															""
-														)
-													}
-												>
-													&#43;
-												</AddButton>
-
-												<DelButton
-													type="button"
-													onClick={() => {
-														values.skills.length >
-															1 &&
-															arrayHelpers.remove(
-																index
-															);
-													}}
-												>
-													&#8722;
-												</DelButton>
-											</ButtonGroup>
-										</InputGroup>
-									</FormGroup>
+															disabled={values.skills.length===1}
+															onClick={() => {
+																values.skills
+																	.length >
+																	1 &&
+																	arrayHelpers.remove(
+																		index
+																	);
+															}}
+														>
+															&#8722;
+														</DelButton>
+													</ButtonGroup>
+												</InputGroup>
+											</FormGroup>
+										</AnimatedFormItem>
+									</CSSTransition>
 								))}
-							</>
+							</TransitionGroup>
 						)}
 					></FieldArray>
 				</Form>

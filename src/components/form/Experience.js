@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Formik, Form, Field, FieldArray } from "formik";
 import { FormGroup, ButtonGroup, InputGroup } from "reactstrap";
 import * as yup from "yup";
@@ -8,6 +9,7 @@ import {
 	AddButton,
 	DelButton,
 	StyledInput,
+	AnimatedFormItem,
 } from "../styled/StyledComponents";
 import { FormTitle, FormLabel } from "../styled/StyledText";
 
@@ -32,171 +34,176 @@ const Experience = ({ formRef, formData }) => {
 					<FieldArray
 						name="experiences"
 						render={(arrayHelpers) => (
-							<>
+							<TransitionGroup>
 								{values.experiences.map((experience, index) => (
-									<div key={index}>
-										<FormGroup>
-											<FormLabel>Company Name</FormLabel>
-											{/* <ButtonGroup>
-												<Button className="bg-danger" type="button"
-													onClick={() => { values.experiences.length > 1 && arrayHelpers.remove(index) }} >-</Button>
-												<Button className="bg-info" type="button"
-													onClick={() => arrayHelpers.insert(index, {
-														CompanyName: "",
-														Position: "",
-														StartDate: "",
-														EndDate: "",
-														Highlights: [""]
-													})}>+</Button>
-											</ButtonGroup> */}
+									<CSSTransition
+										key={index}
+										classNames="field-item"
+										timeout={{ enter: 300, exit: 200 }}
+									>
+										<AnimatedFormItem key={index}>
+											<FormGroup>
+												<FormLabel>
+													Company Name
+												</FormLabel>
 
-											<Field
-												type="text"
-												name={`experiences.${index}.CompanyName`}
-												as={StyledInput}
-												placeholder="Enter Company Name"
-											></Field>
-										</FormGroup>
-										<FormGroup>
-											<FormLabel>Position</FormLabel>
-											<Field
-												type="text"
-												name={`experiences.${index}.Position`}
-												as={StyledInput}
-												placeholder="Enter Position"
-											></Field>
-										</FormGroup>
-										<FormGroup>
-											<FormLabel>Highlights</FormLabel>
-											<FieldArray
-												name={`experiences.${index}.Highlights`}
-												render={(arrayHelpers) => (
-													<>
-														{values.experiences[
-															index
-														].Highlights.map(
-															(
-																highlight,
-																index2
-															) => (
-																<FormGroup
-																	key={index2}
-																>
-																	<InputGroup>
-																		<Field
-																			name={`experiences.${index}.Highlights.${index2}`}
-																			type="input"
-																			as={
-																				StyledInput
-																			}
-																			className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
-																			placeholder="Enter Highlight"
-																		/>
-																		<ButtonGroup>
-																			{/* <Button
-																			type="button"
-																			onClick={() => { values.experiences[index].Highlights.length > 1 && arrayHelpers.remove(index2) }} className="bg-danger"
-																		>
-																			-
-                      											</Button>
-																		<Button
-																			type="button"
-																			onClick={() => arrayHelpers.insert(index2, '')} className="bg-success"
-																		>+
-                      											</Button> */}
-																			<AddButton
-																				type="button"
-																				onClick={() =>
-																					arrayHelpers.insert(
-																						index2 +
-																							1,
-																						""
-																					)
+												<Field
+													type="text"
+													name={`experiences.${index}.CompanyName`}
+													as={StyledInput}
+													placeholder="Enter Company Name"
+												></Field>
+											</FormGroup>
+											<FormGroup>
+												<FormLabel>Position</FormLabel>
+												<Field
+													type="text"
+													name={`experiences.${index}.Position`}
+													as={StyledInput}
+													placeholder="Enter Position"
+												></Field>
+											</FormGroup>
+											<FormGroup>
+												<FormLabel>
+													Highlights
+												</FormLabel>
+												<FieldArray
+													name={`experiences.${index}.Highlights`}
+													render={(arrayHelpers) => (
+														<TransitionGroup>
+															{values.experiences[
+																index
+															].Highlights.map(
+																(
+																	highlight,
+																	index2
+																) => (
+																	<CSSTransition
+																		key={
+																			index2
+																		}
+																		classNames="field-item"
+																		timeout={{
+																			enter: 300,
+																			exit: 200,
+																		}}
+																	>
+																		<AnimatedFormItem>
+																			<FormGroup
+																				key={
+																					index2
 																				}
 																			>
-																				&#43;
-																			</AddButton>
+																				<InputGroup>
+																					<Field
+																						name={`experiences.${index}.Highlights.${index2}`}
+																						type="input"
+																						as={
+																							StyledInput
+																						}
+																						className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
+																						placeholder="Enter Highlight"
+																					/>
+																					<ButtonGroup>
+																						<AddButton
+																							type="button"
+																							onClick={() =>
+																								arrayHelpers.insert(
+																									index2 +
+																										1,
+																									""
+																								)
+																							}
+																						>
+																							&#43;
+																						</AddButton>
 
-																			<DelButton
-																				type="button"
-																				onClick={() => {
-																					values
-																						.experiences[
-																						index
-																					]
-																						.Highlights
-																						.length >
-																						1 &&
-																						arrayHelpers.remove(
-																							index2
-																						);
-																				}}
-																			>
-																				&#8722;
-																			</DelButton>
-																		</ButtonGroup>
-																	</InputGroup>
-																</FormGroup>
-															)
-														)}
-													</>
-												)}
-											></FieldArray>
-										</FormGroup>
-										<FormGroup>
-											<FormLabel>Start Date</FormLabel>
-											<Field
-												type="text"
-												name={`experiences.${index}.StartDate`}
-												as={StyledInput}
-												placeholder="Enter Start Date"
-											></Field>
-										</FormGroup>
-										<FormGroup>
-											<FormLabel>End Date</FormLabel>
-											<Field
-												type="text"
-												name={`experiences.${index}.EndDate`}
-												as={StyledInput}
-												placeholder="Enter End Date"
-											></Field>
-										</FormGroup>
-
-										<ButtonGroup className="d-flex justify-content-center">
-											<BackButton
-												type="button"
-												onClick={() => {
-													values.experiences.length >
-														1 &&
-														arrayHelpers.remove(
-															index
-														);
-												}}
-											>
-												Delete Experience
-											</BackButton>
-
-											<NextButton
-												type="button"
-												onClick={() =>
-													arrayHelpers.insert(
-														index + 1,
-														{
-															CompanyName: "",
-															Position: "",
-															StartDate: "",
-															EndDate: "",
-															Highlights: [""],
-														}
-													)
-												}
-											>
-												Add Experience
-											</NextButton>
-										</ButtonGroup>
-									</div>
+																						<DelButton
+																							type="button"
+																	disabled={values.experiences[index].Highlights.length===1}
+																							onClick={() => {
+																								values
+																									.experiences[
+																									index
+																								]
+																									.Highlights
+																									.length >
+																									1 &&
+																									arrayHelpers.remove(
+																										index2
+																									);
+																							}}
+																						>
+																							&#8722;
+																						</DelButton>
+																					</ButtonGroup>
+																				</InputGroup>
+																			</FormGroup>
+																		</AnimatedFormItem>
+																	</CSSTransition>
+																)
+															)}
+														</TransitionGroup>
+													)}
+												></FieldArray>
+											</FormGroup>
+											<FormGroup>
+												<FormLabel>
+													Start Date
+												</FormLabel>
+												<Field
+													type="text"
+													name={`experiences.${index}.StartDate`}
+													as={StyledInput}
+													placeholder="Enter Start Date"
+												></Field>
+											</FormGroup>
+											<FormGroup>
+												<FormLabel>End Date</FormLabel>
+												<Field
+													type="text"
+													name={`experiences.${index}.EndDate`}
+													as={StyledInput}
+													placeholder="Enter End Date"
+												></Field>
+											</FormGroup>
+										</AnimatedFormItem>
+									</CSSTransition>
 								))}
-							</>
+
+								<ButtonGroup className="d-flex justify-content-center">
+									<BackButton
+										type="button"
+										disabled={
+											values.experiences.length === 1
+										}
+										onClick={() => {
+											values.experiences.length > 1 &&
+												arrayHelpers.remove(
+													values.experiences.length -
+														1
+												);
+										}}
+									>
+										Delete Experience
+									</BackButton>
+
+									<NextButton
+										type="button"
+										onClick={() =>
+											arrayHelpers.push({
+												CompanyName: "",
+												Position: "",
+												StartDate: "",
+												EndDate: "",
+												Highlights: [""],
+											})
+										}
+									>
+										Add Experience
+									</NextButton>
+								</ButtonGroup>
+							</TransitionGroup>
 						)}
 					></FieldArray>
 				</Form>
