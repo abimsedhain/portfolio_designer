@@ -83,54 +83,35 @@ const NextButton = styled(Button)`
 
 const BackButton = styled(Button)`
 	font-size: ${(props) => props.theme.SmallButtonSize};
-	//border: 1px solid;
-	//border-color: ${(props) => props.theme.BackButton};
-	//background-color: ${(props) => props.theme.White};
 	color: ${(props) => props.theme.White};
-	//border-radius: 4px;
 
-	//&:hover {
-		//background-color: ${(props) => props.theme.BackButton};
-		//color: ${(props) => props.theme.White};
-	//}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
 	}
 	&:disabled{
-		background-color:#777;
-		border-color:#777;
-		color: black;
+		background-color:#666;
+		border-color:#666;
 	}
 `;
 
 const AddButton = styled(Button)`
-	border-radius: 50%;
-	//background: rgba(255, 255, 255, 0.1);
-	//border: 1px solid;
-	//border-color: ${(props) => props.theme.NextButton};
-	font-size: 25px;
+	border-radius: 60%;
+	font-size: ${props=>props.theme.SmallButtonSize};
 	color: ${(props) => props.theme.White};
-	padding: 1px 12px 1px 12px;
-	margin: 0px 2px 0px 2px;
+	padding: 1px 8px;
+	margin: auto 1.5px; 
 
-	//&:hover {
-		//background-color: ${(props) => props.theme.NextButton};
-		//color: ${(props) => props.theme.White};
-	//}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
 	}
 `;
 
-const DelButton = styled(Button)`
+const DelButton = styled(AddButton)`
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.1);
 	border: 1px solid;
 	border-color: ${(props) => props.theme.BackButton};
-	font-size: 25px;
 	color: ${(props) => props.theme.BackButton};
-	padding: 1px 12px 1px 12px;
-	margin: 0px 1px 0px 1px;
 
 	&:hover {
 		background-color: ${(props) => props.theme.BackButton};
@@ -140,9 +121,9 @@ const DelButton = styled(Button)`
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
 	}
 	&:disabled{
-		background-color:#777;
-		border-color:#777;
-		color: black;
+		background-color:#666;
+		border-color:#666;
+		color: white;
 	}
 `;
 
@@ -155,7 +136,7 @@ const HrLine = styled.hr`
 const StyledInput = styled.input`
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid #000000;
+	border-bottom: 1px solid ${props=>props.theme.Grey};
 	padding: 10px;
 	width: 100%;
 	&:focus {
@@ -163,10 +144,14 @@ const StyledInput = styled.input`
 		border-bottom: ${(props) => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
 	}
+	&::placeholder{
+		color: ${props=>props.theme.Grey};
+		font-size: ${props=>props.theme.FooterSize};
+	}
 `;
 
 const StyledTextarea = styled.textarea`
-	background: transparent;
+	//background: transparent;
 	border: none;
 	border-bottom: 1px solid #000000;
 	padding: 10px;
@@ -175,6 +160,10 @@ const StyledTextarea = styled.textarea`
 		outline: none;
 		border-bottom: ${(props) => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
+	}
+	&::placeholder{
+		color: ${props=>props.theme.Grey};
+		font-size: ${props=>props.theme.FooterSize};
 	}
 `;
 

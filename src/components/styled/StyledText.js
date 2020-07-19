@@ -15,7 +15,6 @@ const Header = styled.h1`
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)}
 `;
 
-
 const Subheader = styled.h2`
 	font-family: ${(props) => props.theme.Subheader};
 	font-weight: ${(props) => props.Bold && "bold"};
@@ -45,41 +44,38 @@ const FormTitle = styled.h1`
 	font-size: ${(props) => props.theme.DescriptionSize};
 	font-family: ${(props) => props.theme.Header};
 	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
-	font-weight: ${(props) => props.theme.HeaderWeight};
+	font-weight: bold;
 	margin: 0.5em 0em 1em;
 `;
 
 const FormLabel = styled.h1`
-	font-size: ${(props) =>
-		props.FooterSize
-			? props.theme.FooterSize
-			: props.theme.SmallDescriptionSize};
-	font-family: ${(props) =>
-		props.Header ? props.theme.Header : props.theme.Description};
-	font-weight: ${(props) =>
-		props.FooterWeight
-			? props.theme.FooterWeight
-			: props.theme.FormLabelWeight};
-	color: ${(props) =>
-		props.Grey || props.White
-			? props.White
-				? props.theme.White
-				: props.theme.Grey
-			: props.theme.Dark};
+	font-size: 1rem;
+	font-family: ${(props) => props.theme.Header};
+	font-weight: 400;
 	float: left;
 	padding: 0px 10px;
+	color: ${(props) => props.theme.Dark};
 `;
 
 const BoldSpan = styled.span`
 	
 	font-weight: bold;
 
-	background-image: linear-gradient(120deg, ${props=>props.theme.Grey} 0%, ${props=>props.theme.Grey} 100%);
-	//background-color: ${props=>props.theme.Primary}
-	background-repeat: no-repeat;
-	background-size: 100% 0.3em;
-	background-position: 0 80%;
+	//background-image: linear-gradient(-180deg, ${(props) =>
+		props.theme.Secondary} 0%, ${(props) => props.theme.Primary} 100%);
+	//background-color: ${(props) => props.theme.Primary};
+	//background-repeat: no-repeat;
+	//background-size: 100% 0.3em;
+	//background-position: 0 80%;
 `;
+
+const SmallSpan = styled.span`
+	font-size: ${props=>props.theme.FooterSize};
+	color: ${props=>props.theme.Grey};
+	margin: 4px;
+
+`
+
 const StyledLogo = styled.h2`
 	font-family: ${(props) => props.theme.Header};
 	font-weight: ${(props) => props.theme.HeaderSize};
@@ -98,5 +94,6 @@ export {
 	FormLabel,
 	LogoText,
 	BoldSpan,
-	StyledLogo
+	StyledLogo,
+	SmallSpan
 };

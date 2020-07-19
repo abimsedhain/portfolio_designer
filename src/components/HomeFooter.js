@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Navbar, Nav, NavItem } from "reactstrap";
 
 import {StyledFooter} from "./styled/StyledContainers"
-import {  FormLabel } from "./styled/StyledText";
+import {  SmallSpan } from "./styled/StyledText";
 
 //Footer for Home page
 function HomeFooter() {
@@ -17,27 +17,27 @@ function HomeFooter() {
 				>
 					<Nav className="ml-left" navbar>
 						<NavItem>
-							<FormLabel FooterWeight FooterSize Header Grey>
+							<SmallSpan>
 								&copy; 2020 Capos
-							</FormLabel>
+							</SmallSpan>
 						</NavItem>
 					</Nav>
 
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<FormLabel FooterWeight FooterSize Header Grey>
+							<SmallSpan>
 								About
-							</FormLabel>
+							</SmallSpan>
 						</NavItem>
 						<NavItem>
-							<FormLabel FooterWeight FooterSize Header Grey>
+							<SmallSpan>
 								Contact
-							</FormLabel>
+							</SmallSpan>
 						</NavItem>
 						<NavItem>
-							<FormLabel FooterWeight FooterSize Header Grey>
+							<SmallSpan>
 								Donate
-							</FormLabel>
+							</SmallSpan>
 						</NavItem>
 					</Nav>
 				</Navbar>

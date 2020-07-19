@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from "reactstrap";
+import { ReactComponent as BackgroundClip } from "../../assets/background.svg";
 
 const HomeContainer = styled.div`
 	min-height: 100vh;
@@ -36,7 +37,7 @@ const HomepageContain = styled(FullSizeContainer)`
 `;
 
 const ClipPathBackground = styled.div`
-	position: absolute;
+	position: fixed;
 	left: 0%;
 	top: 0%;
 	height: 100vh;
@@ -46,27 +47,47 @@ const ClipPathBackground = styled.div`
 	background-color: ${(props) => props.Secondary && props.theme.Secondary};
 	opacity: ${(props) => (props.Opacity ? props.Opacity : "25%")};
 	z-index: ${(props) => (props.Index ? props.Index : "0")};
-	clip-path: ${(props) => props.Mask && `ellipse(100% 84% at 99% 12%)`};
+`;
+
+const StyledBackgroundClip = styled(BackgroundClip)`
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	height: 100vh;
+	width: max(100vh, 100vw);
+	//width: 100vw;
+	transform: rotate(-90deg);	
+	transform: scale(1.2);	
+	z-index: ${(props) => (props.Index ? props.Index : "0")};
+	.path {
+		fill: white;
+		fill: ${(props) => props.Primary && props.theme.Primary};
+		fill: ${(props) => props.Secondary && props.theme.Secondary};
+		opacity: ${(props) => (props.Opacity ? props.Opacity : "25%")};
+		z-index: ${(props) => (props.Index ? props.Index : "0")};
+	}
 `;
 const StyledFormGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: max-content auto;
 	height: calc(100vh - 60px);
 	@media (max-width: 767px) {
 		height: calc(100vh - 65px);
 	}
+
 `;
 
 const StyledFormGridElement = styled.div`
-	background-color: ${(props) => props.primary&&props.theme.Primary};
+	background-color: ${(props) => props.primary && props.theme.Primary};
 	padding: ${(props) => props.padding && props.padding};
-	grid-row: ${(props) => props.rowSpan && `span ${props.rowSpan}`};
-	grid-column: ${(props) => props.columnSpan && `span ${props.columnSpan}`};
+	grid-column: ${(props) => props.navbar && `span 5`};
+	grid-column: ${(props) => props.input && `1/3`};
+	grid-column: ${(props) => props.preview && `3/6`};
 	overflow: ${(props) => props.overflow && props.overflow};
 	@media (max-width: 767px) {
-		grid-column: ${props=>!props.navbar && "1 / 3"};
-		grid-row: ${props=>!props.navbar && "2 / 3"};
+		grid-column: ${(props) => !props.navbar && "1 / 6"};
+		grid-row: ${(props) => !props.navbar && "2 / 3"};
 		transform: ${(props) => props.isBeingPreviewed && "translateX(100vw)"};
 	}
 
@@ -75,20 +96,17 @@ const StyledFormGridElement = styled.div`
 		height: 5px;
 	}
 	::-webkit-scrollbar-track {
-		background-color: white;
+		background-color: ${props=>props.theme.Secondary};
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: #aaa;
 		border-radius: 4px;
 	}
 
-
 	//Animation classes
 
-
-	--transition: transform 0.3s cubic-bezier(0, 0, 0.46, 1.53); 
+	--transition: transform 0.3s cubic-bezier(0, 0, 0.46, 1.53);
 	&.form-section-enter {
-		
 		transform: translateX(-100vw);
 	}
 
@@ -97,7 +115,6 @@ const StyledFormGridElement = styled.div`
 		transition: var(--transition);
 	}
 	&.form-section-exit {
-		
 		transform: translateX(0px);
 	}
 	&.form-section-exit-active {
@@ -109,16 +126,14 @@ const StyledFormGridElement = styled.div`
 		transform: translateX(100vwpx);
 	}
 
-	&.template-section-enter{
-	
+	&.template-section-enter {
 		transform: translateX(100vw);
 	}
 	&.template-section-enter-active {
 		transform: translateX(0px);
 		transition: var(--transition);
 	}
-	&.template-section-exit{
-	
+	&.template-section-exit {
 		transform: translateX(0px);
 	}
 	&.template-section-exit-active {
@@ -137,6 +152,7 @@ const StyledFormFooter = styled(StyledFormGridElement)`
 		justify-content: space-between;
 		margin: 0 auto;
 	}
+
 `;
 
 const StyledFormFooterContainer = styled.div`
@@ -159,4 +175,5 @@ export {
 	StyledFormFooter,
 	StyledFormGridElement,
 	StyledFormFooterContainer,
+	StyledBackgroundClip,
 };

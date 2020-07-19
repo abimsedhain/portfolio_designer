@@ -25,6 +25,19 @@ import {
 } from "../state management/userContext";
 import types from "../state management/types";
 
+
+import styled from "styled-components";
+
+const StyledFormInputContainer = styled.div`
+	background-color: ${props=> props.theme.White};
+	padding: 1em;
+	border: 1px solid;
+	border-color: ${props=>props.theme.Grey};
+
+	border-radius: 10px;
+
+`
+
 const Form = ({ match }) => {
 	const history = useHistory();
 	const [formData, setFormData] = useState(initialFormData);
@@ -75,8 +88,8 @@ const Form = ({ match }) => {
 
 	return (
 		<>
-			<StyledFormGrid>
-				<StyledFormGridElement columnSpan={2} navbar primary>
+			<StyledFormGrid isBeingPreviewed={isBeingPreviewed}>
+				<StyledFormGridElement navbar primary>
 					<StyledLogo White>
 						<span onClick={() => history.push("/")}>Capos</span>
 					</StyledLogo>
@@ -85,8 +98,11 @@ const Form = ({ match }) => {
 				<StyledFormGridElement
 					overflow="scroll"
 					isBeingPreviewed={isBeingPreviewed}	
-					padding="2em"
+					padding="1em"
+					input
 				>
+		
+		<StyledFormInputContainer>
 					<Route
 						path={`${match.path}/:formId?`}
 						render={(props) => {
@@ -103,14 +119,15 @@ const Form = ({ match }) => {
 							);
 						}}
 					/>
+		</StyledFormInputContainer>
 				</StyledFormGridElement>
 		</CSSTransition>
 
 				<CSSTransition in={isBeingPreviewed} timeout={500} classNames="template-section">
 				<StyledFormGridElement
 					overflow="scroll"
-					smSize="2"
 					isBeingPreviewed={!isBeingPreviewed}	
+					preview
 				>
 					<Template />
 				</StyledFormGridElement>

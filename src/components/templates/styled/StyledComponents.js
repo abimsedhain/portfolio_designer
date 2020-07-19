@@ -70,7 +70,7 @@ const StyledBox = styled.div`
 	}
 `
 const StyledNavbar = styled(Navbar)`
-	background-color: ${props => props.theme.Background};
+	//background-color: ${props => props.theme.Background};
 	`
 	const StyledNavLink = styled(Description)`
 		display: block;

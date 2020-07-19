@@ -18,6 +18,8 @@ const validationSchema = yup.object({
 	// eduDescription:yup.string().required('Description should be less than 240 words').max(240)
 });
 
+
+
 const Education = ({ formRef, formData }) => {
 	return (
 		<Formik

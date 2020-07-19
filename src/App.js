@@ -8,6 +8,7 @@ import Template from "./components/templates/Template";
 import Lost from "./components/Lost";
 import Portfolio from "./components/Portfolio";
 import Authenticate from "./components/authentication/Authenticate";
+import {ClipPathBackground} from "./components/styled/StyledContainers";
 
 // Theme and ThemeProvider from styled folder and components
 import Theme from "./components/styled/Theme";
@@ -60,6 +61,7 @@ function App() {
 					{/**Provding state and dispatch context**/}
 					<userStateContext.Provider value={state}>
 						<userDispatchContext.Provider value={dispatch}>
+							<ClipPathBackground Secondary Opacity="100%" Index="-3"/>
 							<Switch>
 								<Route path="/" exact component={Home} />
 								<Route

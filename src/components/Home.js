@@ -3,7 +3,7 @@ import { userStateContext } from "../state management/userContext";
 import { Row, Col } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import HomeFooter from "./HomeFooter";
-import mainlogo from "../assets/logo2.svg";
+import mainlogo from "../assets/logo-test.svg";
 import {
 	HomepageButton,
 	GoogleSignInButton,
@@ -13,8 +13,11 @@ import {
 	HomeContainer,
 	HomepageContain,
 	ClipPathBackground,
+	StyledBackgroundClip
+
 } from "./styled/StyledContainers";
 import { Header, Description, BoldSpan, StyledLogo } from "./styled/StyledText";
+
 
 function Home() {
 	const userState = useContext(userStateContext).userState;
@@ -22,18 +25,18 @@ function Home() {
 	return (
 		<HomeContainer>
 			{/** Adding the clip background **/}
+			<StyledBackgroundClip Secondary Index="-1" Opacity="100%"/>
 			<ClipPathBackground Primary Index="-2" Opacity="15%" />
-			<ClipPathBackground Mask Index="-1" Opacity="100%" />
 			<StyledLogo onClick={()=>history.push("/")}>Capos</StyledLogo>
 			<HomepageContain>
 				<Row className="mb-auto mt-5 m-md-auto">
 					<Col className="text-left col-12 col-sm-12 col-md-6 col-lg-7 order-md-0 order-sm-1 order-xs-1 order-1 ">
-						<Header>Capos</Header>
-						<Description Lighter id="LoginCard">
-							Build a simple and elegant{" "}
+						<Header Lighter  Small id="LoginCard">
+							Build a{" "}
 							<BoldSpan>Portfolio Website</BoldSpan> under 10
 							minutes.
-						</Description>
+						</Header>
+						<Description Small>Get up and running with one of our custom templates</Description>
 						<HomepageButton
 							White
 							Small

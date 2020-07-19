@@ -30,7 +30,7 @@ const PersonalInfo = ({ formRef, formData }) => {
 						type="text"
 						name="fullName"
 						as={StyledInput}
-						placeholder="Enter Full Name"
+						placeholder="John Smith"
 					></Field>
 					<ErrorMessage name="fullName" />
 				</FormGroup>
@@ -41,7 +41,7 @@ const PersonalInfo = ({ formRef, formData }) => {
 						type="email"
 						name="email"
 						as={StyledInput}
-						placeholder="Enter Email"
+						placeholder="JSmith@g****.com"
 					/>
 					{/* <StyledInput type='email' name='email' as={StyledInput} placeholder="Enter Email" ></StyledInput> */}
 					<ErrorMessage name="email" />
@@ -54,7 +54,7 @@ const PersonalInfo = ({ formRef, formData }) => {
 						name="bio"
 						as={StyledTextarea}
 						type="textarea"
-						placeholder="Enter your Bio Here..."
+						placeholder="Super Hero, Saint, God himself"
 					/>
 					<ErrorMessage name="email" />
 				</FormGroup>

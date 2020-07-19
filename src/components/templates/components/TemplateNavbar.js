@@ -16,7 +16,7 @@ const TemplateNavbar = (props) => {
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<StyledNavbar color="light" light expand="md" className="bg-white text-right pt-2 pb-0 pb-md-5">
+		<StyledNavbar  expand="md" className="text-right pt-2 pb-0 pb-md-5">
 			<NavbarToggler onClick={toggle} className="mr-2 ml-auto" />
 			<Collapse isOpen={isOpen} navbar>
 				<Nav className="mr-auto" navbar>

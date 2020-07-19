@@ -2,7 +2,7 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as yup from "yup";
-import { FormGroup, ButtonGroup, InputGroup } from "reactstrap";
+import { FormGroup, InputGroup } from "reactstrap";
 import {
 	AddButton,
 	DelButton,
@@ -71,7 +71,6 @@ const SocialMedia = ({ formRef, formData }) => {
 														className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
 														placeholder="Enter Skill"
 													/>
-													<ButtonGroup>
 														<AddButton
 															type="button"
 															onClick={() =>
@@ -98,7 +97,6 @@ const SocialMedia = ({ formRef, formData }) => {
 														>
 															&#8722;
 														</DelButton>
-													</ButtonGroup>
 												</InputGroup>
 											</FormGroup>
 										</AnimatedFormItem>
