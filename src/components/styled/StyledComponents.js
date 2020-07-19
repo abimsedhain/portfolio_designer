@@ -83,23 +83,31 @@ const NextButton = styled(Button)`
 
 const BackButton = styled(Button)`
 	font-size: ${(props) => props.theme.SmallButtonSize};
-	color: ${(props) => props.theme.White};
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid;
+	border-color: ${(props) => props.theme.BackButton};
+	color: ${(props) => props.theme.BackButton};
 
+	&:hover {
+		background-color: ${(props) => props.theme.BackButton};
+		color: ${(props) => props.theme.White};
+	}
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
 	}
-	&:disabled{
-		background-color:#666;
-		border-color:#666;
+	&:disabled {
+		background-color: #666;
+		border-color: #666;
+		color: ${(props) => props.theme.White};
 	}
 `;
 
 const AddButton = styled(Button)`
 	border-radius: 60%;
-	font-size: ${props=>props.theme.SmallButtonSize};
+	font-size: ${(props) => props.theme.SmallButtonSize};
 	color: ${(props) => props.theme.White};
 	padding: 1px 8px;
-	margin: auto 1.5px; 
+	margin: auto 1.5px;
 
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
@@ -120,9 +128,9 @@ const DelButton = styled(AddButton)`
 	&:focus {
 		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.BackButton};
 	}
-	&:disabled{
-		background-color:#666;
-		border-color:#666;
+	&:disabled {
+		background-color: #666;
+		border-color: #666;
 		color: white;
 	}
 `;
@@ -136,7 +144,7 @@ const HrLine = styled.hr`
 const StyledInput = styled.input`
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid ${props=>props.theme.Grey};
+	border-bottom: 1px solid ${(props) => props.theme.Grey};
 	padding: 10px;
 	width: 100%;
 	&:focus {
@@ -144,9 +152,9 @@ const StyledInput = styled.input`
 		border-bottom: ${(props) => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
 	}
-	&::placeholder{
-		color: ${props=>props.theme.Grey};
-		font-size: ${props=>props.theme.FooterSize};
+	&::placeholder {
+		color: ${(props) => props.theme.Grey};
+		font-size: ${(props) => props.theme.FooterSize};
 	}
 `;
 
@@ -161,9 +169,9 @@ const StyledTextarea = styled.textarea`
 		border-bottom: ${(props) => `2px solid ${props.theme.Primary}`};
 		margin-bottom: -1px;
 	}
-	&::placeholder{
-		color: ${props=>props.theme.Grey};
-		font-size: ${props=>props.theme.FooterSize};
+	&::placeholder {
+		color: ${(props) => props.theme.Grey};
+		font-size: ${(props) => props.theme.FooterSize};
 	}
 `;
 
