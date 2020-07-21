@@ -49,7 +49,7 @@ const Education = ({ formRef, formData }) => {
 													type="text"
 													name={`education.${index}.InstituteName`}
 													as={StyledInput}
-													placeholder="Enter Institution Name"
+													placeholder="Princeton University"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -58,7 +58,7 @@ const Education = ({ formRef, formData }) => {
 													type="text"
 													name={`education.${index}.Degree`}
 													as={StyledInput}
-													placeholder="Enter Degree"
+													placeholder="Computer Science"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -69,7 +69,7 @@ const Education = ({ formRef, formData }) => {
 													type="text"
 													name={`education.${index}.StartDate`}
 													as={StyledInput}
-													placeholder="Enter Start Date"
+													placeholder="Aug 2020"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -78,7 +78,7 @@ const Education = ({ formRef, formData }) => {
 													type="text"
 													name={`education.${index}.EndDate`}
 													as={StyledInput}
-													placeholder="Enter End Date"
+													placeholder="May 2024"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -117,7 +117,7 @@ const Education = ({ formRef, formData }) => {
 																						as={
 																							StyledInput
 																						}
-																						placeholder="Enter Courses"
+																						placeholder="Machine Learning"
 																						className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
 																					/>
 																					<ButtonGroup>

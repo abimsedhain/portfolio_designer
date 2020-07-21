@@ -51,7 +51,7 @@ const Experience = ({ formRef, formData }) => {
 													type="text"
 													name={`experiences.${index}.CompanyName`}
 													as={StyledInput}
-													placeholder="Enter Company Name"
+													placeholder="Facebook"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -60,7 +60,7 @@ const Experience = ({ formRef, formData }) => {
 													type="text"
 													name={`experiences.${index}.Position`}
 													as={StyledInput}
-													placeholder="Enter Position"
+													placeholder="Software Engineer"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -102,7 +102,7 @@ const Experience = ({ formRef, formData }) => {
 																							StyledInput
 																						}
 																						className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
-																						placeholder="Enter Highlight"
+																						placeholder="Did really cool things using really cool technology"
 																					/>
 																					<ButtonGroup>
 																						<AddButton
@@ -155,7 +155,7 @@ const Experience = ({ formRef, formData }) => {
 													type="text"
 													name={`experiences.${index}.StartDate`}
 													as={StyledInput}
-													placeholder="Enter Start Date"
+													placeholder="May 2020"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -164,7 +164,7 @@ const Experience = ({ formRef, formData }) => {
 													type="text"
 													name={`experiences.${index}.EndDate`}
 													as={StyledInput}
-													placeholder="Enter End Date"
+													placeholder="Aug 2020"
 												></Field>
 											</FormGroup>
 										</AnimatedFormItem>

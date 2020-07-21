@@ -65,7 +65,7 @@ const Projects = ({ formRef, formData }) => {
 													type="text"
 													name={`projects.${index}.Title`}
 													as={StyledInput}
-													placeholder="Enter Project Title"
+													placeholder="Capos Portfolio Designer"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -76,7 +76,7 @@ const Projects = ({ formRef, formData }) => {
 													type="text"
 													name={`projects.${index}.Description`}
 													as={StyledInput}
-													placeholder="Enter Project Description"
+													placeholder="Web App for creating cool and stylish portfolios"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -119,7 +119,7 @@ const Projects = ({ formRef, formData }) => {
 																							StyledInput
 																						}
 																						className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
-																						placeholder="Enter Highlight"
+																						placeholder="Used the MERN stack"
 																					/>
 																					<ButtonGroup>
 																						
@@ -173,7 +173,7 @@ const Projects = ({ formRef, formData }) => {
 													type="text"
 													name={`projects.${index}.SourceLink`}
 													as={StyledInput}
-													placeholder="Enter Project Source Link"
+													placeholder="github.com/asimsedhain/Portfolio-Designer"
 												></Field>
 											</FormGroup>
 											<FormGroup>
@@ -182,7 +182,7 @@ const Projects = ({ formRef, formData }) => {
 													type="text"
 													name={`projects.${index}.DemoLink`}
 													as={StyledInput}
-													placeholder="Enter Project Demo Link"
+													placeholder="capos.netlify.app/"
 												></Field>
 											</FormGroup>
 										</AnimatedFormItem>

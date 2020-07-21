@@ -34,7 +34,7 @@ const SocialMedia = ({ formRef, formData }) => {
 							type="text"
 							id="github"
 							name="github"
-							placeholder="Enter GitHub Link"
+							placeholder="github.com/asimsedhain"
 							as={StyledInput}
 						/>
 						<ErrorMessage name="github" />
@@ -46,7 +46,7 @@ const SocialMedia = ({ formRef, formData }) => {
 							id="linkedin"
 							name="linkedin"
 							as={StyledInput}
-							placeholder="Enter LinkedIn Link"
+							placeholder="linkedin.com/in/ashimsedhain/"
 						/>
 						<ErrorMessage name="linkedin" />
 					</FormGroup>
@@ -69,7 +69,7 @@ const SocialMedia = ({ formRef, formData }) => {
 														type="input"
 														as={StyledInput}
 														className="col-8 col-sm-9 col-md-8 col-lg-9 col-xl-10"
-														placeholder="Enter Skill"
+														placeholder="JavaScript"
 													/>
 														<AddButton
 															type="button"
