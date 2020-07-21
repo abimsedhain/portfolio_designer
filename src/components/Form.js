@@ -32,7 +32,8 @@ const StyledFormInputContainer = styled.div`
 	background-color: ${props=> props.theme.White};
 	padding: 1em;
 	border: 1px solid;
-	border-color: ${props=>props.theme.Grey};
+	//border-color: ${props=>props.theme.Grey};
+	border-color: #AAA4;
 
 	border-radius: 10px;
 
