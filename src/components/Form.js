@@ -90,7 +90,7 @@ const Form = ({ match }) => {
 		<>
 			<StyledFormGrid isBeingPreviewed={isBeingPreviewed}>
 				<StyledFormGridElement navbar primary>
-					<StyledLogo White>
+					<StyledLogo Black shadow>
 						<span onClick={() => history.push("/")}>Capos</span>
 					</StyledLogo>
 				</StyledFormGridElement>

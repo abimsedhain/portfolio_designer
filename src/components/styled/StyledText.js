@@ -85,6 +85,10 @@ const StyledLogo = styled.h2`
 	padding: 1rem 2rem;
 	text-align: left;
 	margin: 0;
+	background-color: ${props=> props.White && props.theme.Primary};
+	background-color: ${props=> props.Black && props.theme.White};
+	position: relative;
+	box-shadow: ${props=> props.shadow&&"0px 1px 5px #AAA"};
 `;
 export {
 	Header,
