@@ -66,19 +66,9 @@ const LoginBtn = styled(Button)`
 
 const NextButton = styled(Button)`
 	font-size: ${(props) => props.theme.SmallButtonSize};
-	//border: 1px solid;
-	//border-color: ${(props) => props.theme.NextButton};
-	//background-color: ${(props) => props.theme.White};
 	color: ${(props) => props.theme.White};
-	//border-radius: 4px;
 
-	//&:hover {
-		//background-color: ${(props) => props.theme.NextButton};
-		//color: ${(props) => props.theme.White};
-	//}
-	&:focus {
-		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
-	}
+	
 `;
 
 const BackButton = styled(Button)`
@@ -108,10 +98,6 @@ const AddButton = styled(Button)`
 	color: ${(props) => props.theme.White};
 	padding: 1px 8px;
 	margin: auto 1.5px;
-
-	&:focus {
-		box-shadow: 0 0 0pt 1pt ${(props) => props.theme.NextButton};
-	}
 `;
 
 const DelButton = styled(AddButton)`

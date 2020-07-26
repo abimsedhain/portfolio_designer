@@ -3,12 +3,13 @@ import "./App.css";
 
 // Importing Components
 import Home from "./components/Home";
-import Form from "./components/Form"
+import Form from "./components/Form";
 import Template from "./components/templates/Template";
 import Lost from "./components/Lost";
 import Portfolio from "./components/Portfolio";
 import Authenticate from "./components/authentication/Authenticate";
-import {ClipPathBackground} from "./components/styled/StyledContainers";
+import Dashboard from "./components/dashboard/Dashboard";
+import { ClipPathBackground } from "./components/styled/StyledContainers";
 
 // Theme and ThemeProvider from styled folder and components
 import Theme from "./components/styled/Theme";
@@ -61,7 +62,11 @@ function App() {
 					{/**Provding state and dispatch context**/}
 					<userStateContext.Provider value={state}>
 						<userDispatchContext.Provider value={dispatch}>
-							<ClipPathBackground Secondary Opacity="100%" Index="-3"/>
+							<ClipPathBackground
+								Secondary
+								Opacity="100%"
+								Index="-3"
+							/>
 							<Switch>
 								<Route path="/" exact component={Home} />
 								<Route
@@ -73,6 +78,10 @@ function App() {
 								<Route
 									path="/portfolio"
 									component={Portfolio}
+								/>
+								<Route
+									path="/dashboard"
+									component={Dashboard}
 								/>
 								{/**Shows 404 if no route is matched**/}
 								<Route component={Lost} />

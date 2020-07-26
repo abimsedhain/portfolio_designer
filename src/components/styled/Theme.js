@@ -1,4 +1,4 @@
-const Theme={
+const Theme = {
 	Header: "Montserrat",
 	HeaderWeight: "300",
 	Subheader: "Cardo",
@@ -21,8 +21,8 @@ const Theme={
 	SmallButtonSize: "1rem",
 	FormLabelWeight: "600",
 	FooterWeight: "400",
-	NextButton: "#0275d8",
-	BackButton: "#CF0820"
-}
+	BackButton: "#CF0820",
+	DashboardLabelSize: "1rem",
+};
 
-export default Theme
+export default Theme;

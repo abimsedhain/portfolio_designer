@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useState } from "react";
-import {CSSTransition} from "react-transition-group"
-import { StyledLogo } from "./styled/StyledText";
+import { CSSTransition } from "react-transition-group";
+import { StyledLogo, PointerSpan } from "./styled/StyledText";
 import { FooterButton } from "./styled/StyledComponents";
 import {
 	StyledFormFooterContainer,
@@ -25,19 +25,18 @@ import {
 } from "../state management/userContext";
 import types from "../state management/types";
 
-
 import styled from "styled-components";
 
 const StyledFormInputContainer = styled.div`
-	background-color: ${props=> props.theme.White};
+	background-color: ${(props) => props.theme.White};
 	padding: 1em;
 	border: 1px solid;
-	//border-color: ${props=>props.theme.Grey};
+	//border-color: ${(props) => props.theme.Grey};
 	border-color: #AAA4;
 
 	border-radius: 10px;
 
-`
+`;
 
 const Form = ({ match }) => {
 	const history = useHistory();
@@ -90,49 +89,59 @@ const Form = ({ match }) => {
 	return (
 		<>
 			<StyledFormGrid isBeingPreviewed={isBeingPreviewed}>
-				<StyledFormGridElement navbar primary>
-					<StyledLogo Black shadow>
-						<span onClick={() => history.push("/")}>Capos</span>
+				<StyledFormGridElement navbar>
+					<StyledLogo black shadow>
+						<PointerSpan onClick={() => history.push("/")}>
+							Capos
+						</PointerSpan>
 					</StyledLogo>
 				</StyledFormGridElement>
-				<CSSTransition in={!isBeingPreviewed} timeout={500} classNames="form-section">
-				<StyledFormGridElement
-					overflow="scroll"
-					isBeingPreviewed={isBeingPreviewed}	
-					padding="1em"
-					input
+				<CSSTransition
+					in={!isBeingPreviewed}
+					timeout={500}
+					classNames="form-section"
 				>
-		
-		<StyledFormInputContainer>
-					<Route
-						path={`${match.path}/:formId?`}
-						render={(props) => {
-							const matchInner = props.match;
-							const id = parseInt(matchInner.params.formId) || 0;
-							setFormId(id);
-							return React.createElement(
-								FormComponents.current[id],
-								{
-									formRef,
-									formData,
-									portfolioId,
-								}
-							);
-						}}
-					/>
-		</StyledFormInputContainer>
-				</StyledFormGridElement>
-		</CSSTransition>
+					<StyledFormGridElement
+						overflow="scroll"
+						isBeingPreviewed={isBeingPreviewed}
+						padding="1em"
+						input
+					>
+						<StyledFormInputContainer>
+							<Route
+								path={`${match.path}/:formId?`}
+								render={(props) => {
+									const matchInner = props.match;
+									const id =
+										parseInt(matchInner.params.formId) || 0;
+									setFormId(id);
+									return React.createElement(
+										FormComponents.current[id],
+										{
+											formRef,
+											formData,
+											portfolioId,
+										}
+									);
+								}}
+							/>
+						</StyledFormInputContainer>
+					</StyledFormGridElement>
+				</CSSTransition>
 
-				<CSSTransition in={isBeingPreviewed} timeout={500} classNames="template-section">
-				<StyledFormGridElement
-					overflow="scroll"
-					isBeingPreviewed={!isBeingPreviewed}	
-					preview
+				<CSSTransition
+					in={isBeingPreviewed}
+					timeout={500}
+					classNames="template-section"
 				>
-					<Template />
-				</StyledFormGridElement>
-		</CSSTransition>
+					<StyledFormGridElement
+						overflow="scroll"
+						isBeingPreviewed={!isBeingPreviewed}
+						preview
+					>
+						<Template />
+					</StyledFormGridElement>
+				</CSSTransition>
 			</StyledFormGrid>
 			<StyledFormFooterContainer>
 				<StyledFormFooter>

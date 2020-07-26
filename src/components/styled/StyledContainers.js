@@ -56,8 +56,8 @@ const StyledBackgroundClip = styled(BackgroundClip)`
 	height: 100vh;
 	width: max(100vh, 100vw);
 	//width: 100vw;
-	transform: rotate(-90deg);	
-	transform: scale(1.2);	
+	transform: rotate(-90deg);
+	transform: scale(1.2);
 	z-index: ${(props) => (props.Index ? props.Index : "0")};
 	.path {
 		fill: white;
@@ -75,7 +75,6 @@ const StyledFormGrid = styled.div`
 	@media (max-width: 767px) {
 		height: calc(100vh - 65px);
 	}
-
 `;
 
 const StyledFormGridElement = styled.div`
@@ -96,7 +95,7 @@ const StyledFormGridElement = styled.div`
 		height: 5px;
 	}
 	::-webkit-scrollbar-track {
-		background-color: ${props=>props.theme.Secondary};
+		background-color: ${(props) => props.theme.Secondary};
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: #aaa;
@@ -152,7 +151,6 @@ const StyledFormFooter = styled(StyledFormGridElement)`
 		justify-content: space-between;
 		margin: 0 auto;
 	}
-
 `;
 
 const StyledFormFooterContainer = styled.div`
@@ -165,6 +163,119 @@ const StyledFormFooterContainer = styled.div`
 	right: 0;
 `;
 
+const StyledDashboardGrid = styled.div`
+	display: grid;
+	grid-template-columns: max-content auto;
+	grid-template-rows: max-content auto;
+	height: 100vh;
+`;
+
+const StyledDashboardElement = styled.div`
+	background-color: ${(props) => props.primary && props.theme.Primary};
+	padding: ${(props) => props.padding && props.padding};
+	grid-column: ${(props) => props.navbar && `span 5`};
+	grid-column: ${(props) => props.input && `1/3`};
+	grid-column: ${(props) => props.preview && `3/6`};
+	overflow: ${(props) => props.overflow && props.overflow};
+`;
+
+const StyledDashboardCard = styled.div`
+	background-color: ${(props) => props.primary && props.theme.Primary};
+	background-color: ${(props) => props.white && props.theme.White};
+	padding: ${(props) => props.padding && props.padding};
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1rem;
+	grid-column: ${(props) => props.spanAll && `1 / -1`};
+	grid-column: ${(props) => props.spanMore && `1/-2`};
+	//grid-column-end: span 3;
+	//grid-column: 1 / span 3;
+`;
+
+const StyledDashboardNavbar = styled.div`
+	grid-column: span 2;
+`;
+
+const StyledDashboardSidebar = styled.div`
+	grid-column: span 1;
+	display: flex;
+	flex-direction: column;
+	background: ${(props) => props.theme.White};
+	box-shadow: ${(props) => props.shadow && "0px 1px 5px #AAA4"};
+	align-items: flex-start;
+`;
+const StyledDashboardElementContainer = styled.div`
+	padding: ${(props) => props.padding && props.padding};
+	grid-column: span 1;
+	background-color: ${(props) => props.primary && props.theme.Primary};
+	padding: ${(props) => props.padding && props.padding};
+	overflow: ${(props) => props.overflow && props.overflow};
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: max-content;
+	grid-auto-flow: dense;
+	gap: 2rem;
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+`;
+
+const StyledDashboardTable = styled.table`
+	table-layout: fixed;
+	width: 100%;
+
+	td {
+		padding: 1rem;
+		height: 40px;
+		vertical-align: center;
+		text-align: left;
+	}
+	tbody > tr {
+		border-style: solid;
+		border-color: ${(props) => props.theme.Grey};
+		border-width: 1px;
+		border-right: 1px;
+		border-left: 1px;
+	}
+	th {
+		padding: 1rem;
+		text-align: left;
+	}
+	@media (max-width: 767px) {
+		tr > th {
+			display: none;
+		}
+		tr > td {
+			display: none;
+		}
+		th:first-child{
+			display: table-cell;
+		}
+		td:first-child{
+			display: table-cell;
+		}
+		th:last-child{
+			display: table-cell;
+		}
+		td:last-child{
+			display: table-cell;
+		}
+	}
+	}
+`;
+
+
+const StyledDashboardFlexbox = styled.div`
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-start;
+
+`
+
 export {
 	FullSizeContainer,
 	HomeContainer,
@@ -176,4 +287,12 @@ export {
 	StyledFormGridElement,
 	StyledFormFooterContainer,
 	StyledBackgroundClip,
+	StyledDashboardGrid,
+	StyledDashboardNavbar,
+	StyledDashboardElement,
+	StyledDashboardElementContainer,
+	StyledDashboardSidebar,
+	StyledDashboardCard,
+	StyledDashboardTable,
+	StyledDashboardFlexbox
 };
