@@ -189,9 +189,10 @@ const StyledDashboardCard = styled.div`
 	align-items: flex-start;
 	padding: 1rem;
 	grid-column: ${(props) => props.spanAll && `1 / -1`};
-	grid-column: ${(props) => props.spanMore && `1/-2`};
-	//grid-column-end: span 3;
-	//grid-column: 1 / span 3;
+	grid-column: ${(props) => props.spanMore && `span 2`};
+	@media (max-width: 767px) {
+		grid-column: 1 / -1;
+	}
 `;
 
 const StyledDashboardNavbar = styled.div`
@@ -218,9 +219,6 @@ const StyledDashboardElementContainer = styled.div`
 	grid-auto-flow: dense;
 	gap: 2rem;
 
-	@media (max-width: 767px) {
-		grid-template-columns: 1fr;
-	}
 `;
 
 const StyledDashboardTable = styled.table`
@@ -273,6 +271,12 @@ const StyledDashboardFlexbox = styled.div`
 	width: 100%;
 	align-items: center;
 	justify-content: flex-start;
+`
+
+
+const StyledVisContainer = styled.div`
+	height: ${props=>props.height};
+	width: 100%;
 
 `
 
@@ -294,5 +298,6 @@ export {
 	StyledDashboardSidebar,
 	StyledDashboardCard,
 	StyledDashboardTable,
-	StyledDashboardFlexbox
+	StyledDashboardFlexbox,
+	StyledVisContainer
 };

@@ -23,6 +23,8 @@ const Theme = {
 	FooterWeight: "400",
 	BackButton: "#CF0820",
 	DashboardLabelSize: "1rem",
+	Red: "#CF0820",
+	Green: "#178501",
 };
 
 export default Theme;

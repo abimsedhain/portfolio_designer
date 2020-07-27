@@ -12,7 +12,7 @@ const Header = styled.h1`
 	font-size: ${(props) => props.Small && props.theme.SubheaderSize};
 	font-size: ${(props) => props.Large && props.theme.LargeHeaderSize};
 	font-weight: ${(props) => props.theme.HeaderWeight};
-	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)}
+	color: ${(props) => (props.White ? props.theme.White : props.theme.Dark)};
 `;
 
 const Subheader = styled.h2`
@@ -101,17 +101,22 @@ const StyledDashboardSidebarElement = styled.h5`
 	text-align: left;
 	margin: 0.25rem 0rem 0.25rem 0.5rem;
 	border-radius: 20px 0 0 20px;
+	border-radius: ${props=>props.button&&"20px"};
 	color: ${(props) => (props.white ? props.theme.White : props.theme.Dark)};
 	background-color: ${(props) => props.white && props.theme.Primary};
 	background-color: ${(props) => props.black && props.theme.White};
 `;
 
 const StyledDashboardLabel = styled.h5`
-	font-size: ${props=>props.theme.DashboardLabelSize};
-	font-weight: ${props=>props.theme.FormLabelWeight};
-	color: ${props=>props.theme.Primary};
+	font-size: ${(props) => props.theme.DashboardLabelSize};
+	font-weight: ${(props) => props.theme.FormLabelWeight};
+	color: ${(props) => props.theme.Primary};
+`;
 
-`
+const DashboardAmount = styled(Header)`
+	color: ${(props) => props.green && props.theme.Green};
+	color: ${(props) => props.red && props.theme.Red};
+`;
 
 export {
 	Header,
@@ -125,5 +130,6 @@ export {
 	SmallSpan,
 	PointerSpan,
 	StyledDashboardSidebarElement,
-	StyledDashboardLabel
+	StyledDashboardLabel,
+	DashboardAmount,
 };
