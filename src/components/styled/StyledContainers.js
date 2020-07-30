@@ -73,7 +73,7 @@ const StyledFormGrid = styled.div`
 	grid-template-rows: max-content auto;
 	height: calc(100vh - 60px);
 	@media (max-width: 767px) {
-		height: calc(100vh - 65px);
+		height: calc(100vh - 60px);
 	}
 `;
 
@@ -163,11 +163,27 @@ const StyledFormFooterContainer = styled.div`
 	right: 0;
 `;
 
+const StyledDashboardFooterContainer = styled(StyledFormFooterContainer)`
+	border-top: solid 1px ${props=>props.theme.Grey};
+	background: ${(props) => props.theme.White};
+	@media (min-width: 767px) {
+		display: none;
+	}
+`;
+
+const StyledDashboardFooter = styled(StyledFormFooter)`
+	background: ${(props) => props.theme.White};
+`;
+
 const StyledDashboardGrid = styled.div`
 	display: grid;
 	grid-template-columns: max-content auto;
 	grid-template-rows: max-content auto;
 	height: 100vh;
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+		height: calc(100vh - 60px);
+	}
 `;
 
 const StyledDashboardElement = styled.div`
@@ -206,6 +222,9 @@ const StyledDashboardSidebar = styled.div`
 	background: ${(props) => props.theme.White};
 	box-shadow: ${(props) => props.shadow && "0px 1px 5px #AAA4"};
 	align-items: flex-start;
+	@media (max-width: 767px) {
+		display: none;
+	}
 `;
 const StyledDashboardElementContainer = styled.div`
 	padding: ${(props) => props.padding && props.padding};
@@ -218,7 +237,6 @@ const StyledDashboardElementContainer = styled.div`
 	grid-auto-rows: max-content;
 	grid-auto-flow: dense;
 	gap: 2rem;
-
 `;
 
 const StyledDashboardTable = styled.table`
@@ -265,20 +283,17 @@ const StyledDashboardTable = styled.table`
 	}
 `;
 
-
 const StyledDashboardFlexbox = styled.div`
 	display: flex;
 	width: 100%;
 	align-items: center;
 	justify-content: flex-start;
-`
-
+`;
 
 const StyledVisContainer = styled.div`
-	height: ${props=>props.height};
+	height: ${(props) => props.height};
 	width: 100%;
-
-`
+`;
 
 export {
 	FullSizeContainer,
@@ -299,5 +314,7 @@ export {
 	StyledDashboardCard,
 	StyledDashboardTable,
 	StyledDashboardFlexbox,
-	StyledVisContainer
+	StyledVisContainer,
+	StyledDashboardFooterContainer,
+	StyledDashboardFooter,
 };

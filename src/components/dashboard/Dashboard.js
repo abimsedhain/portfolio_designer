@@ -1,6 +1,4 @@
 import React from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { RadialChart } from "react-vis";
 import {
 	StyledDashboardCard,
 	StyledDashboardElementContainer,
@@ -14,9 +12,10 @@ import DashboardSidebar from "./DashboardSidebar";
 import DashboardBarWidget from "./DashboardBarWidget";
 import DashboardLineWidget from "./DashboardLineWidget";
 import DashboardPieWidget from "./DashboardPieWidget";
+import DashboardMobileFooter from "./DashboardMobileFooter"
 
 const Dashboard = () => {
-	return (
+	return (<>
 		<StyledDashboardGrid>
 			<DashboardNavbar />
 			<DashboardSidebar />
@@ -72,7 +71,8 @@ const Dashboard = () => {
 				</StyledDashboardCard>
 			</StyledDashboardElementContainer>
 		</StyledDashboardGrid>
-	);
+		<DashboardMobileFooter/>
+	</>	);
 };
 
 const AnotherTableRow = () => {
