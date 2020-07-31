@@ -173,6 +173,9 @@ const StyledDashboardFooterContainer = styled(StyledFormFooterContainer)`
 
 const StyledDashboardFooter = styled(StyledFormFooter)`
 	background: ${(props) => props.theme.White};
+	@media (max-width: 767px) {
+		width: 85%;
+	}
 `;
 
 const StyledDashboardGrid = styled.div`
